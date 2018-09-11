@@ -1,5 +1,6 @@
 <?php
 require("comun.php");
+require("./clases/Empresa.php");
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -93,7 +94,23 @@ require("comun.php");
          </ul>
     </div>
 
-		<footer>
+
+   <div>
+       <?php
+            $Empresa = new Empresa();  //creo instancia de la clase para poder usar sus metodos
+            $resultado = $Empresa->obtenerEmpresasActivas();  //guardo en una variable lo que devuelve el metodo "ObtenerEMpresasActivas"
+
+            while($filas = $resultado->fetch_array()){//recorro lo que esta en la variable resultado
+
+                   echo "el nombre de la empresa es: ".$filas['nombre_empresa'];
+
+            }
+
+        ?>
+   </div>
+
+
+    <footer>
 
 		</footer>
 </body>

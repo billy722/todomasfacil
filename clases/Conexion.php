@@ -18,10 +18,10 @@
       // $this->clave= "agenda_daem";
       // $this->bd= "daemmulc_agenda";
 
-      $this->servidor= "127.0.0.1";
-      $this->usuario= "root";
-      $this->clave= "82537240Guitar";
-      $this->bd= "agenda_general_daem";
+      $this->servidor= "todomasfacil.cl";
+      $this->usuario= "billy722";
+      $this->clave= "ixLnTbyd";
+      $this->bd= "todomasfacil";
 
 
     }

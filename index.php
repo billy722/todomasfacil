@@ -26,8 +26,8 @@ require("comun.php");
   }
   #listado_categorias{
     background: #37626e;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding-top:25px;
+    padding-bottom:12px;
 
   }
 
@@ -35,7 +35,8 @@ require("comun.php");
     text-decoration: none;
     display: inline;
     color:white;
-    font-size: 30px;
+    font-size: 25px;
+    padding-bottom: 0px;
   }
  a{
     text-decoration: none;
@@ -51,7 +52,8 @@ require("comun.php");
      position: absolute;
 
      z-index: 1000;
-     margin-top: -300px;
+     margin-top: -400px;
+
   }
 </style>
 
@@ -70,25 +72,25 @@ require("comun.php");
     <div id="listado_categorias" class="container-fluid">
          <ul>
            <li>
-             <a href="#" >COMIDA > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>COMIDA  </a>
            </li>
            <li>
-             <a href="#" >HOTELES > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>HOTELES  </a>
            </li>
            <li>
-             <a href="#" >RESTAURANT > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>RESTAURANT  </a>
            </li>
            <li>
-             <a href="#" >SALUD > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>SALUD  </a>
            </li>
            <li>
-             <a href="#" >DIVERSIÓN > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>DIVERSIÓN  </a>
            </li>
            <li>
-             <a href="#" >AUTOMOVIL > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>AUTOMOVIL  </a>
            </li>
            <li>
-             <a href="#" >TECNOLOGÍA > </a>
+             <a href="#" ><span class="fas fa-utensils"> </span>TECNOLOGÍA   </a>
            </li>
          </ul>
     </div>

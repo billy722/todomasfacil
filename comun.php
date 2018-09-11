@@ -24,6 +24,9 @@ function comprobarSession(){
         <script src='./js/bootstrap.min.js'></script>
         <script src="./js/scriptLogin.js"></script>
         <script src="./js/validaciones.js"></script>
+        <script src="./js/fontawesome-all.min.js"></script>
+
+        </script>
   <?php
 }
 
@@ -131,7 +134,8 @@ function cargarMenuPrincipal(){
     color:white!important;
     font-size: 20px;
     margin-right: 2px;
-    padding:5px;
+    padding-top:15px;
+    padding-bottom:15px;  /*inferior*/
 }
 </style>
 

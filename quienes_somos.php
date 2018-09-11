@@ -4,11 +4,11 @@ require("comun.php");
 <!DOCTYPE html>
 <html lang="es">
      <head>
-       <title>Todo Fácil</title>
+
+       <title>Quienes somos</title>
        <?php
        cargarHead();
         ?>
-
      </head>
 <body>
 

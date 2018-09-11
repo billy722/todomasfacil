@@ -8,27 +8,22 @@ function comprobarSession(){
   }
 }
 
-function cargarHead(){
+    function cargarHead(){
 ?>
-  <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/estilos.css">
-  <link rel="stylesheet" href="./sweetalert/sweet-alert.css">
-  <link rel="stylesheet" href='./css/fullcalendar.min.css' />
-  <link rel="stylesheet" href='./css/fullcalendar.print.min.css' media='print' />
+        <link href='./css/fullcalendar.min.css' rel='stylesheet' />
+        <link href='./css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/estilos.css">
 
-  <script src='./js/jquery-3.1.0.min.js'></script>
-  <script src='./js/bootstrap.min.js'></script>
-  <script src="./js/validaciones.js"></script>
-  <script src="./sweetalert/sweet-alert.min.js"></script>
-  <script src='./js/moment.min.js'></script>
-  <script src='./js/fullcalendar.min.js'></script>
-  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script> -->
-  <script src="./js/fontawesome-all.min.js"></script>
 
-  <script src="./js/validaciones.js"></script>
+        <script src='./js/jquery-3.1.0.min.js'></script>
+        <script src='./js/moment.min.js'></script>
+        <script src='./js/bootstrap.min.js'></script>
+        <script src="./js/scriptLogin.js"></script>
+        <script src="./js/validaciones.js"></script>
   <?php
 }
 
@@ -124,90 +119,58 @@ function cargarMenuConfiguraciones(){
 
 function cargarMenuPrincipal(){
 ?>
+
+
+
 <style>
-
-#contenedor_logo_menu{
-  height:40px;
-  width: 40px;
-  background:white;
-  margin-top: -10px;
-  margin-bottom: -10px;
-  margin-left: -10px;
+.bg-light {
+    background-color: #ffffff!important;
 }
-#logo_menu{
-  background-image: url("./img/logo_daem.png");
-  height: 100%;
-  width:100%;
-  background-size: cover;
-  background-position: center;
-}
-
 .nav-link{
-  /* background-color: rgb(28, 196, 201); */
-  margin-right: 5px;
-}
-.nav-link:hover{
- color:white;
- /* background-color: rgb(13, 112, 115); */
-
+    background-color: #fc8132!important;
+    color:white!important;
+    font-size: 20px;
+    margin-right: 2px;
+    padding:5px;
 }
 </style>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark " style="background-image: url('img/fondo.jpg');">
-  <a class="navbar-brand" href="#">
-    <div id="contenedor_logo_menu">
-      <div id="logo_menu"></div>
-    </div>
-    <!-- <img src="./img/logo.png" width="80" height="50" class="d-inline-block align-top" alt=""> -->
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
+    <nav id="menu_principal" class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="./img/logo.png" width="240" height="110" class="d-inline-block align-top" alt="">
+      </a>
 
-     <?php
-     $url= basename($_SERVER['PHP_SELF']);
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03" >
 
-     require_once './clases/Usuario.php';
-     $usuario= new Usuario();
-     $usuario= $usuario->obtenerUsuarioActual();
+          <ul class="navbar-nav mr-sm-2  ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">INICIO<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="nuestros_clientes.php">NUESTROS CLIENTES<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="eventos.php">EVENTOS<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="quienes_somos.php">QUIENES SOMOS<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contactanos.php">CONTACTANOS<span class="sr-only">(current)</span></a>
+            </li>
 
-     if($usuario['tipo_usuario']==1 || $usuario['tipo_usuario']==2){
+          </ul>
 
-            //UN LINK
-            echo '<li class="nav-item">';
-                  if($url=="agenda_general.php"){
-                    echo '<a class="nav-link active" href="./agenda_general.php">Agenda General</span></a>';
-                  }else{
-                    echo '<a class="nav-link" href="./agenda_general.php">Agenda General</span></a>';
-                  }
-            echo '</li>';
+      </div>
 
-      }
-      if($usuario['tipo_usuario']==1){
+    </nav>
 
-             //UN LINK
-             echo '<li class="nav-item">';
-                   if($url=="configuraciones.php" || $url=="usuarios.php" ){
-                     echo '<a class="nav-link active" href="./configuraciones.php">Configuraciones</span></a>';
-                   }else{
-                     echo '<a class="nav-link" href="./configuraciones.php">Configuraciones</span></a>';
-                   }
-             echo '</li>';
-       }
-
-
-     ?>
-
-    </ul>
-
-     <label class="text-white"><?php echo $usuario['nombre'].', área de &nbsp;'.$usuario['nombre_departamento'].' &nbsp;'; ?></label>
-     <a href="./cerrarSesion.php" class="btn btn-danger my-2 my-sm-0" >Salir</a>
   </div>
-</nav>
-<div><hr></div>
-<div><hr></div>
+
+
 
 <?php
 }

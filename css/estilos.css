@@ -2,11 +2,15 @@
 body{
   /* background-image: url("../imagenes/fondo6.jpg"); */
   margin:0;
-  font-family: nexaBold;
+  font-family: nexaLight;
   font-weight: lighter;
 }
 
   @font-face {
     font-family: nexaBold;
-    src: url('../fonts/Nexa_Bold.otf'), url('../fonts/Nexa_Light.otf');
+    src: url('../fonts/Nexa_Bold.otf');
+}
+  @font-face {
+    font-family: nexaLight;
+    src: url('../fonts/Nexa_Light.otf');
 }

@@ -1,0 +1,426 @@
+@import "https://fonts.googleapis.com/css?family=ABeeZee";
+
+/*-- General CSS --*/
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  max-width: 100%;
+  font-family: "ABeeZee", sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+/*-- .navbar CSS --*/
+
+.navbar{
+    padding: 2rem 0 !important;
+    background-color: #ffffff;
+    z-index: 2 !important;
+    border-bottom: 1px solid #c0c0c0 !important;
+}
+
+.navbar a{
+    color: #000;
+    font-size: 2rem;
+
+    transition: all 1s;
+}
+
+.navbar a:hover{
+    background: transparent!important;
+    color: cadetblue;
+}
+
+.navbar-toggle{
+    border: 1px solid #333 !important;
+}
+
+.navbar-toggle .icon-bar{
+    color: #444 !important;
+    background-color: #333 !important;
+}
+
+.modal-backdrop{
+    z-index: 10 !important;
+}
+
+/*-- .carousel CSS --*/
+
+.carousel-informacion{
+    min-width: 100%;
+    height: auto !important;
+    float: left;
+    margin-top: 80px;
+}
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+}
+
+.carousel-inner > .item > img{
+    width: 100%;
+    height: 550px !important;
+}
+
+.carousel-caption {
+    top: 25% !important;
+}
+
+/*-- .servicios CSS --*/
+
+.servicios{
+    width: 100%;
+    min-height: 35%;
+    float: left;
+    padding: 2rem 0;
+}
+
+.servicios h4{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contenido-servicio{
+    margin: .5rem 0;
+}
+
+.servicios i{
+    padding: 1rem 0;
+    color: #0f3f5b;
+}
+
+/*-- .galeria CSS --*/
+
+.galeria{
+    width: 100%;
+    min-height: 45%;
+    float: left;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    background-color: cadetblue;
+}
+
+.galeria span{
+    color: #ffffff;
+    padding-bottom: 1rem;
+}
+
+.galeria .col-xs-12{
+    margin:1rem 0 !important;
+}
+
+/*-- .sobre_nosotros CSS --*/
+
+.sobre_nosotros{
+    width: 100%;
+    min-height: 50%;
+    float: left;
+    padding-top: 3rem;
+    background-color: #ffffff;
+}
+
+/*-- .catalogo CSS --*/
+
+.contenido-principal{
+    width: 100%;
+    min-height: 80%;
+    float: left;
+    padding-top: 100px;
+}
+
+.contenido-principal .contenido-categoria{
+    margin-bottom: 3rem;
+    float: left;
+    background:#f5f5f5;
+    border-radius: 4px;
+}
+
+.contenido-principal .titulo-catalogo{
+    width: 100%;
+    padding: 1rem 0;
+    color: #ffffff;
+    background-color: #0f3f5b;
+}
+
+.nav-pills li{
+    background-color: rgba(16, 89, 131, .5);
+}
+
+.nav-pills > li > a{
+    border-radius: 0px !important;
+    color: #ffffff;
+}
+
+.nav-pills > li > a:hover{
+    color: #333;
+}
+
+.cb1{
+    border-top: 2px solid #ffa500;
+}
+
+.c1{
+    border: 2px solid #ffa500;
+    background-color: #ffa500;
+}
+
+.cb2{
+    border-top: 2px solid #9400d3;
+}
+
+.c2{
+    border: 2px solid #9400d3;
+    background-color: #9400d3;
+}
+
+.cb3{
+    border-top: 2px solid #8b5013;
+}
+
+.c3{
+    border: 2px solid #8b5013;
+    background-color: #8b5013;
+}
+.cb4{
+    border-top: 2px solid #A4A4A4;
+}
+
+.c4{
+    border: 2px solid #A4A4A4;
+    background-color: #A4A4A4;
+}
+
+.cb5{
+    border-top: 2px solid #2E2EFE;
+}
+
+.c5{
+    border: 2px solid #2E2EFE;
+    background-color: #2E2EFE;
+}
+
+.cb6{
+    border-top: 2px solid #2EFEF7;
+}
+
+.c6{
+    border: 2px solid #2EFEF7;
+    background-color: #2EFEF7;
+}
+
+.cb7{
+    border-top: 2px solid #3ADF00;
+}
+
+.c7{
+    border: 2px solid #3ADF00;
+    background-color: #3ADF00;
+}
+
+.cb8{
+    border-top: 2px solid #FF8000;
+}
+
+.c8{
+    border: 2px solid #FF8000;
+    background-color: #FF8000;
+}
+
+.cb9{
+    border-top: 2px solid #B40404;
+}
+
+.c9{
+    border: 2px solid #B40404;
+    background-color: #B40404;
+}
+
+.titulo-categoria{
+    color: #ffffff;
+    padding: 1rem;
+}
+
+.well-cw{
+    padding: 1rem 0 !important;
+    margin: 1rem;
+    background-color: #ffffff !important;
+}
+
+.well-cw span{
+    padding: 50px 15px;
+    font-size: 1.5rem;
+}
+
+.well-cw img{
+    padding-bottom: 1rem;
+}
+
+/*-- .ficha CSS --*/
+
+.ficha{
+    width: 100%;
+    min-height: 100%;
+    float: left;
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.ficha .ficha-content{
+    padding: 2rem 1rem;
+}
+
+/*-- .servicios [pagina] CSS --*/
+
+.box-servicios{
+    margin: 4rem 0 1rem 0;
+}
+
+.icon-cuadrado{
+    width: 80px;
+    height: 80px;
+    padding: 1rem 0;
+    color: #ffffff;
+    margin-left: 1rem;
+    float: left;
+    border-radius: 50%;
+    background:#950808;
+}
+
+.icon-cuadrado i{
+    padding-top: 1rem;
+}
+
+.contenido-servicio{
+    width: 60%;
+    float: left;
+}
+
+/*-- .form-reg CSS --*/
+
+.form-reg{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #c0c0c0;
+}
+
+    .asr_mini{
+        padding: 1rem;
+        border: 1px solid #c0c0c0;
+        height: 100px;
+    }
+
+/*-- .footer CSS --*/
+
+footer{
+    width: 100%;
+    min-height: 18%;
+    float: left;
+    padding-top: 3rem;
+    background-color: #444;
+}
+
+footer li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer li a:hover{
+    color: #f2f2f2;
+}
+
+.sub_footer{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 1rem 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: #333;
+}
+
+/*-- .perfil-usuario CSS --*/
+
+.perfil-usuario{
+    width: 100%;
+    min-height: 80%;
+    float: left;
+    padding-top: 80px;
+}
+
+.perfil-usuario h4{
+    margin-left: 1rem;
+}
+
+.mini-u{
+    width: 100%;
+    min-height: all;
+    float: left;
+    padding: .5rem;
+    margin: 1rem 0;
+    text-align: center;
+    border-radius: 1rem;
+    color: #ffffff;
+    background-color: #444;
+}
+
+.mini-u i{
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.mini-u-contenido{
+    padding: 1rem 0;
+    margin: .5rem;
+}
+
+.mini-u-btn{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    transition: 1s all;
+}
+
+.mini-u-btn:hover{
+    text-decoration-line: none;
+    background-color: red;
+    color: #f2f2f2;
+}
+
+.mini-u-btn:focus{
+    color: red;
+}
+
+.despegable-menu{
+    width: 100%;
+    height: all;
+    margin-top: 3rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1rem solid #d6e9c6;
+    border-radius: .5rem;
+}
+
+.despegable-menu span{
+    padding: 1rem 0;
+}
+
+/*-- .fin de perfil-usuario CSS --*/

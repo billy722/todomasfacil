@@ -5,7 +5,7 @@ body{
   font-family: nexaLight;
   font-weight: lighter;
 }
-
+/*  Fuente de las letras del menu */
   @font-face {
     font-family: nexaBold;
     src: url('../fonts/Nexa_Bold.otf');
@@ -14,3 +14,65 @@ body{
     font-family: nexaLight;
     src: url('../fonts/Nexa_Light.otf');
 }
+
+/* galeria de fotos */
+
+.galeria{
+  width: 100%;
+  min-height: 45%;
+  float: left;
+  padding-top: 1rem;
+  /* padding-bottom: 1rem; */
+  background-color: cadetblue;
+}
+
+.galeria span{
+  color: #ffffff;
+  padding-bottom: 1rem;
+}
+
+.galeria .col-xs-12{
+  margin:1rem 0 !important;
+}
+
+.contenido-principal{
+    width: 100%;
+    min-height: 80%;
+    float: left;
+    padding-top: 100px;
+}
+
+.carousel-informacion{
+    min-width: 100%;
+    height: auto !important;
+    float: left;
+    margin-top: 80px;
+}
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+}
+
+.carousel-inner > .item > img{
+    width: 100%;
+    height: 550px !important;
+}
+
+.carousel-caption {
+    top: 25% !important;
+}
+
+/* Fin galeria de fotos */
+
+
+    .sub_footer{
+        width: 100%;
+        height: auto;
+        float: left;
+        padding: 1rem 0;
+        text-align: center;
+        color: #ffffff;
+        background-color: #ff4000;
+    }

@@ -96,5 +96,8 @@ require("comun.php");
 		<footer>
 
 		</footer>
+    <?php
+      sub_footer();
+      ?>
 </body>
 </html>

@@ -1,13 +1,16 @@
 <?php
 require("comun.php");
+require("./clases/Empresa.php");
  ?>
 <!DOCTYPE html>
 <html lang="es">
      <head>
-       <title>Contactanos</title>
+       <title>Todo Fácil</title>
+
        <?php
        cargarHead();
         ?>
+
      </head>
 <body>
 
@@ -18,82 +21,104 @@ require("comun.php");
  ?>
 
   <!-- imagen principal -->
+<br>
+<main class="contenido-principal"><!--contenido-principal-->
+<div class="container">
 
-<style >
-  .imagen_principal{
-    background-image: url('./img/principal');
-  }
-  #listado_categorias{
-    background: #37626e;
-    padding-top:5px;
-    padding-bottom:5px;
+    <form id="formularioMensajes" name="formularioMensajes" method="POST" class="col-md-8 col-md-offset-2">
+      <legend align="center">Contacto</legend>
+                <div class="form-group">
+                   <label for="nombre">Nombre:</label>
+                   <input class="form-control" required id="nombre" name="nombre" type="text" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input class="form-control" required id="apellido" name="apellido" type="text" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                   <label for="correo">Correo Electrónico:</label>
+                   <input class="form-control" required id="correo" name="correo" type="email" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                   <label for="mensaje">Mensaje</label>
+                   <textarea class="form-control col-xs-12" required id="mensaje"  name="mensaje" placeholder="Escriba su mensaje"></textarea>
+                </div>
+                <div class="form-group">
+                  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+                      <br><input type="submit" class="btn btn-warning col-xs-12 "></input>
+                  </div>
+                </div>
+           </form>
 
-  }
-
-  #listado_categorias li{
-    text-decoration: none;
-    display: inline;
-    color:white;
-    font-size: 30px;
-  }
- a{
-    text-decoration: none;
-    color:white;
-
-  }
-  a:hover{
-    color:#f9913c;
-    text-decoration: none;
-
-  }
-  #formulario_busqueda{
-     position: absolute;
-
-     z-index: 1000;
-     margin-top: -300px;
-  }
-</style>
-
-<div>
-  <img src="./img/principal.jpg" class="img-fluid" alt="Responsive image">
-  <center>
-    <div id="formulario_busqueda">
-      <div class="form-group col-offset-5 col-12">
-        <input class="form-control" type="text">
-      </div>
-    </div>
-  </center>
-</div>
-
-
-    <div id="listado_categorias" class="container-fluid">
-         <ul>
-           <li>
-             <a href="#" >COMIDA > </a>
-           </li>
-           <li>
-             <a href="#" >HOTELES > </a>
-           </li>
-           <li>
-             <a href="#" >RESTAURANT > </a>
-           </li>
-           <li>
-             <a href="#" >SALUD > </a>
-           </li>
-           <li>
-             <a href="#" >DIVERSIÓN > </a>
-           </li>
-           <li>
-             <a href="#" >AUTOMOVIL > </a>
-           </li>
-           <li>
-             <a href="#" >TECNOLOGÍA > </a>
-           </li>
-         </ul>
     </div>
 
-		<footer>
+</main><!--contenido-principal-->
 
-		</footer>
+<br>
+
+<footer>
+
+
+</footer>
+<?php
+  sub_footer();
+  ?>
+
+<script>
+
+function eliminarCamposMensaje(){ /*AQUI LE DOY UN NOMBRE CUALQUIERA A LA FUNCION*/
+        $("#nombre").val("");
+        $("#apellido").val("");
+        $("#correo").val("");
+        $("#mensaje").val("");
+
+}
+
+function eventoAlertCorrecto(){
+  swal({
+    title: "Mensaje enviado correctamente",
+    text: "",
+    timer: 2000,
+    showConfirmButton: false,
+    });
+}
+</script>
+<script>
+
+   $("#formularioMensajes").submit(function(){//captura cuando se envia el formulario
+      event.preventDefault();//detiene el envio del formulario
+ // alert(respuesta);
+      if($("#nombre").val()=="" || $("#apellido").val()=="" || $("#correo").val()=="" || $("#mensaje").val()==""){
+           alert("No puede dejar campos vacios");
+           alert(respuesta);
+      }else{
+
+          $.ajax({//realiza el envio del formulario pero por ajax para no tener que recargar pagina
+
+              url:"insertMensaje.php", //donde se va a ingresar el mensaje "insertarMensaje.php"
+              data:$("#formularioMensajes").serialize(),
+              success:function(respuesta){
+                  if(respuesta == 1){
+                    //alert("mensaje enviado.");
+                      eventoAlertCorrecto();
+                      eliminarCamposMensaje();
+
+
+                  }else{
+                      alert("Ha ocurrido un error.");
+                  }
+
+              }
+          });
+          return false;
+        }
+  });
+
+
+</script>
+
+<script src='./js/jquery-3.1.0.min.js'></script>
+
 </body>
+
 </html>

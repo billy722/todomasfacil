@@ -17,7 +17,9 @@ function comprobarSession(){
         <link href='./css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/estilos.css">
-
+        <link rel="stylesheet" type="text/css" href="./css/sweet-alert.css">
+        <link rel="stylesheet" type="text/css" href="./css/lightbox.css">
+        <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
 
         <script src='./js/jquery-3.1.0.min.js'></script>
         <script src='./js/moment.min.js'></script>
@@ -25,6 +27,10 @@ function comprobarSession(){
         <script src="./js/scriptLogin.js"></script>
         <script src="./js/validaciones.js"></script>
         <script src="./js/fontawesome-all.min.js"></script>
+        <script src="./js/sweetalert.min.js"></script>
+        <script src="./js/lightbox.js"></script>
+        <script src="./js/lightbox.min.js"></script>
+
 
         </script>
   <?php
@@ -178,5 +184,11 @@ function cargarMenuPrincipal(){
 
 <?php
 }
-
+function sub_footer(){
  ?>
+
+<div class="sub_footer">
+    <span>&copy;Todos Los Derechos Reservados</span>
+</div>
+
+<?php } ?>

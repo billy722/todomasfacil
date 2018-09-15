@@ -67,32 +67,7 @@ require("comun.php");
 </div>
 
 
-    <div id="listado_categorias" class="container-fluid">
-         <ul>
-           <li>
-             <a href="#" >COMIDA > </a>
-           </li>
-           <li>
-             <a href="#" >HOTELES > </a>
-           </li>
-           <li>
-             <a href="#" >RESTAURANT > </a>
-           </li>
-           <li>
-             <a href="#" >SALUD > </a>
-           </li>
-           <li>
-             <a href="#" >DIVERSIÓN > </a>
-           </li>
-           <li>
-             <a href="#" >AUTOMOVIL > </a>
-           </li>
-           <li>
-             <a href="#" >TECNOLOGÍA > </a>
-           </li>
-         </ul>
-    </div>
-
+    
 		<footer>
 
 		</footer>

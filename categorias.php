@@ -32,9 +32,9 @@ require("./clases/Empresa.php");
             echo '<div class="container">
              </div>
               <div class="card bg-white text-black">
-               <img class="card-img .special-card" src="./img/logoTransparente.jpg" alt="Card image">
+               <img class="card-img" src="./img/logoTransparente.jpg" alt="Card image">
                <div class="card-img-overlay">
-                 <center><h5 class="card-title">'.$filas['nombre_empresa'].'</h5></center>
+                 <center><h4 class="card-title">'.$filas['nombre_empresa'].'</h4></center>
                  <center><p class="card-text">'.$filas['descripcion_empresa'].'</p></center>
                </div>
               </div>
@@ -43,6 +43,7 @@ require("./clases/Empresa.php");
          }
 
      ?>
+
 <!-- <div class="container">
  </div>
   <div class="card bg-white text-black">
@@ -73,8 +74,8 @@ require("./clases/Empresa.php");
 
 		</footer>
 
-    <!-- <?php
-      // sub_footer();
-      ?> -->
+    <?php
+      sub_footer();
+      ?>
 </body>
 </html>

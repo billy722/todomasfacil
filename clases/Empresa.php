@@ -35,8 +35,7 @@ Class Empresa{
      $resultado_consulta = $Conexion->query("select * from tb_empresas where categoria_empresa = ".$this->categoria_empresa);
      return $resultado_consulta;
 
-  }
-
+    }                                                 
 }
 
 

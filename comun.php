@@ -17,6 +17,7 @@ function comprobarSession(){
         <link href='./css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/estilos.css">
+        <link rel="stylesheet" href="./css/estilosSlider.css">
         <link rel="stylesheet" type="text/css" href="./css/sweet-alert.css">
         <link rel="stylesheet" type="text/css" href="./css/lightbox.css">
         <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">

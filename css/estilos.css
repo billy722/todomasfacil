@@ -4,6 +4,7 @@ body{
   margin:0;
   font-family: nexaLight;
   font-weight: lighter;
+  
 }
 /*  Fuente de las letras del menu */
   @font-face {
@@ -23,10 +24,10 @@ body{
   float: left;
   padding-top: 1rem;
   /* padding-bottom: 1rem; */
-  background-color: cadetblue;
-}
+   background-color: cadetblue;
+ }
 
-.galeria span{
+ .galeria span{
   color: #ffffff;
   padding-bottom: 1rem;
 }

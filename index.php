@@ -1,6 +1,7 @@
 <?php
 require("comun.php");
 require("./clases/Empresa.php");
+require("./clases/Categoria.php");
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,6 +9,7 @@ require("./clases/Empresa.php");
        <title>Todo Fácil</title>
        <link href="./css/lightbox.min.css" rel="stylesheet" />
         <link href="./css/estilos.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/estilosSlider.css">
        <!-- <link href="./css/1.css" rel="stylesheet" /> -->
        <?php
        cargarHead();
@@ -74,96 +76,111 @@ require("./clases/Empresa.php");
 </div>
 
     <div id="listado_categorias" class="container-fluid">
+      <center>
          <ul>
-           <li>
-             <a href="#" ><span class="fa birthday-cake"> </span>COMIDA  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fa fa-bed"> </span>HOTELES  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fas fa-utensils"> </span>RESTAURANT  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fa fa-user-md"> </span>SALUD  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fas fa-gamepad"> </span>DIVERSIÓN  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fas fa-car"> </span>AUTOMOVIL  </a>
-           </li>
-           <li>
-             <a href="#" ><span class="fas fa-apple"> </span>TECNOLOGÍA   </a>
-           </li>
-         </ul>
-    </div>
+           <?php
+               $Categoria = new Categoria(); //instancio lo de la clase categoria
+               $respuesta = $Categoria->obtenerCategorias();
+
+                 while ($filas = $respuesta->fetch_array()) {
+                   echo '<li>
+                           <a href="categorias.php?id='.$filas['id_categoria'].'">
+                              <span class="'.$filas['icono'].'">  </span>
+                               <label> '.$filas['descripcion_categoria'].'</label>
+                            </a>
+                         </li>';
+       // comillas simples cuando ingreso html
+                }
+            ?>
+          </ul>
+        </center>
+     </div>
+
+
 
 <!-- BANNER EMPRESAS -->
-
-<section class="galeria">
-
-<div class="container">
-
     <div class="row">
+      <div class="slider">
+      	<div class="slide-track">
+      		<div class="slider">
+          <a href="descripcion_empresas.php">
+      			<img src="./imagenes/empresas/denticlass0.png" height="100" width="250" alt="" /></a>
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/1.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/2.png" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/3.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/4.jpg" height="100" width="250" alt="" />
+      		</div>
+          <div class="slider">
+      			<img src="./imagenes/empresas/5.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/6.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/7.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/8.png" height="100" width="250" alt="" />
+      		</div>
+          <div class="slider">
+      			<img src="./imagenes/empresas/9.jpg" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/10.png" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/11.png" height="100" width="250" alt="" />
+      		</div>
+      		<div class="slider">
+      			<img src="./imagenes/empresas/12.png" height="100" width="250" alt="" />
+      		</div>
+      	</div>
+      </div>
+ </div>
+      <!-- <?php
+          // $empresa = new Empresa(); //instancio lo de la clase categoria
+          // $respuesta = $empresa->obtenerEmpresasActivas();
 
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+           //  while ($filas = $respuesta->fetch_array()) {
+           //    // echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+           //    //     <a href="descripcion_empresas.php">
+           //    //     <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="wall" class="img-responsive img-rounded"></a>
+           //    // </div>';
+           //
+           //    echo '<section class="galeria">
+           //            <div class="container">
+           //                <div class="slider">
+           //                	<div class="slide-track">
+           //                		<div class="slider">
+           //                     <a href="descripcion_empresas.php">
+           //                			<img src="./imagenes/empresas/'.$filas['ruta_foto'].'" height="100" width="250" alt="" /></a>
+           //                    </div>
+           //                  </div>
+           //                </div>
+           //            </div>
+           //          </section>';
+           // }
+
+       ?> -->
+
+
+
+
+       </div>
+     </section>
+
+         <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
             <a href="./imagenes/empresas/1.jpg" data-lightbox="image-1" data-title="lalalalallalala">
             <img src="./imagenes/empresas/1.jpg" alt="wall" class="img-responsive img-rounded"></a>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="./imagenes/empresas/2.png" data-lightbox="image-1" data-title="lalalalallalala">
-            <img src="./imagenes/empresas/2.png" alt="wall" class="img-responsive img-rounded"></a>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="./imagenes/empresas/3.jpg" data-lightbox="image-1" data-title="lalalalallalala">
-            <img src="./imagenes/empresas/3.jpg" alt="wall" class="img-responsive img-rounded"></a>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="./imagenes/empresas/4.jpg" data-lightbox="image-1" data-title="lalalalallalala">
-            <img src="./imagenes/empresas/4.jpg" alt="wall" class="img-responsive img-rounded"></a>
-        </div>
-
-
-
-
-    </div>
-
-
-
-
-</div>
-
-</section>
-
-<!-- FIN BANNER EMPRESAS -->
-
-    <!-- <div>
-       <?php
-            // $Empresa = new Empresa();  //creo instancia de la clase para poder usar sus metodos
-            // $resultado = $Empresa->obtenerEmpresasActivas();  //guardo en una variable lo que devuelve
-            //                                                   //el metodo "ObtenerEMpresasActivas"
-            //
-            // while($filas = $resultado->fetch_array()){//recorro lo que esta en la variable resultado
-            //
-            //        // echo "el nombre de la empresa es: ".$filas['nombre_empresa'];
-            //         // echo '<img src="./imagenes/empresas/'.$filas['imagen_empresa'].'" >';
-            //        echo "<section class="galeria">";
-            //        echo "<div class="container">";
-            //        echo "<div class="row">";
-            //        echo "<a href="./imagenes/empresas/" '.$filas['imagen_empresa'].' data-lightbox="image-1" data-title="lalalalallalala">";
-            //        echo "<img src="./imagenes/empresas/" '.$filas['imagen_empresa'].' alt="wall" class="img-responsive img-rounded"></a>";
-            //        echo "</div>";
-            //        echo "</div>";
-            //        echo "</section>";
-
-          //}
-
-        ?>
-   </div> -->
+        </div> -->
 
 
     <footer>
@@ -176,15 +193,8 @@ require("./clases/Empresa.php");
 
 
 </body>
-<script>
-    lightbox.option({
-      'resizeDuration': 1000,
-      'wrapAround': true,
-      'fadeDuration':1000,
-      'maxWidth':512
-    })
-</script>
+
 <script src="./js/lightbox.min.js"></script>
   <script src="./js/jquery-3.1.0.min.js"></script>
-<!-- <script src="./js/lightbox.js"></script> -->
+
 </html>

@@ -7,7 +7,6 @@ Class Categoria{
   private $id_categoria;
   private $descripcion_empresa;
 
-
   public function obtenerCategorias(){
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();
@@ -16,6 +15,8 @@ Class Categoria{
      return $resultado_consulta;
 
   }
+
+
 
 }
 

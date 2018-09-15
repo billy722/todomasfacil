@@ -25,7 +25,7 @@ require("./clases/Empresa.php");
 <main class="contenido-principal"><!--contenido-principal-->
 <div class="container">
 
-    <form id="formularioMensajes" name="formularioMensajes" method="POST" class="col-md-8 col-md-offset-2">
+    <form action="" id="formularioMensajes" name="formularioMensajes" method="POST" class="col-md-8 col-md-offset-2">
       <legend align="center">Contacto</legend>
                 <div class="form-group">
                    <label for="nombre">Nombre:</label>
@@ -64,25 +64,7 @@ require("./clases/Empresa.php");
   sub_footer();
   ?>
 
-<script>
 
-function eliminarCamposMensaje(){ /*AQUI LE DOY UN NOMBRE CUALQUIERA A LA FUNCION*/
-        $("#nombre").val("");
-        $("#apellido").val("");
-        $("#correo").val("");
-        $("#mensaje").val("");
-
-}
-
-function eventoAlertCorrecto(){
-  swal({
-    title: "Mensaje enviado correctamente",
-    text: "",
-    timer: 2000,
-    showConfirmButton: false,
-    });
-}
-</script>
 <script>
 
    $("#formularioMensajes").submit(function(){//captura cuando se envia el formulario
@@ -90,22 +72,19 @@ function eventoAlertCorrecto(){
  // alert(respuesta);
       if($("#nombre").val()=="" || $("#apellido").val()=="" || $("#correo").val()=="" || $("#mensaje").val()==""){
            alert("No puede dejar campos vacios");
-           alert(respuesta);
       }else{
 
           $.ajax({//realiza el envio del formulario pero por ajax para no tener que recargar pagina
 
-              url:"insertMensaje.php", //donde se va a ingresar el mensaje "insertarMensaje.php"
+              url:"./metodos_ajax/contactanos/enviar_correo.php", //donde se va a ingresar el mensaje "insertarMensaje.php"
               data:$("#formularioMensajes").serialize(),
               success:function(respuesta){
+                  // alert(respuesta);
                   if(respuesta == 1){
-                    //alert("mensaje enviado.");
-                      eventoAlertCorrecto();
-                      eliminarCamposMensaje();
-
-
+                      swal("Mensaje enviado correctamente.","","success");
                   }else{
-                      alert("Ha ocurrido un error.");
+                    swal("Ha ocurrido un error","","danger");
+
                   }
 
               }

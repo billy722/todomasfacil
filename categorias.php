@@ -21,28 +21,35 @@ require("./clases/Empresa.php");
  ?>
 
  <div>
-    <?php
-        $id_categoria = $_REQUEST['id'];
 
-        $empresa_creada = new Empresa();
-        $empresa_creada->setCategoria($id_categoria);
-        $respuesta = $empresa_creada->obtenerEmpresasPorCategorias();
+ <div class="container">
+   <div class="row">
+      <?php
+          $id_categoria = $_REQUEST['id'];
 
-          while ($filas = $respuesta->fetch_array()) {
-            echo '<div class="container">
-             </div>
-              <div class="card bg-white text-black">
-               <img class="card-img" src="./img/logoTransparente.jpg" alt="Card image">
-               <div class="card-img-overlay">
-                 <center><h4 class="card-title">'.$filas['nombre_empresa'].'</h4></center>
-                 <center><p class="card-text">'.$filas['descripcion_empresa'].'</p></center>
-               </div>
-              </div>
-             </div>';
+          $empresa_creada = new Empresa();
+          $empresa_creada->setCategoria($id_categoria);
+          $respuesta = $empresa_creada->obtenerEmpresasPorCategorias();
 
-         }
+            while ($filas = $respuesta->fetch_array()) {
+              echo '
+              <div class="col-md-4">
+                  <div class=" card bg-white text-black" >
+                      <img class="card-img-top" style="height:200px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
+                      <div class="card-body">
+                        <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
+                        <p class="card-text">'.$filas['descripcion_empresa'].'</p>
+                        <a href="#" class="btn btn-primary btn-block">Ver empresa</a>
+                      </div>
+                 </div>
+              </div>';
 
-     ?>
+           }
+
+       ?>
+  </div>
+</div>
+
 
 <!-- <div class="container">
  </div>

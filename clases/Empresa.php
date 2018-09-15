@@ -32,10 +32,12 @@ Class Empresa{
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();
 
-     $resultado_consulta = $Conexion->query("select * from tb_empresas where categoria_empresa = ".$this->categoria_empresa);
+     $resultado_consulta = $Conexion->query("SELECT * from tb_empresas e
+                                              left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
+                                              where categoria_empresa = ".$this->categoria_empresa);
      return $resultado_consulta;
 
-    }                                                 
+    }
 }
 
 

@@ -39,7 +39,6 @@ require("./clases/Empresa.php");
                       <div class="card-body">
                         <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
                         <p class="card-text">'.$filas['descripcion_empresa'].'</p>
-                        <a href="descripcion_empresa.php" class="btn btn-primary btn-block">Ver empresa</a>
                       </div>
                  </div>
               </div>';
@@ -51,17 +50,16 @@ require("./clases/Empresa.php");
 </div>
 
 
-<!-- <div class="container">
- </div>
+<div class="container">
   <div class="card bg-white text-black">
    <img class="card-img .special-card" src="./img/logoTransparente.jpg" alt="Card image">
    <div class="card-img-overlay">
-     <h5 class="card-title">Card title</h5>
-     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+     <h5 class="card-title"></h5>
+     <p class="card-text"><p class="card-text">'.$filas['descripcion_empresa'].'</p></p>
      <p class="card-text">Last updated 3 mins ago</p>
    </div>
   </div>
- </div> -->
+ </div>
 
  <!-- <?php
 //      $empresa = new Empresa(); //instancio lo de la clase categoria

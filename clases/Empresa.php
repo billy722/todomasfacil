@@ -17,6 +17,14 @@ Class Empresa{
     $this->categoria_empresa = $id_recibido;
   }
 
+  public function setId($id_recibidoE){
+    $this->id_empresa = $id_recibidoE;
+  }
+
+  public function setDescripcion ($desc){
+    $this->descripcion_empresa=$desc;
+  }
+
   public function obtenerEmpresasActivas(){
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();
@@ -38,6 +46,32 @@ Class Empresa{
      return $resultado_consulta;
 
     }
+
+
+    public function obtenerEmpresas(){
+       $Conexion = new Conexion();
+       $Conexion = $Conexion->conectar();
+
+       $resultado_consulta = $Conexion->query("SELECT * from tb_empresas e
+                                                left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
+                                                where e.id_empresa =".$this->id_empresa);
+
+       return $resultado_consulta;
+
+      }
+
+      public function obtenerDescripcionEmpresas(){
+         $Conexion = new Conexion();
+         $Conexion = $Conexion->conectar();
+
+         $resultado_consulta = $Conexion->query("SELECT descripcion_empresa FROM tb_empresas
+                                                  where id_empresa =".$this->id_empresa);
+
+         return $resultado_consulta;
+
+        }
+
+
 }
 
 

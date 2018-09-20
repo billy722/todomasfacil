@@ -103,25 +103,22 @@ require("./clases/Categoria.php");
       <div class="slider">
       	<div class="slide-track">
       		<div class="slider">DENTICLASS
-           <a href="categorias.php">
-             <img src="./imagenes/empresas/denticlass0.png" height="100" width="250" alt="" />
-           </a>
+          <a href="categorias.php?id='.$filas['id_imagen'].'">
+        <img src="./imagenes/empresas/denticlass0.png" height="100" width="250" alt="" /></a>
       		</div>
-      		<div class="slider">
-
-      			<img src="./imagenes/empresas/1.jpg" height="100" width="250" alt="" />
-            <a href="categorias.php">EMMA SUAZO</a>
+      		<div class="slider">EMMA SUAZO
+            <a href="categorias.php?id='.$filas['id_imagen'].'">
+      			<img src="./imagenes/empresas/1.jpg" height="100" width="250" alt="" /></a>
       		</div>
-      		<div class="slider">
-            <a href="categorias.php" >EMPORIO HERNAIZ
-      			 <img src="./imagenes/empresas/2.png" height="100" width="250" alt="" />
-            </a>
+      		<div class="slider">EMPORIO HERNAIZ
+            <a href="categorias.php?id='.$filas['id_imagen'].'">
+      			<img src="./imagenes/empresas/2.png" height="100" width="250" alt="" /></a>
       		</div>
       		<div class="slider">ESTACION CHURRASQUERIA
-            <a href="categorias.php">
+            <a href="categorias.php?id='.$filas['id_imagen'].'">
       			<img src="./imagenes/empresas/3.jpg" height="100" width="250" alt="" /></a>
       		</div>
-      		<div class="slider"><a href="categorias.php">
+      		<div class="slider">
       			<img src="./imagenes/empresas/4.jpg" height="100" width="250" alt="" /></a>
       		</div>
           <div class="slider">

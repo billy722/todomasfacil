@@ -4,7 +4,7 @@ body{
   margin:0;
   font-family: nexaLight;
   font-weight: lighter;
-  
+
 }
 /*  Fuente de las letras del menu */
   @font-face {
@@ -14,6 +14,40 @@ body{
   @font-face {
     font-family: nexaLight;
     src: url('../fonts/Nexa_Light.otf');
+}
+.imagen_principal{
+  background-image: url('./img/principal');
+}
+#listado_categorias{
+  background: #37626e;
+  padding-top:25px;
+  padding-bottom:12px;
+
+}
+
+#listado_categorias li{
+  text-decoration: none;
+  display: inline;
+  color:white;
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+a{
+  text-decoration: none;
+  color:white;
+
+}
+a:hover{
+  color:#f9913c;
+  text-decoration: none;
+
+}
+#formulario_busqueda{
+   position: absolute;
+
+   z-index: 1000;
+   margin-top: -400px;
+
 }
 
 /* galeria de fotos */

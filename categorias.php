@@ -43,7 +43,7 @@ require("./clases/Empresa.php");
                       <div class="card-body">
                         <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
                         <p class="card-text">'.$filas['descripcion_empresa'].'</p>
-                        <a href="descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'"class="btn btn-primary btn-block">Ver empresa</a>
+                        <a href="descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'"class="btn btn-primary btn-block"> Ver empresa</a>
                       </div>
                  </div>
               </div>';

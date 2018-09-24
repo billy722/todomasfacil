@@ -22,34 +22,63 @@ require("./clases/descripcion_empresa.php");
       cargarMenuPrincipal();
  ?>
 
- <div>
+<!-- CONTENEDOR IMAGEN PRINCIPAL -->
+
+ <!-- <div class="container">
+   <div class="row">
+      <?php
+          // $id_categoria = $_REQUEST['idEmpresa'];
+          // // $id_categoria = $_REQUEST['idEmpresa'];
+          //
+          // $empresa_creada = new Empresa();
+          // $empresa_creada->setCategoria($id_categoria);
+          // $respuesta = $empresa_creada->obtenerEmpresasPorCategorias();
+          //
+          //    while ($empresaPrincipal = $respuesta->fetch_array()) {
+          //      // echo "\".$id_categoria\".";
+          //
+          //
+          //     echo '
+          //     <div class="col-md-4">
+          //         <div class=" card bg-white text-black" >
+          //             <img class="card-img-top" style="height:200px" src="./imagenes/empresas/'.$empresaPrincipal['ruta_foto'].'" alt="Card image">
+          //             <div class="card-body">
+          //               <h5 class="card-title">'.$empresaPrincipal['nombre_empresa'].'</h5>
+          //               <p class="card-text">'.$empresaPrincipal['descripcion_empresa'].'</p>
+          //             </div>
+          //        </div>
+          //     </div>';
+          //
+          //   }
+
+       ?>
+  </div>
+</div> -->
+
 
  <div class="container">
    <div class="row">
 
      <?php
-         $descripcion_empresa = $_REQUEST['idEmpresa'];
+     $id_empresa = $_REQUEST['idEmpresa'];
 
-         $empresa_creada = new Empresa();
-         $empresa_creada->setDescripcion($descripcion_empresa);
-         $respuesta = $empresa_creada->obtenerDescripcionEmpresas();
+     $empresa_creada = new Empresa();
+     $empresa_creada->setId($id_empresa);
+     $respuesta = $empresa_creada->obtenerEmpresas();
 
-           //  while ($filas = $respuesta->fetch_array()) {
-           //    // echo "\".$id_empresa\".";
-           //   echo '<div class="col-md-4">
-           //      <div class="card-body">
-           //         <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
-           //         <p class="card-text">'.$filas['descripcion_empresa'].'</p>
-           //       </div>
-           //   </div>
-           //
-           //   ';
-           //
-           // }
+         if ($filas = $respuesta->fetch_array()) {
+           // echo "\".$id_empresa\".";
+          echo '<div class="col-md-4">
+              <div class=" card bg-white text-black">
+              <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
+              <p class="card-text">'.$filas['descripcion_empresa'].'</p>
+              </div>
+          </div>';
 
-
-
-
+        }
+        else {
+          swal("Ha ocurrido un error","","danger");
+        }
 
       ?>
 
@@ -69,9 +98,7 @@ require("./clases/descripcion_empresa.php");
                   <div class=" card bg-white text-black" >
                       <img class="card-img-top" style="height:200px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
                   </div>
-              </div>
-
-              ';
+              </div>';
 
             }
             // <div class="card-body">

@@ -7,10 +7,58 @@ require("./clases/Categoria.php");
 <html lang="es">
      <head>
        <title>Todo Fácil</title>
-       <link href="./css/lightbox.min.css" rel="stylesheet" />
-        <link href="./css/estilos.css" rel="stylesheet" />
-        <link rel="stylesheet" href="./css/estilosSlider.css">
+       <!-- <link href="./css/lightbox.min.css" rel="stylesheet" /> -->
+        <!-- <link href="./css/estilos.css" rel="stylesheet" /> -->
+        <!-- <link rel="stylesheet" href="./css/estilosSlider.css"> -->
+
+        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
        <!-- <link href="./css/1.css" rel="stylesheet" /> -->
+
+       <style type="text/css">
+         html, body {
+           margin: 0;
+           padding: 0;
+         }
+
+         * {
+           box-sizing: border-box;
+         }
+
+         .slider {
+             width: 50%;
+             margin: 100px auto;
+         }
+
+         .slick-slide {
+           margin: 0px 20px;
+         }
+
+         .slick-slide img {
+           width: 100%;
+         }
+
+         .slick-prev:before,
+         .slick-next:before {
+           color: black;
+         }
+
+
+         .slick-slide {
+           transition: all ease-in-out .3s;
+           opacity: .2;
+         }
+
+         .slick-active {
+           opacity: .5;
+         }
+
+         .slick-current {
+           opacity: 1;
+         }
+       </style>
+
+
        <?php
        cargarHead();
 
@@ -99,54 +147,26 @@ require("./clases/Categoria.php");
 
 
 <!-- BANNER EMPRESAS -->
+<section class="seccion_imagenes slider">
+  <!-- <div>
+    <img src="./imagenes/empresas/denticlass0.png" /></a>
+  </div> -->
 
-      <div class="slider">
-      	<div class="slide-track">
-      		<div class="slider">DENTICLASS
-          <a href="categorias.php?id='.$filas['id_imagen'].'">
-        <img src="./imagenes/empresas/denticlass0.png" height="100" width="250" alt="" /></a>
-      		</div>
-      		<div class="slider">EMMA SUAZO
-            <a href="categorias.php?id='.$filas['id_imagen'].'">
-      			<img src="./imagenes/empresas/1.jpg" height="100" width="250" alt="" /></a>
-      		</div>
-      		<div class="slider">EMPORIO HERNAIZ
-            <a href="categorias.php?id='.$filas['id_imagen'].'">
-      			<img src="./imagenes/empresas/2.png" height="100" width="250" alt="" /></a>
-      		</div>
-      		<div class="slider">ESTACION CHURRASQUERIA
-            <a href="categorias.php?id='.$filas['id_imagen'].'">
-      			<img src="./imagenes/empresas/3.jpg" height="100" width="250" alt="" /></a>
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/4.jpg" height="100" width="250" alt="" /></a>
-      		</div>
-          <div class="slider">
-      			<img src="./imagenes/empresas/5.jpg" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/6.jpg" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/7.jpg" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/8.png" height="100" width="250" alt="" />
-      		</div>
-          <div class="slider">
-      			<img src="./imagenes/empresas/9.jpg" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/10.png" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/11.png" height="100" width="250" alt="" />
-      		</div>
-      		<div class="slider">
-      			<img src="./imagenes/empresas/12.png" height="100" width="250" alt="" />
-      		</div>
-      	</div>
-      </div>
+  <?php
+      $Empresa = new Empresa(); //instancio lo de la clase categoria
+      $respuesta = $Empresa->obtenerEmpresasActivas();
+
+        while ($filas = $respuesta->fetch_array()) {
+          echo '<div>
+                  <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                </div>';
+       }
+
+   ?>
+
+</section>
+
+
 
       <!-- <?php
           // $empresa = new Empresa(); //instancio lo de la clase categoria
@@ -177,8 +197,6 @@ require("./clases/Categoria.php");
 
 
 
-       </div>
-     </section>
 
          <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
             <a href="./imagenes/empresas/1.jpg" data-lightbox="image-1" data-title="lalalalallalala">
@@ -194,10 +212,27 @@ require("./clases/Categoria.php");
       ?>
 
 
+        <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
+        <script src="./js/jquery-3.1.0.min.js"></script>
+        <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+        <script type="text/javascript">
+
+          // $(document).on('ready', function() {
+
+            $(".seccion_imagenes").slick({
+              dots: true,
+              infinite: true,
+              slidesToShow: 3,
+              slidesToScroll: 3
+            });
+
+          // });
+      </script>
 
 </body>
-
+<!--
 <script src="./js/lightbox.min.js"></script>
-  <script src="./js/jquery-3.1.0.min.js"></script>
+  <script src="./js/jquery-3.1.0.min.js"></script> -->
 
 </html>

@@ -81,9 +81,7 @@ require("./clases/Empresa.php");
 
   ?> -->
 
-		<footer>
 
-		</footer>
     <div id="listado_categorias" class="container-fluid">
       <center>
          <ul>

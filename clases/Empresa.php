@@ -60,17 +60,6 @@ Class Empresa{
 
       }
 
-      public function obtenerDescripcionEmpresas(){
-         $Conexion = new Conexion();
-         $Conexion = $Conexion->conectar();
-
-         $resultado_consulta = $Conexion->query("SELECT * from tb_empresas e
-                                                  left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
-                                                  where ie.tipo_imagen=1 AND categoria_empresa = ".$this->id_empresa);
-
-         return $resultado_consulta;
-
-        }
 
         public function obtenerEmpresasAfiche(){
            $Conexion = new Conexion();
@@ -78,7 +67,7 @@ Class Empresa{
 
            $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
                                                     left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
-                                                    where ie.tipo_imagen=2 AND estado_empresa=1");
+                                                    where ie.tipo_imagen=2 AND estado_empresa=1 AND e.id_empresa=".$this->id_empresa);
            return $resultado_consulta;
 
         }

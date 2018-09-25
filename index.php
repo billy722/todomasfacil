@@ -166,22 +166,8 @@ require("./clases/Categoria.php");
 
 </section>
 
-
-
-
-
-
-
-<<<<<<< HEAD
        </div>
-=======
 
-         <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="./imagenes/empresas/1.jpg" data-lightbox="image-1" data-title="lalalalallalala">
-            <img src="./imagenes/empresas/1.jpg" alt="wall" class="img-responsive img-rounded"></a>
-        </div> -->
-
->>>>>>> da5a84e08753c7c8028281460eef43ffaebdbf14
 
     <footer>
 

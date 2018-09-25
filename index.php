@@ -148,51 +148,19 @@ require("./clases/Categoria.php");
       	</div>
       </div>
 
-      <!-- <?php
-          // $empresa = new Empresa(); //instancio lo de la clase categoria
-          // $respuesta = $empresa->obtenerEmpresasActivas();
-
-           //  while ($filas = $respuesta->fetch_array()) {
-           //    // echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-           //    //     <a href="categorias.php?id='.$filas['id_imagen'].'">
-           //    //     <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="wall" class="img-responsive img-rounded"></a>
-           //    // </div>';
-           //
-           //    echo '<section class="galeria">
-           //            <div class="container">
-           //                <div class="slider">
-           //                	<div class="slide-track">
-           //                		<div class="slider">
-           //                     <a href="descripcion_empresas.php">
-           //                			<img src="./imagenes/empresas/'.$filas['ruta_foto'].'" height="100" width="250" alt="" /></a>
-           //                    </div>
-           //                  </div>
-           //                </div>
-           //            </div>
-           //          </section>';
-           // }
-
-       ?> -->
 
 
 
 
        </div>
-     </section>
-
-         <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="./imagenes/empresas/1.jpg" data-lightbox="image-1" data-title="lalalalallalala">
-            <img src="./imagenes/empresas/1.jpg" alt="wall" class="img-responsive img-rounded"></a>
-        </div> -->
-
 
     <footer>
 
-		</footer>
+
     <?php
       sub_footer();
       ?>
-
+	</footer>
 
 
 </body>

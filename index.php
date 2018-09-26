@@ -7,59 +7,61 @@ require("./clases/Categoria.php");
 <html lang="es">
      <head>
        <title>Todo Fácil</title>
-       
-        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
-       <!-- <link href="./css/1.css" rel="stylesheet" /> -->
-
-       <style type="text/css">
-         html, body {
-           margin: 0;
-           padding: 0;
-         }
-
-         * {
-           box-sizing: border-box;
-         }
-
-         .slider {
-             width: 50%;
-             margin: 100px auto;
-         }
-
-         .slick-slide {
-           margin: 0px 20px;
-         }
-
-         .slick-slide img {
-           width: 100%;
-         }
-
-         .slick-prev:before,
-         .slick-next:before {
-           color: black;
-         }
-
-
-         .slick-slide {
-           transition: all ease-in-out .3s;
-           opacity: .2;
-         }
-
-         .slick-active {
-           opacity: .5;
-         }
-
-         .slick-current {
-           opacity: 1;
-         }
-       </style>
-
 
        <?php
        cargarHead();
 
         ?>
+        <link rel="stylesheet"  href="./lightslider-master/src/css/lightslider.css"/>
+        <style>
+          ul{
+          list-style: none outside none;
+            padding-left: 0;
+                margin: 0;
+        }
+           .item{
+                margin-bottom: 60px;
+            }
+        .content-slider li{
+            background-color: #ed3020;
+            text-align: center;
+            color: #FFF;
+        }
+        .content-slider h3 {
+            margin: 0;
+            padding: 70px 0;
+        }
+        .demo{
+          width: 800px;
+        }
+        </style>
+        <script src="./js/jquery-3.1.0.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./lightslider-master/src/js/lightslider.js"></script>
+        <script>
+           $(document).ready(function() {
+          $("#content-slider").lightSlider({
+                    loop:true,
+                    keyPress:true,
+                    auto:true,
+                    speed:500,
+                    item:4,
+                    thumbItem:9,
+                    slideMargin: 1,
+                });
+          // $("#content-slider-principal").lightSlider({
+          //           loop:true,
+          //           keyPress:true,
+          //           auto:true,
+          //           speed:3000,
+          //           item:1,
+          //           thumbItem:9,
+          //           slideMargin: 1,
+          //       });
+
+        });
+        </script>
 
      </head>
 <body>
@@ -109,6 +111,18 @@ require("./clases/Categoria.php");
   }
 </style>
 
+
+<!-- BANNER EMPRESAS -->
+<!-- <div class="item">
+    <ul id="content-slider-principal" class="content-slider">
+
+       <div>
+         <img src="./img/principal.jpg" >
+
+       </div>
+    </ul>
+</div> -->
+
 <div>
   <img src="./img/principal.jpg" class="img-fluid" alt="Responsive image">
   <center>
@@ -144,24 +158,22 @@ require("./clases/Categoria.php");
 
 
 <!-- BANNER EMPRESAS -->
-<section class="seccion_imagenes slider">
-  <!-- <div>
-    <img src="./imagenes/empresas/denticlass0.png" /></a>
-  </div> -->
+<div class="item">
+    <ul id="content-slider" class="content-slider">
+      <?php
+          $Empresa = new Empresa(); //instancio lo de la clase categoria
+          $respuesta = $Empresa->obtenerEmpresasActivas();
 
-  <?php
-      $Empresa = new Empresa(); //instancio lo de la clase categoria
-      $respuesta = $Empresa->obtenerEmpresasActivas();
+            while ($filas = $respuesta->fetch_array()) {
+              echo '<div>
+                      <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                    </div>';
+           }
+       ?>
 
-        while ($filas = $respuesta->fetch_array()) {
-          echo '<div>
-                  <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
-                </div>';
-       }
+    </ul>
+</div>
 
-   ?>
-
-</section>
 
        </div>
 
@@ -174,27 +186,9 @@ require("./clases/Categoria.php");
       ?>
 	</footer>
 
-        <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
-        <script src="./js/jquery-3.1.0.min.js"></script>
-        <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
 
-        <script type="text/javascript">
-
-          // $(document).on('ready', function() {
-
-            $(".seccion_imagenes").slick({
-              dots: true,
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 3
-            });
-
-          // });
-      </script>
 
 </body>
-<!--
-<script src="./js/lightbox.min.js"></script>
-  <script src="./js/jquery-3.1.0.min.js"></script> -->
+
 
 </html>

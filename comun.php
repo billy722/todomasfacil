@@ -19,8 +19,8 @@ function comprobarSession(){
         <link rel="stylesheet" href="./css/estilos.css">
         <!-- <link rel="stylesheet" href="./css/estilosSlider.css"> -->
         <link rel="stylesheet" type="text/css" href="./css/sweet-alert.css">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap-social.css">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap-social.less">
+        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
 
         <script src='./js/jquery-3.1.0.min.js'></script>
         <script src='./js/moment.min.js'></script>
@@ -31,6 +31,8 @@ function comprobarSession(){
         <script src="./js/sweetalert.min.js"></script>
         <script src="./js/lightbox.js"></script>
         <script src="./js/lightbox.min.js"></script>
+
+
 
 
         </script>

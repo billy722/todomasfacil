@@ -12,6 +12,7 @@ require("./clases/Empresa.php");
        <?php
        cargarHead();
         ?>
+
      </head>
 <body>
 
@@ -21,57 +22,11 @@ require("./clases/Empresa.php");
       cargarMenuPrincipal();
  ?>
 
- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
- <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
-<!-- <link href="./css/1.css" rel="stylesheet" /> -->
-
-<style type="text/css">
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  .slider {
-      width: 50%;
-      margin: 100px auto;
-  }
-
-  .slick-slide {
-    margin: 0px 20px;
-  }
-
-  .slick-slide img {
-    width: 100%;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: black;
-  }
-
-
-  .slick-slide {
-    transition: all ease-in-out .3s;
-    opacity: .2;
-  }
-
-  .slick-active {
-    opacity: .5;
-  }
-
-  .slick-current {
-    opacity: 1;
-  }
-</style>
 
 <!-- CONTENEDOR IMAGEN PRINCIPAL -->
 
 <!-- https://demoapus.com/apuslisting/listings/az-food-fast/ -->
-<!-- SLIDER DE LA EMPRESA SELECCIONADA -->
+<!-- EMPRESA SELECCIONADA LOGO -->
 <div class="container">
    <?php
        $id_empresa = $_REQUEST['idEmpresa'];
@@ -96,38 +51,58 @@ require("./clases/Empresa.php");
     ?>
 </div>
 
-<div class="">
-  <!-- BANNER EMPRESAS -->
-  <section class="seccion_imagenes slider">
+
+  <!-- BANNER EMPRESAS SELECCIONADA -->
+  <!-- <section class="carousel-informacion">
+
+  <div id="carousel-id" class="carousel slide" data-ride="carousel">
+      <!-- <ol class="carousel-indicators">
+          <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+          <li data-target="#carousel-id" data-slide-to="2" class=""></li>
+          <li data-target="#carousel-id" data-slide-to="3" class=""></li>
+
+      </ol> -->
+      <!-- <?php
+          // $id_empresa = $_REQUEST['idEmpresa'];
+          //
+          // $Empresa = new Empresa(); //instancio lo de la clase categoria
+          // $Empresa->setId($id_empresa);
+          // $respuesta = $Empresa->obtenerImgEmpresas();
+          //
+          //   while ($filas = $respuesta->fetch_array()) {
+          //     echo '<div class="carousel-inner">
+          //         <div class="item active">
+          //             <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="slider-1" />
+          //         </div>
+          //     </div>';
+          //  }
+       ?> -->
+
+      <!-- <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> -->
+      <!-- <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
+  <!-- </div>
+
+  </section> -->
+
+  <!-- <section class="seccion_imagenes slider">
     <?php
-
-        $Empresa = new Empresa(); //instancio lo de la clase categoria
-        $respuesta = $Empresa->obtenerEmpresas();
-
-          while ($filas = $respuesta->fetch_array()) {
-            echo '<div>
-                    <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
-                  </div>';
-         }
+        // $id_empresa = $_REQUEST['idEmpresa'];
+        //
+        // $Empresa = new Empresa(); //instancio lo de la clase categoria
+        // $Empresa->setId($id_empresa);
+        // $respuesta = $Empresa->obtenerImgEmpresas();
+        //
+        //   while ($filas = $respuesta->fetch_array()) {
+        //     echo '<div>
+        //             <img src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+        //           </div>';
+        //  }
      ?>
-  </section>
-</div>
+  </section> -->
 
-<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-<script src="./js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript">
 
-  // $(document).on('ready', function() {
 
-    $(".seccion_imagenes").slick({
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    });
-
-  // });
-</script>
 <br>
 <!-- DESCRIPCION DE LA EMPRESA -->
 
@@ -192,7 +167,7 @@ require("./clases/Empresa.php");
                     <th>Jueves</th>
                     <th>Viernes</th>
                     <th>Sabado</th>
-                    <th>Domingo/th>
+                    <th>Domingo</th>
                     </p>
                   </div>
                 </div>
@@ -234,8 +209,40 @@ require("./clases/Empresa.php");
 
       ?>
 
+      <!-- EMPRESA SELECCIONADA IMAGENES -->
+      <div class="container">
+         <?php
+             $id_empresa = $_REQUEST['idEmpresa'];
+
+             $empresa_creada = new Empresa();
+             $empresa_creada->setId($id_empresa);
+             $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
 
 
+                while ($filas = $respuesta->fetch_array()) {
+                  // echo "\".$id_empresa\".";
+                 echo '
+                 <div class="container">
+                 <div class="row">
+                      <div class="col-sm-4">
+                        <div class="card">
+                        <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
+                          </div>
+                        </div>
+                      </div></div>';
+                }
+
+          ?>
+      </div>
+
+
+      <!-- <section class="">
+      <div class="container">
+      <div class="row">
+             <div class="card">
+              <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
+             </div></div></div>
+             </section> -->
 
     <!-- Menu de categorias -->
     <div id="listado_categorias" class="container-fluid">

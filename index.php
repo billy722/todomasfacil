@@ -7,10 +7,7 @@ require("./clases/Categoria.php");
 <html lang="es">
      <head>
        <title>Todo Fácil</title>
-       <!-- <link href="./css/lightbox.min.css" rel="stylesheet" /> -->
-        <!-- <link href="./css/estilos.css" rel="stylesheet" /> -->
-        <!-- <link rel="stylesheet" href="./css/estilosSlider.css"> -->
-
+       
         <link rel="stylesheet" type="text/css" href="./slick/slick.css">
         <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
        <!-- <link href="./css/1.css" rel="stylesheet" /> -->

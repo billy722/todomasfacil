@@ -13,8 +13,47 @@ require("./clases/Empresa.php");
        cargarHead();
         ?>
 
-     </head>
-<body>
+        <link rel="stylesheet"  href="./lightslider-master/src/css/lightslider.css"/>
+        <style>
+        	ul{
+    			list-style: none outside none;
+    		    padding-left: 0;
+                margin: 0;
+    		}
+            .demo .item{
+                margin-bottom: 60px;
+            }
+    		.content-slider li{
+    		    background-color: #ed3020;
+    		    text-align: center;
+    		    color: #FFF;
+    		}
+    		.content-slider h3 {
+    		    margin: 0;
+    		    padding: 70px 0;
+    		}
+    		.demo{
+    			width: 800px;
+    		}
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./lightslider-master/src/js/lightslider.js"></script>
+        <script>
+        	 $(document).ready(function() {
+    			$("#content-slider").lightSlider({
+                    loop:true,
+                    keyPress:true,
+                    auto:true,
+                    speed:500,
+                    item:4,
+                    thumbItem:9,
+                    slideMargin: 1,
+                });
+
+    		});
+        </script>
+    </head>
+    <body>
 
 
   <div class="container-fluid">
@@ -23,30 +62,59 @@ require("./clases/Empresa.php");
  ?>
 
 
+       <div class="item">
+           <div class="clearfix" style="max-width:474px;">
+
+           </div>
+       </div>
+       <div class="item">
+           <ul id="content-slider" class="content-slider">
+             <?php
+                 $id_empresa = $_REQUEST['idEmpresa'];
+
+                 $empresa_creada = new Empresa();
+                 $empresa_creada->setId($id_empresa);
+                 $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
+
+
+                    while ($filas = $respuesta->fetch_array()) {
+                      // echo "\".$id_empresa\".";
+                     echo '
+                     <li>
+                       <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
+                     </li>';
+                    }
+
+              ?>
+
+           </ul>
+       </div>
+
+
 <!-- CONTENEDOR IMAGEN PRINCIPAL -->
 
 <!-- https://demoapus.com/apuslisting/listings/az-food-fast/ -->
 <!-- EMPRESA SELECCIONADA LOGO -->
 <div class="container">
    <?php
-       $id_empresa = $_REQUEST['idEmpresa'];
-
-       $empresa_creada = new Empresa();
-       $empresa_creada->setId($id_empresa);
-       $respuesta = $empresa_creada->obtenerEmpresasAfiche();
-
-
-          if ($filas = $respuesta->fetch_array()) {
-            // echo "\".$id_empresa\".";
-           echo '<div class="container">
-                  <div class="row justify-content-md-center">
-                  <div class="col-sm-8">
-                  <div class="center-block">
-                   <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
-                  </div></div></div></div>';
-          }else {
-
-          }
+       // $id_empresa = $_REQUEST['idEmpresa'];
+       //
+       // $empresa_creada = new Empresa();
+       // $empresa_creada->setId($id_empresa);
+       // $respuesta = $empresa_creada->obtenerEmpresasAfiche();
+       //
+       //
+       //    if ($filas = $respuesta->fetch_array()) {
+       //      // echo "\".$id_empresa\".";
+       //     echo '<div class="container">
+       //            <div class="row justify-content-md-center">
+       //            <div class="col-sm-8">
+       //            <div class="center-block">
+       //             <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
+       //            </div></div></div></div>';
+       //    }else {
+       //
+       //    }
 
     ?>
 </div>
@@ -210,30 +278,7 @@ require("./clases/Empresa.php");
       ?>
 
       <!-- EMPRESA SELECCIONADA IMAGENES -->
-      <div class="container">
-         <?php
-             $id_empresa = $_REQUEST['idEmpresa'];
 
-             $empresa_creada = new Empresa();
-             $empresa_creada->setId($id_empresa);
-             $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
-
-
-                while ($filas = $respuesta->fetch_array()) {
-                  // echo "\".$id_empresa\".";
-                 echo '
-                 <div class="container">
-                 <div class="row">
-                      <div class="col-sm-4">
-                        <div class="card">
-                        <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
-                          </div>
-                        </div>
-                      </div></div>';
-                }
-
-          ?>
-      </div>
 
 
       <!-- <section class="">
@@ -270,5 +315,12 @@ require("./clases/Empresa.php");
       sub_footer();
       ?>
       </footer>
+
+      <script type = "text / javascript" >
+  $ ( documento ). listo ( función () {
+    $ ( "#lightSlider" ). lightSlider ();
+  });
+</script>
+
 </body>
 </html>

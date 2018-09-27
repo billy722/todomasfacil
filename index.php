@@ -45,10 +45,10 @@ require("./clases/Categoria.php");
                     loop:true,
                     keyPress:true,
                     auto:true,
-                    speed:500,
+                    speed:600,
                     item:4,
                     thumbItem:9,
-                    slideMargin: 1,
+                    slideMargin: 2,
                 });
           // $("#content-slider-principal").lightSlider({
           //           loop:true,
@@ -109,30 +109,39 @@ require("./clases/Categoria.php");
      margin-top: -400px;
 
   }
+  #imagen_index{
+    background-image:url('./img/principal.jpg');
+    height:550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #campo_busqueda{
+    height: 60px;
+    border-radius: 0px;
+    width: 100%;
+    font-size: 30px;
+    border-color: #dd7700;
+    border-width: medium;
+    opacity: 0.8;
+  }
+  #label_campo_busqueda{
+    font-size: 30px;
+    color:white;
+  }
+
 </style>
 
+    <div id="imagen_index" class="img-fluid d-flex" alt="Responsive image" >
+       <div class="row justify-content-center align-self-center col-12  ">
 
-<!-- BANNER EMPRESAS -->
-<!-- <div class="item">
-    <ul id="content-slider-principal" class="content-slider">
-
-       <div>
-         <img src="./img/principal.jpg" >
+         <h1 id="label_campo_busqueda" class="col-12 col-md-4">¿Que estás buscando?</h1>
+           <br>
+         <input id="campo_busqueda" type="text" class="form-control col-12 col-md-4">
 
        </div>
-    </ul>
-</div> -->
 
-<div>
-  <img src="./img/principal.jpg" class="img-fluid" alt="Responsive image">
-  <center>
-    <div id="formulario_busqueda">
-      <div class="form-group col-offset-18 col-12">
-        <!-- <input class="form-control" type="text"> -->
-      </div>
     </div>
-  </center>
-</div>
 
     <div id="listado_categorias" class="container-fluid">
       <center>

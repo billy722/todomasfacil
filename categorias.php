@@ -38,21 +38,27 @@ require("./clases/Empresa.php");
 
               echo '
               <div class="col-md-4">
-                  <div class=" card bg-white text-black" >
-                      <img class="card-img-top" style="height:200px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
-                      <div class="card-body">
-                        <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
-                        <p class="card-text">'.$filas['descripcion_empresa'].'</p>
-                        <a href="descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'"class="btn btn-primary btn-block"> Ver empresa</a>
-                      </div>
-                 </div>
+
+                  <div class=" card bg-white border-info mb-3 text-black" >
+                        <a href="descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'" >
+                        <img class="card-img-top" style="height:200px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image">
+                        </a>
+
+                        <div class="card-body">
+                          <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
+                          <p class="card-text">'.substr($filas['descripcion_empresa'], 0, 100).' ...</p>
+
+                        </div>
+                   </div>
               </div>';
 
             }
 
        ?>
+
   </div>
 </div>
+<div><hr></div>
 
 
 <!-- <div class="container">

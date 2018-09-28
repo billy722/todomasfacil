@@ -135,7 +135,7 @@ require("./clases/Categoria.php");
     <div id="imagen_index" class="img-fluid d-flex" alt="Responsive image" >
        <div class="row justify-content-center align-self-center col-12  ">
 
-         <h1 id="label_campo_busqueda" class="col-12 col-md-4">¿Que estás buscando?</h1>
+         <!-- <h1 id="label_campo_busqueda" class="col-12 col-md-4">¿Que estás buscando?</h1> -->
            <br>
          <input id="campo_busqueda" type="text" class="form-control col-12 col-md-4">
 
@@ -164,7 +164,7 @@ require("./clases/Categoria.php");
         </center>
      </div>
 
-
+<br>
 
 <!-- BANNER EMPRESAS -->
 <div class="item">
@@ -174,9 +174,13 @@ require("./clases/Categoria.php");
           $respuesta = $Empresa->obtenerEmpresasActivas();
 
             while ($filas = $respuesta->fetch_array()) {
-              echo '<div>
-                      <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
-                    </div>';
+              echo '
+                    <div>
+                      <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
+                        <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                      </a>
+                    </div>
+                  ';
            }
        ?>
 

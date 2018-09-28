@@ -117,7 +117,7 @@ require("./clases/Empresa.php");
                   <div class="card-body">
                     <h5 class="card-title">'.$filas['nombre_empresa'].'</h5>
                     <p class="card-text">'.$filas['descripcion_empresa'].'</p>
-                    <video width="400" height="300" src="./imagenes/empresas/denticlass.mp4" controls>
+                    <video width="600" height="300" src="./imagenes/empresas/denticlass.mp4" controls>
                       Tu navegador no implementa el elemento <code>video</code>.
                     </video>
                   </div>
@@ -131,17 +131,52 @@ require("./clases/Empresa.php");
                 </div>
               </div>
             </div>
+            <br>
+            <div class="col-sm-5">
+              <div class="card">
+
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+          </div>
           </div>';
 
         }
         else {
-          swal("Ha ocurrido un error","","danger");
+          // swal("Ha ocurrido un error","","danger");
         }
 
       ?>
+      </div>
+      <!-- SI NO LA COMENTA AMIGA BESOS -->
+      <div class="container">
+
+
+            <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Lunes</th>
+            <th scope="col">Martes</th>
+            <th scope="col">Miercoles</th>
+            <th scope="col">Jueves</th>
+            <th scope="col">Viernes</th>
+            <th scope="col">Sabado</th>
+            <th scope="col">Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </div>
 
       <!-- EMPRESA SELECCIONADA LOGO -->
-      <div class="container">
+      <!-- <div class="container"> -->
          <?php
              $id_empresa = $_REQUEST['idEmpresa'];
 

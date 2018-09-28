@@ -33,7 +33,6 @@ function comprobarSession(){
         <!-- <script src="./js/lightbox.js"></script> -->
         <!-- <script src="./js/lightbox.min.js"></script> -->
 
-        <link rel="stylesheet" href="./bootstrap-social/bootstrap-social.css">
 
 
 

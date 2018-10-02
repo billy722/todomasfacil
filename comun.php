@@ -23,7 +23,7 @@ function comprobarSession(){
         <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css"> -->
         <!-- <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
 
-        <!-- <script src='./js/jquery-3.1.0.min.js'></script> -->
+        <script src='./js/jquery-3.1.0.min.js'></script>
         <script src='./js/moment.min.js'></script>
         <script src='./js/bootstrap.min.js'></script>
         <script src="./js/scriptLogin.js"></script>
@@ -175,14 +175,53 @@ function cargarMenuPrincipal(){
             <li class="nav-item active">
               <a class="nav-link" href="contactanos.php">CONTACTANOS<span class="sr-only">(current)</span></a>
             </li>
-
+            <li class="nav-item active">
+              <a class="nav-link" href="contactanos.php" data-toggle="modal" data-target="#modal-id-1">:0<span class="sr-only">(current)</span></a>
+            </li>
           </ul>
-
       </div>
-
     </nav>
-
   </div>
+
+  <!-- modal -->
+
+
+  <!-- The Modal -->
+ <div class="modal fade" id="modal-id-1">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title">INGRESAR</h4>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+
+       <!-- Modal body -->
+       <div class="modal-body">
+         <form class="" name="inicio_sesion" id="inicio_sesion" action="">
+           <div class="form-group">
+             <input type="text" class="form-control" onkeypress="" placeholder="Ingrese su rut" id="run_usuario" name="run_usuario" required autofocus>
+             <br>
+             <input type="password" class="form-control" placeholder="Contraseña" name="password_usuario" required>
+
+           </div>
+
+             <button class="btn btn-lg btn-primary btn-block" type="submit"   >
+                 Aceptar</button>
+                 <button class="btn btn-lg btn-danger btn-block" type="" data-dismiss="modal">
+                 Cancelar</button>
+          </form>
+       </div>
+
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+
+     </div>
+   </div>
+ </div>
 
 
 
@@ -195,4 +234,29 @@ function sub_footer(){
     <span>&copy;Todos Los Derechos Reservados</span>
 </div>
 
-<?php } ?>
+<?php }
+
+function login(){ ?>
+  <script>
+      $('#inicio_sesion').submit(function(){
+          event.preventDefault();
+          $.ajax({
+              url:"../comun/validarSesion.php",
+              data:$('#inicio_sesion').serialize(),
+              success:function(respuesta){
+
+              if(respuesta == '1'){
+              window.location = 'indexAdmin.php';
+              }else if(respuesta == '2'){
+                  window.location = 'perfil-usuario.php';
+
+              }else{
+                   alert("Usuario no Registrado en el sistema o sin los permisos Necesarios.");
+                   location.reload();
+              }
+          }
+
+          });
+      });
+  </script>
+  <?php } 

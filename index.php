@@ -62,6 +62,20 @@ require("./clases/Categoria.php");
 
         });
         </script>
+        <script>
+           $(document).ready(function() {
+          $("#content-slider2").lightSlider({
+                    loop:true,
+                    keyPress:true,
+                    auto:true,
+                    speed:500,
+                    item:2,
+                    thumbItem:9,
+                    slideMargin: 1,
+                });
+
+        });
+        </script>
 
      </head>
 <body>
@@ -157,7 +171,6 @@ require("./clases/Categoria.php");
                                <label> '.$filas['descripcion_categoria'].'</label>
                             </a>
                          </li>';
-       // comillas simples cuando ingreso html
                 }
             ?>
           </ul>
@@ -167,6 +180,7 @@ require("./clases/Categoria.php");
 <br>
 
 <!-- BANNER EMPRESAS -->
+<div class="container-fluid d-none d-md-block">
 <div class="item">
     <ul id="content-slider" class="content-slider">
       <?php
@@ -186,6 +200,29 @@ require("./clases/Categoria.php");
 
     </ul>
 </div>
+</div>
+<div class="container-fluid d-md-none">
+   <div class="item">
+       <ul id="content-slider2" class="content-slider">
+         <?php
+             $Empresa = new Empresa(); //instancio lo de la clase categoria
+             $respuesta = $Empresa->obtenerEmpresasActivas();
+
+               while ($filas = $respuesta->fetch_array()) {
+                 echo '
+                       <div>
+                         <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
+                           <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                         </a>
+                       </div>
+                     ';
+              }
+          ?>
+
+       </ul>
+   </div>
+</div>
+
 
 
        </div>

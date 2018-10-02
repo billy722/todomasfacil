@@ -5,7 +5,7 @@ class Estado{
 
  private $tabla;
  private $id_estado;
- private $descripcion;
+ private $descripcion_estado;
 
  public function setTabla($parametro){
    $this->tabla = $parametro;
@@ -25,6 +25,14 @@ class Estado{
     }else{
       return false;
     }
+
+ }
+ public function obtenerEstadoEmpresa(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $resultado_consulta = $Conexion->query("select * from estado_empresas");
+    return $resultado_consulta;
 
  }
 

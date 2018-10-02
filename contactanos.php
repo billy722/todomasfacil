@@ -44,7 +44,7 @@ require("./clases/Empresa.php");
                 </div>
                 <div class="form-group">
                   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-                      <br><input type="submit" class="btn btn-primary btn-block col-xs-12 "></input>
+                      <br><input type="submit" class="btn btn-lg btn-primary btn-block"></input>
                   </div>
                 </div>
            </form>

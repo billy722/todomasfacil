@@ -65,7 +65,7 @@ require("./clases/Empresa.php");
                     keyPress:true,
                     auto:true,
                     speed:500,
-                    item:2,
+                    item:1,
                     thumbItem:9,
                     slideMargin: 1,
                 });
@@ -236,26 +236,8 @@ require("./clases/Empresa.php");
               </div>
       </div>
 
-      <div id="listado_categorias" class="container-fluid">
-        <center>
-           <ul>
-             <?php
 
-                 $Categoria = new Categoria();
-                 $respuesta = $Categoria->obtenerCategorias();
-
-                   while ($filas = $respuesta->fetch_array()) {
-                     echo '<li>
-                             <a href="categorias.php?id='.$filas['id_categoria'].'">
-                                <span class="'.$filas['icono'].'">  </span>
-                                 <label> '.$filas['descripcion_categoria'].'</label>
-                              </a>
-                           </li>';
-                  }
-              ?>
-            </ul>
-          </center>
-       </div>
+  <?php cargarCategorias(); ?>
 
 <footer>
     <?php

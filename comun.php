@@ -39,6 +39,58 @@ function comprobarSession(){
         </script>
   <?php
 }
+    function cargarCategorias(){
+?>
+
+    <style>
+    #listado_categorias .categorias{
+      text-decoration: none;
+      display: inline;
+      color:white;
+      font-size: 20px;
+      padding-bottom: 0px;
+    }
+    #listado_categorias .categorias-md{
+      text-decoration: none;
+      display: inline;
+      color:white;
+      font-size: 25px;
+      padding-bottom: 0px;
+    }
+    </style>
+      <div id="listado_categorias" class="container-fluid">
+        <center>
+           <div class="row justify-content-center">
+
+             <?php
+                 $Categoria = new Categoria(); //instancio lo de la clase categoria
+                 $respuesta = $Categoria->obtenerCategorias();
+
+
+                   while ($filas = $respuesta->fetch_array()) {
+                     echo '<div class=" d-none d-md-block categorias-md">
+                             <a href="categorias.php?id='.$filas['id_categoria'].'">
+                                <span class="'.$filas['icono'].'"></span>
+                                <label for="">'.$filas['descripcion_categoria'].'</label>
+                              </a>
+                              <span>&nbsp&nbsp</span>
+                           </div>';
+
+                     echo '<div class="col-3 d-md-none col-md-3 categorias">
+                             <a href="categorias.php?id='.$filas['id_categoria'].'">
+                                <span class="'.$filas['icono'].'"></span> '.$filas['descripcion_categoria'].'
+                              </a>
+                           </div>';
+                  }
+              ?>
+            </div>
+          </center>
+       </div>
+
+  <?php
+}
+
+
 
 
 function VentanaCargando(){
@@ -117,7 +169,7 @@ function cargarMenuConfiguraciones(){
   }
 
      echo'<hr>';
-  // 
+  //
   // if($url=="usuarios.php"){
   //     echo '<a href="./usuarios.php" class="active btn btn-info col-12">Usuarios </a>';
   // }else{

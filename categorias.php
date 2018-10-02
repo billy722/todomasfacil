@@ -88,26 +88,7 @@ require("./clases/Empresa.php");
   ?> -->
 
 
-    <div id="listado_categorias" class="container-fluid">
-      <center>
-         <ul>
-           <?php
-               $Categoria = new Categoria(); //instancio lo de la clase categoria
-               $respuesta = $Categoria->obtenerCategorias();
-
-                 while ($filas = $respuesta->fetch_array()) {
-                   echo '<li>
-                           <a href="categorias.php?id='.$filas['id_categoria'].'">
-                              <span class="'.$filas['icono'].'">  </span>
-                               <label> '.$filas['descripcion_categoria'].'</label>
-                            </a>
-                         </li>';
-       // comillas simples cuando ingreso html
-                }
-            ?>
-          </ul>
-        </center>
-     </div>
+  <?php cargarCategorias(); ?>
 
     <?php
       sub_footer();

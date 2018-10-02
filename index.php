@@ -99,13 +99,6 @@ require("./clases/Categoria.php");
 
   }
 
-  #listado_categorias li{
-    text-decoration: none;
-    display: inline;
-    color:white;
-    font-size: 25px;
-    padding-bottom: 0px;
-  }
  a{
     text-decoration: none;
     color:white;
@@ -177,25 +170,7 @@ require("./clases/Categoria.php");
 
     </div>
 
-    <div id="listado_categorias" class="container-fluid">
-      <center>
-         <div class="row">
-           <?php
-               $Categoria = new Categoria(); //instancio lo de la clase categoria
-               $respuesta = $Categoria->obtenerCategorias();
-
-                 while ($filas = $respuesta->fetch_array()) {
-                   echo '<div class="col-4 ">
-                           <a href="categorias.php?id='.$filas['id_categoria'].'">
-                              <span class="'.$filas['icono'].'">  </span>
-                               <label> '.$filas['descripcion_categoria'].'</label>
-                            </a>
-                         </div>';
-                }
-            ?>
-          </div>
-        </center>
-     </div>
+  <?php cargarCategorias(); ?>
 
 <br>
 

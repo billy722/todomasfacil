@@ -69,7 +69,7 @@ require("./clases/Categoria.php");
                     keyPress:true,
                     auto:true,
                     speed:500,
-                    item:2,
+                    item:1,
                     thumbItem:9,
                     slideMargin: 1,
                 });
@@ -179,21 +179,21 @@ require("./clases/Categoria.php");
 
     <div id="listado_categorias" class="container-fluid">
       <center>
-         <ul>
+         <div class="row">
            <?php
                $Categoria = new Categoria(); //instancio lo de la clase categoria
                $respuesta = $Categoria->obtenerCategorias();
 
                  while ($filas = $respuesta->fetch_array()) {
-                   echo '<li>
+                   echo '<div class="col-4 ">
                            <a href="categorias.php?id='.$filas['id_categoria'].'">
                               <span class="'.$filas['icono'].'">  </span>
                                <label> '.$filas['descripcion_categoria'].'</label>
                             </a>
-                         </li>';
+                         </div>';
                 }
             ?>
-          </ul>
+          </div>
         </center>
      </div>
 

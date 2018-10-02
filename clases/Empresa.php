@@ -25,6 +25,22 @@ Class Empresa{
     $this->descripcion_empresa=$desc;
   }
 
+
+  public function crearEmpresa(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = " aqui consula del insert   ".$this->nombre_empresa;
+
+    if($Conexion->query($consulta)){
+        return true;
+    }else{
+        echo $consulta;
+        // return false;
+    }
+
+  }
+
   public function obtenerEmpresasActivas(){
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();
@@ -32,6 +48,17 @@ Class Empresa{
      $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
                                               left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
                                               where ie.tipo_imagen=1 AND estado_empresa=1");
+     return $resultado_consulta;
+
+  }
+
+  public function obtenerEmpresasActivasInactivas(){
+     $Conexion = new Conexion();
+     $Conexion = $Conexion->conectar();
+
+     $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
+                                              left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
+                                              where ie.tipo_imagen=1 AND ( estado_empresa=1 or estado_empresa=2 )");
      return $resultado_consulta;
 
   }

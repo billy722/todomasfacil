@@ -1,13 +1,9 @@
 <?php
 @session_start();
 require_once 'comun.php';
-require_once './clases/Departamento.php';
-require_once './clases/Usuario.php';
-require_once './clases/Estado.php';
-require_once './clases/Privilegio.php';
-comprobarSession();
-$usuario= new Usuario();
-$usuario= $usuario->obtenerUsuarioActual();
+require_once './clases/Empresa.php';
+// comprobarSession();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +17,7 @@ $usuario= $usuario->obtenerUsuarioActual();
    <title>Agenda DAEM</title>
    <?php cargarHead(); ?>
 
-  <script src="./js/script_usuarios.js"></script>
+  <script src="./js/script_administrar_empresas.js"></script>
 </head>
 <body>
 
@@ -50,12 +46,12 @@ $usuario= $usuario->obtenerUsuarioActual();
 
           <div  style="" class=" card col-12">
             <div class="container">
-                 <button type="button" onclick="limpiarFormularioUsuario();" class="btn btn-success" data-target="#modal_usuario" data-toggle="modal" name="button">Crear nuevo usuario</button>
+                 <a href="./nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
             </div>
             <div class="container">
               <br>
 
-              <div id='contenedor_listado_usuarios'></div>
+              <div id='contenedor_listado_empresas'></div>
 
             </div>
 

@@ -110,19 +110,27 @@ function VentanaCargando(){
 function cargarMenuConfiguraciones(){
   $url= basename($_SERVER['PHP_SELF']);
 
-  if($url=="usuarios.php"){
-      echo '<a href="./usuarios.php" class="active btn btn-info col-12">Usuarios </a>';
+  if($url=="administracion_empresas.php"){
+      echo '<a href="./administracion_empresas.php" class="active btn btn-info col-12">Empresas </a>';
   }else{
-      echo '<a href="./usuarios.php" class="btn btn-info col-12">Usuarios </a>';
+      echo '<a href="./administracion_empresas.php" class="btn btn-info col-12">Empresas </a>';
   }
 
      echo'<hr>';
+  // 
+  // if($url=="usuarios.php"){
+  //     echo '<a href="./usuarios.php" class="active btn btn-info col-12">Usuarios </a>';
+  // }else{
+  //     echo '<a href="./usuarios.php" class="btn btn-info col-12">Usuarios </a>';
+  // }
+  //
+  //    echo'<hr>';
 
-  if($url=="departamentos.php"){
-      echo '<a href="./departamentos.php" class="active btn btn-info col-12">Departamentos </a>';
-  }else{
-      echo '<a href="./departamentos.php" class="btn btn-info col-12">Departamentos </a>';
-  }
+  // if($url=="departamentos.php"){
+  //     echo '<a href="./departamentos.php" class="active btn btn-info col-12">Departamentos </a>';
+  // }else{
+  //     echo '<a href="./departamentos.php" class="btn btn-info col-12">Departamentos </a>';
+  // }
 
   ?>
 
@@ -259,4 +267,4 @@ function login(){ ?>
           });
       });
   </script>
-  <?php } 
+  <?php }

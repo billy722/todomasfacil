@@ -1,20 +1,29 @@
 <?php
-require("comun.php");
-require("./clases/Categoria.php");
-require("./clases/Empresa.php");
- ?>
+@session_start();
+require_once 'comun.php';
+require_once './clases/Empresa.php';
+// comprobarSession();
+
+?>
+
 <!DOCTYPE html>
-<html lang="es">
-     <head>
+<html lang="en">
+<head>
 
-       <title>Quienes somos</title>
-       <?php
-       cargarHead();
-        ?>
-    <meta charset="utf-8">
-  </head>
-  <body>
+<style>
 
+
+</style>
+   <title>Agenda DAEM</title>
+   <?php cargarHead(); ?>
+
+  <script src="./js/script_administrar_empresas.js"></script>
+</head>
+<body>
+
+<?php cargarMenuPrincipal(); ?>
+
+<br>
 
   <!-- <table class="table">
     <thead class="thead-dark"> -->
@@ -26,13 +35,13 @@ require("./clases/Empresa.php");
                         <h3 class="panel-title">Mantenedor Empresa</h3>
                 </div>
                      <!-- <form> -->
-              <form action="" id="formularioRegion" name="formularioRegion" method="POST">
+              <form action="javascript:guardar_nueva_empresa()" id="formularioRegion" name="formularioRegion" method="POST">
                   <fieldset>
                       <div class="row">
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="nombreRegion">Nombre Empresa:</label>
-                                  <input class="form-control" title="Debe ingresar empresa" required id="txt_empresa" name="txt_empresa" placeholder="Nombre empresa" type="text">
+                                  <input class="form-control" title="Debe ingresar empresa" required id="txt_nombre_empresa" name="txt_nombre_empresa" placeholder="Nombre empresa" type="text">
                               </div>
                           </div>
 

@@ -1,42 +1,35 @@
-listarUsuarios();
+listarEmpresas();
 
-function listarUsuarios(){
+function listarEmpresas(){
 
 
 		$.ajax({
-			url:"./metodos_ajax/usuarios/mostrar_usuarios.php",
+			url:"./metodos_ajax/empresas/mostrar_empresas.php",
 			method:"POST",
 			success:function(respuesta){
-				 $("#contenedor_listado_usuarios").html(respuesta);
+				 $("#contenedor_listado_empresas").html(respuesta);
 			}
 		});
 }
 
-function guardarUsuario(){
+function guardar_nueva_empresa(){
 
-	var clave1 = $("#txt_contrasenia_usuario").val();
-	var clave2 = $("#txt_confirme_contrasenia_usuario").val();
 
-  if(clave1==clave2){
 			$.ajax({
-				url:"./metodos_ajax/usuarios/crear_usuario.php",
+				url:"./metodos_ajax/empresas/crear_empresa.php",
 				method:"POST",
 				data: $("#formulario_modal_usuario").serialize(),
 				success:function(respuesta){
-					 // alert(respuesta);
+					 alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");
-						 $("#modal_usuario").modal('hide');
-						 listarUsuarios();
 					 }else if(respuesta==2){
 						 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
 					 }
 				}
 			});
-	}else{
-		swal("Claves no coinciden","Verifique que la contraseña ingresada sea la misma en ambos campos.","warning");
-	}
+
 }
 
 function limpiarFormularioUsuario(){

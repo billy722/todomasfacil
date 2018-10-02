@@ -136,12 +136,23 @@ require("./clases/Categoria.php");
     width: 100%;
     font-size: 30px;
     border-color: #dd7700;
-    border-width: medium;
+    border-width:thin;
     opacity: 0.8;
   }
   #label_campo_busqueda{
+    font-size: 40px;
+    color:#ffffff;
+  }
+  #boton_buscar{
     font-size: 30px;
     color:white;
+    border-radius: 0;
+    border-color: #dd7700;
+    border-width:thin;
+    border-left: none;
+    opacity: 1;
+    background-color: #fc8132;
+
   }
 
 </style>
@@ -151,7 +162,16 @@ require("./clases/Categoria.php");
 
          <!-- <h1 id="label_campo_busqueda" class="col-12 col-md-4">¿Que estás buscando?</h1> -->
            <br>
-         <input id="campo_busqueda" type="text" class="form-control col-12 col-md-4">
+
+         <form action="" class="form">
+             <div class="form-group">
+                <label for="campo_busqueda"><h1 id="label_campo_busqueda">¿Que estás buscando?</h1></label>
+                <div class="row">
+                  <input id="campo_busqueda" type="text" class="form-control col-10" placeholder="Buscar">
+                  <button id="boton_buscar" class="btn btn-default btn-warning col-2" type="submit" ><i class="fas fa-search"></i></button>
+                </div>
+             </div>
+         </form>
 
        </div>
 

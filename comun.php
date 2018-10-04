@@ -221,23 +221,23 @@ function cargarMenuPrincipal(){
 
           <ul class="navbar-nav mr-sm-2  ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">INICIO<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">&nbsp;&nbsp;INICIO<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="nuestros_clientes.php">NUESTROS CLIENTES<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="nuestros_clientes.php">&nbsp;&nbsp;NUESTROS CLIENTES<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="eventos.php">EVENTOS<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="eventos.php">&nbsp;&nbsp;EVENTOS<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="quienes_somos.php">QUIENES SOMOS<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="quienes_somos.php">&nbsp;&nbsp;QUIENES SOMOS<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="contactanos.php">CONTACTANOS<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="contactanos.php">&nbsp;&nbsp;CONTACTANOS<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
               <a class="nav-link" href="contactanos.php" data-toggle="modal" data-target="#modal-id-1">:0<span class="sr-only">(current)</span></a>
-            </li>
+            </li> -->
           </ul>
       </div>
     </nav>

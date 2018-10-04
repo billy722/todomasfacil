@@ -77,8 +77,10 @@ require("./clases/Categoria.php");
         });
         </script>
 
-     </head>
-<body>
+        <link href="./css/camera.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
 
 
   <div class="container-fluid">
@@ -148,12 +150,110 @@ require("./clases/Categoria.php");
 
   }
 
+  #contenedor_buscador{
+    margin-top: 200px;
+    z-index: 30000;
+    position: absolute;
+
+  }
+
 </style>
 
-    <div id="imagen_index" class="img-fluid d-flex" alt="Responsive image" >
+<script src="./js/easing.min.js" type="text/javascript"></script>
+<script src="./js/camera.min.js" type="text/javascript"></script>
+<!-- Custom JS --->
+<script src="./js/plugins.js"></script>
+
+
+<script>
+
+var ancho_pantalla = screen.width;
+
+// alert(ancho_pantalla);
+
+//Camera Slide-Show Custom Js Here.
+$(function () {
+
+if(ancho_pantalla < 800){
+  $('.camera_wrap').camera({
+    playPause: false,
+    navigation: false,
+    navigationHover: true,
+    hover: false,
+    loader: 'bar',
+    loaderColor: '#fc8132',
+    loaderBgColor: '#222222',
+    loaderOpacity: 1,
+    loaderPadding: 0,
+    time: 2000,
+    transPeriod: 1500,
+    pauseOnClick: true,
+    pagination: false,
+    height: '100%',
+  });
+}else{
+  $('.camera_wrap').camera({
+    playPause: false,
+    navigation: false,
+    navigationHover: true,
+    hover: false,
+    loader: 'bar',
+    loaderColor: '#fc8132',
+    loaderBgColor: '#222222',
+    loaderOpacity: 1,
+    loaderPadding: 0,
+    time: 2000,
+    transPeriod: 1500,
+    pauseOnClick: true,
+    pagination: false,
+    height: '35%',
+  });
+}
+
+
+});
+</script>
+
+<div class="container-fluid">
+
+  <div id="contenedor_buscador" class="row justify-content-center align-self-center col-12  ">
+
+    <form action="" class="form">
+        <div class="form-group">
+           <label for="campo_busqueda"><h1 id="label_campo_busqueda">¿Que estás buscando?</h1></label>
+           <div class="row">
+             <input id="campo_busqueda" type="text" class="form-control col-10" placeholder="Buscar">
+             <button id="boton_buscar" class="btn btn-default btn-warning col-2" type="submit" ><i class="fas fa-search"></i></button>
+           </div>
+        </div>
+    </form>
+
+  </div>
+
+
+    <div class="row">
+
+        <!--Camera Slide-->
+         <div class="camera_wrap">
+            <div data-src="./img/principal.jpg">
+                <img src="./img/principal.jpg">
+            </div>
+            <div data-src="./img/principal2.jpg">
+                <img src="./img/principal2.jpg" class="img-responsive">
+            </div>
+            <div data-src="./img/principal3.jpg">
+                <img src="./img/principal3.jpg">
+            </div>
+
+        </div>   <!--------Camera Slide End-->
+    </div>   <!--***********  Row End-->
+</div>  <!--************** Container End-->
+
+
+
+    <!-- <div id="imagen_index" class="img-fluid d-flex" alt="Responsive image" >
        <div class="row justify-content-center align-self-center col-12  ">
 
-         <!-- <h1 id="label_campo_busqueda" class="col-12 col-md-4">¿Que estás buscando?</h1> -->
            <br>
 
          <form action="" class="form">
@@ -168,7 +268,7 @@ require("./clases/Categoria.php");
 
        </div>
 
-    </div>
+    </div> -->
 
   <?php cargarCategorias(); ?>
 

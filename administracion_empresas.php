@@ -46,7 +46,7 @@ require_once './clases/Empresa.php';
 
           <div  style="" class=" card col-12">
             <div class="container">
-                 <a href="./metodos_ajax/empresas/nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
+                 <a href="./nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
             </div>
             <div class="container">
               <br>

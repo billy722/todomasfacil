@@ -18,7 +18,7 @@ function guardar_nueva_empresa(){
 			$.ajax({
 				url:"./metodos_ajax/empresas/crear_empresa.php",
 				method:"POST",
-				data: $("#contenedor_listado_empresas").serialize(),
+				data: $("#mantenedor_ingresar_empresa").serialize(),
 				success:function(respuesta){
 					 alert(respuesta);
 
@@ -90,49 +90,36 @@ function cargarFormularioClaves(tipo){
 
 }
 
-function modificarUsuario(){
-
-if($("#txt_contrasenia_usuario").length>0){
-
-    if($("#txt_contrasenia_usuario").val()!=$("#txt_confirme_contrasenia_usuario").val()){
-		   	swal("Claves no coinciden","Verifique que la contraseña ingresada sea la misma en ambos campos.","warning");
-        return false;
-		}
-
-}
+function modificar_empresa(){
 
 			$.ajax({
-				url:"./metodos_ajax/usuarios/modificar_usuario.php",
+				url:"./metodos_ajax/empresas/editar_empresa.php",
 				method:"POST",
-				data: $("#formulario_modal_usuario").serialize(),
+				data: $("#mantenedor_modificar_empresa").serialize(),
 				success:function(respuesta){
-					 // alert(respuesta);
+					 alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");
-						 $("#modal_usuario").modal('hide');
-						 listarUsuarios();
+						 listarEmpresas();
 					 }else if(respuesta==2){
 						 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
 
-				   }else if(respuesta==3){
-						 swal("Claves no coinciden","Verifique que la contraseña ingresada sea la misma en ambos campos.","warning");
-					 }
+				   }
 				}
 			});
-
 }
 
-function eliminarUsuario(id){
+function eliminarEmpresa(id){
 
 			$.ajax({
-				url:"./metodos_ajax/usuarios/eliminar_usuario.php?id="+id,
+				url:"./metodos_ajax/empresas/eliminar_empresa.php?id_empresa="+id,
 				method:"POST",
 				success:function(respuesta){
-					 // alert(respuesta);
+					 alert(respuesta);
 					 if(respuesta==1){
 						 swal("Eliminado correctamente","Los datos se han guardado correctamente.","success");
-						 listarUsuarios();
+						 listarEmpresas();
 					 }else if(respuesta==2){
 						 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
 					 }

@@ -39,8 +39,8 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
 
 
                    <td class="">
-                      <button  data-toggle="modal" data-target="#modal_usuario" type="button" class="btn btn-block btn-warning" name="button">Editar</button>
-                      <button  type="button" class="btn btn-block btn-danger" name="button">Eliminar</button>
+                      <a href="./modificar_empresa.php?id_empresa='.$filas['id_empresa'].'" class="btn btn-block btn-warning" name="button">Editar</a>
+                      <button  type="button" class="btn btn-block btn-danger" onclick="eliminarEmpresa('.$filas['id_empresa'].')" name="button">Eliminar</button>
                    </td>
                  </tr>';
 

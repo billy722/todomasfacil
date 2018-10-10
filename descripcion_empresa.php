@@ -160,7 +160,7 @@ require("./clases/Empresa.php");
                       <div class="col-sm-5">
                         <div class="card">
                             <center>
-                          <?php echo $filas['cooredenadas']; ?>
+                          <?php echo $filas['coordenadas']; ?>
                             </center>
                         </div>
                       </div>

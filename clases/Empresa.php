@@ -20,35 +20,35 @@ Class Empresa{
   }
 
   public function setNombre ($nombre_empresa){
-    $this->nombre_empresa=$nombre;
+    $this->nombre_empresa=$nombre_empresa;
   }
 
   public function setDescripcion ($descripcion_empresa){
-    $this->descripcion_empresa=$descripcion;
+    $this->descripcion_empresa=$descripcion_empresa;
   }
 
   public function setCategoriaEmpresa ($categoria_empresa){
-    $this->categoria_empresa=$categoria;
+    $this->categoria_empresa=$categoria_empresa;
   }
 
   public function setEstado ($estado_empresa){
-    $this->estado_empresa=$estado;
+    $this->estado_empresa=$estado_empresa;
   }
 
   public function setVideo ($video_empresa){
-    $this->video_empresa=$video;
+    $this->video_empresa=$video_empresa;
   }
 
     public function setCoordenadas ($coordenadas_empresa){
-      $this->coordenadas_empresa=$coordenadas;
+      $this->coordenadas_empresa=$coordenadas_empresa;
     }
 
   public function crearEmpresa(){
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
-    $consulta = "INSERT INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, cooredenadas)
-                        VALUES (NULL,'.$this->nombre_empresa.', '.$this->descripcion_empresa.', '.$this->categoria_empresa.', '.$this->video_empresa.', '.$this->coordenadas_empresa.');";
+    $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas)
+                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."');";
 
     if($Conexion->query($consulta)){
         return true;
@@ -56,7 +56,42 @@ Class Empresa{
         echo $consulta;
         // return false;
     }
-// .$this->nombre_empresa
+  }
+
+  public function modificarEmpresa(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = "update tb_empresas
+         SET nombre_empresa = '".$this->nombre_empresa."',
+          descripcion_empresa = '".$this->descripcion_empresa."',
+          categoria_empresa = '".$this->categoria_empresa."',
+          estado_empresa = '".$this->estado_empresa."',
+          video_empresa = '".$this->video_empresa."',
+          coordenadas = '".$this->coordenadas_empresa."'
+           WHERE (id_empresa = '".$this->id_empresa."');";
+
+    if($Conexion->query($consulta)){
+        return true;
+    }else{
+        echo $consulta;
+        // return false;
+    }
+  }
+
+  public function eliminarEmpresa(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = "update tb_empresas set estado_empresa='3' WHERE (id_empresa = ".$this->id_empresa.") ";
+
+    if($Conexion->query($consulta)){
+        return true;
+    }else{
+        echo $consulta;
+        // return false;
+    }
+
   }
 
   public function obtenerEmpresasActivas(){
@@ -75,8 +110,7 @@ Class Empresa{
      $Conexion = $Conexion->conectar();
 
      $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
-                                              left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
-                                              where ie.tipo_imagen=1 AND ( estado_empresa=1 or estado_empresa=2 )");
+                                               where ( estado_empresa=1 or estado_empresa=2 )");
      return $resultado_consulta;
 
   }

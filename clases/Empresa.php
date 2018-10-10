@@ -138,6 +138,23 @@ Class Empresa{
 
     }
 
+  public function buscarEmpresas($texto_buscar){
+
+     $Conexion = new Conexion();
+     $Conexion = $Conexion->conectar();
+
+       $resultado_consulta = $Conexion->query("SELECT * from tb_empresas e
+                                                inner join categoria_empresas c on e.categoria_empresa=c.id_categoria
+                                                left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
+                                                where tipo_imagen=1 and
+                                                (e.nombre_empresa like '%".$texto_buscar."%'
+                                                or e.descripcion_empresa like '%".$texto_buscar."%'
+                                                or c.descripcion_categoria like '%".$texto_buscar."%'
+                                                )");
+     return $resultado_consulta;
+
+    }
+
 
     public function obtenerEmpresas(){
        $Conexion = new Conexion();

@@ -1,7 +1,7 @@
 <?php
 require_once '../../clases/Conexion.php';
 require_once '../../clases/Funciones.php';
-require_once '../../clases/Usuario.php';
+require_once '../../clases/Empresa.php';
 
 $Funciones = new Funciones();
 
@@ -9,19 +9,29 @@ $Funciones = new Funciones();
 //SE DEFINEN VARIABLES
 //SE ASIGNAN LOS VALORES RECIBIDOS
 //SE LIMPIAN LOS DATOS RECIBIDOS DE CARACTERES EXTRAÑOS
-$nombre = $Funciones->limpiarTexto($_REQUEST['txt_nombre_empresa']);
-$estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
+$nombre_empresa = $Funciones->limpiarTexto($_REQUEST['txt_nombre_empresa']);
+$descripcion_empresa = $Funciones->limpiarTexto($_REQUEST['txt_descripcion_empresa']);
+$categoria_empresa = $Funciones->limpiarTexto($_REQUEST['categoria_empresa']);
+$estado_empresa = $Funciones->limpiarTexto($_REQUEST['estado_empresa']);
+$video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
+$coordenadas_empresa = $Funciones->limpiarTexto($_REQUEST['txt_coordenadas_empresa']);
+// $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
 
 
 //Creamos objeto de la clase empresa y seteamos sus valores
 $Empresa = new Empresa();
-$Empresa->setNombre($nombre);
+$Empresa->setNombre($nombre_empresa);
+$Empresa->setDescripcion($descripcion_empresa);
+$Empresa->setCategoriaEmpresa($categoria_empresa);
+$Empresa->setEstado($estado_empresa);
+$Empresa->setVideo($video_empresa);
+$Empresa->setCoordenadas($coordenadas_empresa);
 
-
-if($Empreso->crearEmpresa()){
+if($Empresa->crearEmpresa()){
    echo "1";
 }else{
    echo "2";
 }
+
 
  ?>

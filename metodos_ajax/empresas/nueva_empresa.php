@@ -1,7 +1,9 @@
 <?php
 @session_start();
-require_once 'comun.php';
-require_once './clases/Empresa.php';
+require_once '../../clases/Conexion.php';
+require_once '../../clases/Funciones.php';
+require_once '../../clases/Empresa.php';
+require_once '../../comun.php';
 // comprobarSession();
 
 ?>
@@ -10,11 +12,7 @@ require_once './clases/Empresa.php';
 <html lang="en">
 <head>
 
-<style>
-
-
-</style>
-   <title>Agenda DAEM</title>
+   <title>Empresa</title>
    <?php cargarHead(); ?>
 
   <script src="./js/script_administrar_empresas.js"></script>
@@ -35,30 +33,30 @@ require_once './clases/Empresa.php';
                         <h3 class="panel-title">Mantenedor Empresa</h3>
                 </div>
                      <!-- <form> -->
-              <form action="javascript:guardar_nueva_empresa()" id="formularioRegion" name="formularioRegion" method="POST">
+              <form action="javascript:guardar_nueva_empresa()" id="mantenedor_Ingresar_Empresa" name="mantenedor_Ingresar_Empresa" method="POST">
                   <fieldset>
                       <div class="row">
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="nombreRegion">Nombre Empresa:</label>
+                                  <label for="nombreEmpresa">Nombre Empresa:</label>
                                   <input class="form-control" title="Debe ingresar empresa" required id="txt_nombre_empresa" name="txt_nombre_empresa" placeholder="Nombre empresa" type="text">
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="nombreRegion">Descripcion Empresa:</label>
-                                  <input class="form-control" title="Debe ingresar nombre" required id="txt_descripcion" name="txt_descripcion" placeholder="Nombre región" type="text">
+                                  <label for="descripcion">Descripcion Empresa:</label>
+                                  <input class="form-control" title="Ingresar descripcion" required id="txt_descripcion_empresa" name="txt_descripcion_empresa" placeholder="Ingresar descripcion" type="text">
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="tipoUsuario">Categoria</label>
-                                       <select class="form-control" required name="tipousuario" id="tipousuario">
+                                  <label for="categoria">Categoria</label>
+                                       <select class="form-control" required name="categoria_empresa" id="categoria_empresa">
                                          <option value="" selected disabled>Seleccione categoria:</option>
                                           <?php
-                                              require_once './clases/Categoria.php';
+                                              require_once '../../clases/Categoria.php';
                                               $TipoC= new Categoria();
                                               $filasTipoC= $TipoC->obtenerCategorias();
 
@@ -72,11 +70,11 @@ require_once './clases/Empresa.php';
 
                           <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="tipoUsuario">Estado empresa</label>
-                                       <select class="form-control" required name="tipousuario" id="tipousuario">
+                                  <label for="estado">Estado empresa</label>
+                                       <select class="form-control" required name="estado_empresa" id="estado_empresa">
                                          <option value="" selected disabled>Seleccione estado:</option>
                                           <?php
-                                              require_once './clases/Estado.php';
+                                              require_once '../../clases/Estado.php';
                                               $TipoE= new Estado();
                                               $filasTipoC= $TipoE->obtenerEstadoEmpresa();
 
@@ -90,30 +88,28 @@ require_once './clases/Empresa.php';
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="nombreRegion">Video:</label>
-                                  <input class="form-control" title="Debe ingresar nombre" required id="txt_video" name="txt_video" placeholder="Nombre región" type="text">
+                                  <label for="video">Video:</label>
+                                  <input class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text">
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="nombreRegion">Coordenadas:</label>
-                                  <input class="form-control" title="Debe ingresar nombre" required id="txt_coordenadas" name="txt_coordenadas" placeholder="Nombre región" type="text">
+                                  <label for="coordenadas">Coordenadas:</label>
+                                  <input class="form-control" title="Debe ingresar cooredenadas" required id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" placeholder="Nombre región" type="text">
                               </div>
                           </div>
 
                       </div>
                       <div class="container">
-                              <div class="col-md-3">
+                              <div class="col-md-8">
                                   <input type="submit" id="btn_insert" class="btn btn-success" value="Agregar" name="btn_registrar">
                               </div>
                       </div>
-                      <br>
-                      <div class="row">
-                            <div id="contenedorMantenedor"></div><!-- DIV DONDE SE CARGA LA TABLA-->
-                      </div>
-
                   </fieldset>
+                  <div class="formulario_modal_empresa">
+
+                  </div>
               </form>
               </div>
               </div>

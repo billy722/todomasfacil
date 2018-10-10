@@ -13,8 +13,10 @@ $nombre_empresa = $Funciones->limpiarTexto($_REQUEST['txt_nombre_empresa']);
 $descripcion_empresa = $Funciones->limpiarTexto($_REQUEST['txt_descripcion_empresa']);
 $categoria_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['categoria_empresa']);
 $estado_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['estado_empresa']);
-$video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
+$video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);(
 $coordenadas_empresa = $Funciones->limpiarTexto($_REQUEST['txt_coordenadas_empresa']);
+$facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
+$instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
 // $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
 
 
@@ -26,6 +28,8 @@ $Empresa->setCategoriaEmpresa($categoria_empresa);
 $Empresa->setEstado($estado_empresa);
 $Empresa->setVideo($video_empresa);
 $Empresa->setCoordenadas($coordenadas_empresa);
+$Empresa->setFacebook($facebook);
+$Empresa->setInstagram($instagram);
 
 if($Empresa->crearEmpresa()){
    echo "1";

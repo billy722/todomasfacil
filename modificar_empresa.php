@@ -127,6 +127,20 @@ require_once './comun.php';
                               </div>
                           </div>
 
+                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                              <div class="form-group">
+                                  <label for="video">Facebook:</label>
+                                  <input value="<?php echo $filas['facebook']; ?>" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="facebook" type="text">
+                              </div>
+                          </div>
+
+                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                              <div class="form-group">
+                                  <label for="video">Instagram:</label>
+                                  <input value="<?php echo $filas['instagram']; ?>" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
+                              </div>
+                          </div>
+
                       </div>
                       <div class="container">
                               <div class="col-md-8">

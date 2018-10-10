@@ -67,7 +67,7 @@ require_once './clases/Empresa.php';
 
 
   <!-- MODAL EMPRESA-->
-  <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <!-- <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
 
@@ -122,13 +122,13 @@ require_once './clases/Empresa.php';
                     <label for="title" class="col-12 control-label">Estado</label>
                     <select required class="form-control" name="select_estado_usuario" id="select_estado_usuario">
                       <?php
-                          $Estado = new Estado();
-                          $Estado->setTabla("tb_estado_usuario");
-                          $listaEstados = $Estado->obtenerEstados("where id_estado<>3");
-
-                          while($filas = $listaEstados->fetch_array()){
-                             echo '<option value="'.$filas['id_estado'].'">'.$filas['descripcion_estado'].'</option>';
-                          }
+                          // $Estado = new Estado();
+                          // $Estado->setTabla("tb_estado_usuario");
+                          // $listaEstados = $Estado->obtenerEstados("where id_estado<>3");
+                          //
+                          // while($filas = $listaEstados->fetch_array()){
+                          //    echo '<option value="'.$filas['id_estado'].'">'.$filas['descripcion_estado'].'</option>';
+                          // }
 
                        ?>
                     </select>
@@ -140,12 +140,12 @@ require_once './clases/Empresa.php';
                     <label for="title" class="col-12 control-label">Privilegios de usuario</label>
                     <select required class="form-control" name="select_privilegio_usuario" id="select_privilegio_usuario">
                       <?php
-                          $Privilegio = new Privilegio();
-                          $listaPrivilegios = $Privilegio->obtenerPrivilegios();
-
-                          while($filas = $listaPrivilegios->fetch_array()){
-                             echo '<option value="'.$filas['id_tipo_usuario'].'">'.$filas['descripcion_tipo_usuario'].'</option>';
-                          }
+                          // $Privilegio = new Privilegio();
+                          // $listaPrivilegios = $Privilegio->obtenerPrivilegios();
+                          //
+                          // while($filas = $listaPrivilegios->fetch_array()){
+                          //    echo '<option value="'.$filas['id_tipo_usuario'].'">'.$filas['descripcion_tipo_usuario'].'</option>';
+                          // }
 
                        ?>
                     </select>
@@ -157,12 +157,12 @@ require_once './clases/Empresa.php';
                     <label for="title" class="col-12 control-label">Area o departamento</label>
                     <select required class="form-control" name="txt_departamento_usuario" id="txt_departamento_usuario">
                       <?php
-                          $departamento = new Departamento();
-                          $listaDepartamentos = $departamento->obtenerDepartamentos();
-
-                          while($filas = $listaDepartamentos->fetch_array()){
-                             echo '<option value="'.$filas['id_departamento'].'">'.$filas['nombre_departamento'].'</option>';
-                          }
+                          // $departamento = new Departamento();
+                          // $listaDepartamentos = $departamento->obtenerDepartamentos();
+                          //
+                          // while($filas = $listaDepartamentos->fetch_array()){
+                          //    echo '<option value="'.$filas['id_departamento'].'">'.$filas['nombre_departamento'].'</option>';
+                          // }
 
                        ?>
                     </select>
@@ -190,7 +190,7 @@ require_once './clases/Empresa.php';
 
     </div>
     </div>
-  </div>
+  </div> -->
 
 
 </body>

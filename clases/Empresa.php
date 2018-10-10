@@ -11,6 +11,8 @@ Class Empresa{
   private $estado_empresa;
   private $video_empresa;
   private $coordenadas_empresa;
+  private $facebook;
+  private $instagram;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
@@ -43,12 +45,20 @@ Class Empresa{
       $this->coordenadas_empresa=$coordenadas_empresa;
     }
 
+    public function setFacebook ($facebook){
+      $this->facebook=$facebook;
+    }
+
+    public function setInstagram ($instagram){
+      $this->instagram=$instagram;
+    }
+
   public function crearEmpresa(){
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
-    $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas)
-                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."');";
+    $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas, facebook, instagram)
+                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."');";
 
     if($Conexion->query($consulta)){
         return true;
@@ -68,7 +78,9 @@ Class Empresa{
           categoria_empresa = '".$this->categoria_empresa."',
           estado_empresa = '".$this->estado_empresa."',
           video_empresa = '".$this->video_empresa."',
-          coordenadas = '".$this->coordenadas_empresa."'
+          coordenadas = '".$this->coordenadas_empresa."',
+          facebook = '".$this->facebook."',
+          instagram = '".$this->instagram."'
            WHERE (id_empresa = '".$this->id_empresa."');";
 
     if($Conexion->query($consulta)){

@@ -12,7 +12,7 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
            <th>Nombre</th>
            <th>Descripcion</th>
            <th>Video</th>
-           <th>Coordenadas</th>
+
            <th>Opciones</th>
        </thead>
        <tbody>';
@@ -29,9 +29,9 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
 
 
                    <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['nombre_empresa'].'</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['descripcion_empresa'].'</span></td>
+                   <td class=""><span id="txt_nombre_'.$contador.'" >'.substr($filas['descripcion_empresa'], 0, 50).'...</span></td>
                    <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['video_empresa'].'</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['coordenadas'].'</span></td>
+
 
 
 

@@ -135,8 +135,13 @@ require("./clases/Categoria.php");
     opacity: 0.8;
   }
   #label_campo_busqueda{
-    font-size: 40px;
+    font-size: 2rem;
     color:#ffffff;
+    background-color: rgba(9, 65, 91, 0.84);
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:15px;
+    padding-right:15px;
   }
   #boton_buscar{
     font-size: 30px;
@@ -218,11 +223,11 @@ if(ancho_pantalla < 800){
 
   <div id="contenedor_buscador" class="row justify-content-center align-self-center col-12  ">
 
-    <form action="" class="form">
+    <form action="./buscador_empresas.php" class="form">
         <div class="form-group">
            <label for="campo_busqueda"><h1 id="label_campo_busqueda">¿Que estás buscando?</h1></label>
            <div class="row">
-             <input id="campo_busqueda" type="text" class="form-control col-10" placeholder="Buscar">
+             <input id="campo_busqueda" name="campo_busqueda" type="text" class="form-control col-10" placeholder="Buscar">
              <button id="boton_buscar" class="btn btn-default btn-warning col-2" type="submit" ><i class="fas fa-search"></i></button>
            </div>
         </div>

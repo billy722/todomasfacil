@@ -15,7 +15,7 @@ $descripcion_empresa = $Funciones->limpiarTexto($_REQUEST['txt_descripcion_empre
 $categoria_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['categoria_empresa']);
 $estado_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['estado_empresa']);
 $video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
-$coordenadas_empresa = $Funciones->limpiarTexto($_REQUEST['txt_coordenadas_empresa']);
+$coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
 // $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
 
 

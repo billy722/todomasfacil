@@ -42,9 +42,11 @@ require_once './comun.php';
 
 <div class="container-fluid">
       <div class="col-md-12-centered">
-                <div class="panel-heading">
-                        <h3 class="panel-title">Mantenedor Empresa</h3>
-                </div>
+        <div class="card">
+    <div class="card-header">
+      Modificar Mantenedor Empresa
+    </div>
+    <div class="card bg-light mb-3">
                      <!-- <form> -->
               <form action="javascript:modificar_empresa()" id="mantenedor_modificar_empresa" name="mantenedor_modificar_empresa" method="POST">
 
@@ -144,11 +146,12 @@ require_once './comun.php';
                       </div>
                       <div class="container">
                               <div class="col-md-8">
-                                  <input type="submit" id="btn_insert" class="btn btn-success" value="Guardar" name="btn_registrar">
+                                  <input type="submit" id="btn_insert" class="btn btn-warning" value="Editar" name="btn_registrar">
                               </div>
                       </div>
 
               </form>
+              </div>
               </div>
               </div>
 

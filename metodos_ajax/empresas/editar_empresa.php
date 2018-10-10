@@ -16,8 +16,8 @@ $categoria_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['categoria_empres
 $estado_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['estado_empresa']);
 $video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
 $coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
-$facebook = $_REQUEST['txt_facebook'];
-$instagram = $_REQUEST['txt_instagram'];
+$facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
+$instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
 // $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
 
 

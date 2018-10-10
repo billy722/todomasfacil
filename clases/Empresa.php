@@ -8,29 +8,47 @@ Class Empresa{
   private $nombre_empresa;
   private $descripcion_empresa;
   private $categoria_empresa;
-  private $estado;
-  private $imagen;
-  private $video;
-
+  private $estado_empresa;
+  private $video_empresa;
+  private $coordenadas_empresa;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
   }
-
   public function setId($id_recibidoE){
     $this->id_empresa = $id_recibidoE;
   }
 
-  public function setDescripcion ($desc){
-    $this->descripcion_empresa=$desc;
+  public function setNombre ($nombre_empresa){
+    $this->nombre_empresa=$nombre;
   }
 
+  public function setDescripcion ($descripcion_empresa){
+    $this->descripcion_empresa=$descripcion;
+  }
+
+  public function setCategoriaEmpresa ($categoria_empresa){
+    $this->categoria_empresa=$categoria;
+  }
+
+  public function setEstado ($estado_empresa){
+    $this->estado_empresa=$estado;
+  }
+
+  public function setVideo ($video_empresa){
+    $this->video_empresa=$video;
+  }
+
+    public function setCoordenadas ($coordenadas_empresa){
+      $this->coordenadas_empresa=$coordenadas;
+    }
 
   public function crearEmpresa(){
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
-    $consulta = " aqui consula del insert   ".$this->nombre_empresa;
+    $consulta = "INSERT INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, cooredenadas)
+                        VALUES (NULL,'.$this->nombre_empresa.', '.$this->descripcion_empresa.', '.$this->categoria_empresa.', '.$this->video_empresa.', '.$this->coordenadas_empresa.');";
 
     if($Conexion->query($consulta)){
         return true;
@@ -38,7 +56,7 @@ Class Empresa{
         echo $consulta;
         // return false;
     }
-
+// .$this->nombre_empresa
   }
 
   public function obtenerEmpresasActivas(){

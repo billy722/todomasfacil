@@ -1,6 +1,5 @@
 <?php
 require_once '../../clases/Conexion.php';
-// require_once '../../clases/Funciones.php';
 require_once '../../clases/Empresa.php';
 
 $Empresa = new Empresa();
@@ -10,10 +9,10 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
     echo '
     <table class="table table-responsive table-sm table-striped table-bordered table-hover">
        <thead>
-           <!-- <th>Run</th> -->
            <th>Nombre</th>
-           <th>Estado</th>
-           <th>Categoria</th>
+           <th>Descripcion</th>
+           <th>Video</th>
+           <th>Coordenadas</th>
            <th>Opciones</th>
        </thead>
        <tbody>';
@@ -30,8 +29,11 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
 
 
                    <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['nombre_empresa'].'</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['nombre_empresa'].'</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['nombre_empresa'].'</span></td>
+                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['descripcion_empresa'].'</span></td>
+                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['video_empresa'].'</span></td>
+                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['coordenadas'].'</span></td>
+
+
 
 
 

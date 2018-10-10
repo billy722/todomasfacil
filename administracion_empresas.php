@@ -14,7 +14,7 @@ require_once './clases/Empresa.php';
 
 
 </style>
-   <title>Agenda DAEM</title>
+   <title>Administracion de empresas</title>
    <?php cargarHead(); ?>
 
   <script src="./js/script_administrar_empresas.js"></script>
@@ -46,7 +46,7 @@ require_once './clases/Empresa.php';
 
           <div  style="" class=" card col-12">
             <div class="container">
-                 <a href="./nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
+                 <a href="./metodos_ajax/empresas/nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
             </div>
             <div class="container">
               <br>
@@ -66,7 +66,7 @@ require_once './clases/Empresa.php';
 
 
 
-  <!-- MODAL USUARIO-->
+  <!-- MODAL EMPRESA-->
   <div class="modal fade" id="modal_usuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">

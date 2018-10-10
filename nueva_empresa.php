@@ -31,7 +31,7 @@ require_once './comun.php';
       <div class="col-md-12-centered">
       <div class="card">
   <div class="card-header">
-    Ingresar Mantenedor Empresa
+    Ingresar Mantenedor Empresa     
   </div>
    <div class="card bg-light mb-3">
                      <!-- <form> -->

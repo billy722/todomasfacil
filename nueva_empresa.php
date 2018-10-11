@@ -27,11 +27,12 @@ require_once './comun.php';
     <thead class="thead-dark"> -->
 
 
+
 <div class="container-fluid">
       <div class="col-md-12-centered">
       <div class="card">
   <div class="card-header">
-    Ingresar Mantenedor Empresa     
+    Ingresar Mantenedor Empresa
   </div>
    <div class="card bg-light mb-3">
                      <!-- <form> -->
@@ -105,14 +106,14 @@ require_once './comun.php';
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="facebook">Facebook:</label>
-                                  <input value="<?php echo $filas['facebook']; ?>" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="facebook" type="text">
+                                  <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="facebook" type="text">
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="instagram">Instagram:</label>
-                                  <input value="<?php echo $filas['instagram']; ?>" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
+                                  <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
                               </div>
                           </div>
 

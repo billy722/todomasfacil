@@ -330,7 +330,9 @@ if(ancho_pantalla < 800){
 
     <footer>
 
-
+      <a href="">
+        <img src="./img/instragram-logo.jpg" style="height:50px; width:50px;" alt="">
+      </a>
     <?php
       sub_footer();
       ?>

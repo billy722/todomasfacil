@@ -293,9 +293,6 @@ function sub_footer(){
 <div class="sub_footer">
     <span>&copy;Todos Los Derechos Reservados</span>
 
-    <a href="">
-      <img src="./img/instragram-logo" style="height:50px; width:50px;" alt="">
-    </a>
 </div>
 
 <?php }

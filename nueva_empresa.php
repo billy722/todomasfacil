@@ -105,15 +105,19 @@ require_once './comun.php';
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="facebook">Facebook:</label>
+
+                                  <label for="video">Facebook:</label>
                                   <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="facebook" type="text">
+
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="instagram">Instagram:</label>
+
+                                  <label for="video">Instagram:</label>
                                   <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
+
                               </div>
                           </div>
 

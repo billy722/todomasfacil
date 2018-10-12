@@ -80,19 +80,19 @@ require("./clases/Empresa.php");
       #facebook{
           background-color: #0154A0!important;
           color:white!important;
-          font-size: 20px;
+          font-size: 25px;
           margin-right: 2px;
-          padding-top:15px;
-          padding-bottom:15px;  /*inferior*/
+          padding-top:10px;
+          padding-bottom:10px;  /*inferior*/
       }
       #instagram{
           background-image: url("./img/images.jpg")!important;
           background-size:100%;
           color:white!important;
-          font-size: 20px;
+          font-size: 25px;
           margin-right: 2px;
-          padding-top:15px;
-          padding-bottom:15px;  /*inferior*/
+          padding-top:10px;
+          padding-bottom:10px;  /*inferior*/
       }
       </style>
 
@@ -251,12 +251,13 @@ require("./clases/Empresa.php");
               <div class="row col-sm-12 justify-content-md-center">
                   <div class="col-sm-4">
 
-                    <a class="nav-link" data-icon="facebook-square" id="facebook" align="center" href="https://www.facebook.com/profile.php?id=100004766229491">
+                    <a class="nav-link" id="facebook" align="center" href="https://www.facebook.com/profile.php?id=100004766229491"><img src="./img/face.png" style="height:40px; width:40px;" alt="">
                                         &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
                   </div>
+                  <br>
                   <div class="col-sm-4">
                     <!-- <img class="card-img-top"  src="./img/instragram-logo.jpg" alt="Card image"> -->
-                    <a class="nav-link"  id="instagram" align="center" href="index.php">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                    <a class="nav-link"  id="instagram" align="center" href="https://www.instagram.com/?hl=es-la"><img src="./img/insta.png" style="height:40px; width:40px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
                   </div>
              </div>
                 <br>

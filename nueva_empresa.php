@@ -21,26 +21,28 @@ require_once './comun.php';
 
 <?php cargarMenuPrincipal(); ?>
 
-<br>
-
-  <!-- <table class="table">
-    <thead class="thead-dark"> -->
-
-
-
 <div class="container-fluid">
+
       <div class="col-md-12-centered">
-      <div class="card">
-  <div class="card-header">
-    Ingresar Mantenedor Empresa
+      <div class="card border-danger mb-3">
+ <div class="card-header border-danger mb-3" style="background-color:rgb(255, 176, 0);
+                                                    background: -moz-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,146,10,1)), color-stop(72%, rgba(255,175,75,1)), color-stop(100%, rgba(255,175,75,1)));
+                                                    background: -webkit-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                    background: -o-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                    background: -ms-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                    background: linear-gradient(to right, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', endColorstr='#ffaf4b', GradientType=1 );">
+    <h5><B><FONT COLOR="white">  Ingresar Mantenedor Empresa</FONT></h5>
   </div>
-   <div class="card bg-light mb-3">
+<div class="container">
                      <!-- <form> -->
               <form action="javascript:guardar_nueva_empresa()" id="mantenedor_ingresar_empresa" name="mantenedor_Ingresar_Empresa" method="POST">
                   <fieldset>
                       <div class="row">
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
+                                <br>
                                   <label for="nombreEmpresa">Nombre Empresa:</label>
                                   <input class="form-control" title="Debe ingresar empresa" required id="txt_nombre_empresa" name="txt_nombre_empresa" placeholder="Nombre empresa" type="text">
                               </div>
@@ -48,16 +50,18 @@ require_once './comun.php';
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
+                                <br>
                                   <label for="descripcion">Descripcion Empresa:</label>
-                                  <input class="form-control" title="Ingresar descripcion" required id="txt_descripcion_empresa" name="txt_descripcion_empresa" placeholder="Ingresar descripcion" type="text">
+                                  <textarea name="txt_descripcion_empresa" id="txt_descripcion_empresa" class="form-control" rows="4" cols="100"></textarea>
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
+                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="categoria">Categoria</label>
-                                       <select class="form-control" required name="categoria_empresa" id="categoria_empresa">
-                                         <option value="" selected disabled>Seleccione categoria:</option>
+                                <br>
+                                  <label for="categoria">Categoria:</label>
+                                       <select style="width:130px" class="form-control" required name="categoria_empresa" id="categoria_empresa">
+                                         <option value="" selected disabled>Seleccione:</option>
                                           <?php
                                               require_once './clases/Categoria.php';
                                               $TipoC= new Categoria();
@@ -71,11 +75,12 @@ require_once './comun.php';
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
+                          <div style="animation-delay: 0.5s;" class="col-md-2 animated-panel zoomIn">
                               <div class="form-group">
-                                  <label for="estado">Estado empresa</label>
-                                       <select class="form-control" required name="estado_empresa" id="estado_empresa">
-                                         <option value="" selected disabled>Seleccione estado:</option>
+                                <br>
+                                  <label for="estado">Estado:</label>
+                                       <select style="width:130px" class="form-control" required name="estado_empresa" id="estado_empresa">
+                                         <option value="" selected disabled>Seleccione:</option>
                                           <?php
                                               require_once './clases/Estado.php';
                                               $TipoE= new Estado();
@@ -89,49 +94,80 @@ require_once './comun.php';
                               </div>
                           </div>
 
+                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
+                              <div class="form-group">
+                                <br>
+                                  <label for="video">Imagen:</label>
+                                  <input class="form-control" style="width:130px" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="Imagen" type="text">
+                              </div>
+                          </div>
+
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
+                                <br>
                                   <label for="video">Video:</label>
-                                  <input class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text">
+                                  <input class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="Url:video" type="text">
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
+                                <br>
                                   <label for="coordenadas">Coordenadas:</label>
-                                  <input class="form-control" title="Debe ingresar cooredenadas" required id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" placeholder="Nombre región" type="text">
+                                  <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="4" cols="100"></textarea>
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-
+                                <br>
                                   <label for="video">Facebook:</label>
-                                  <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="facebook" type="text">
+                                  <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="Url:facebook" type="text">
 
                               </div>
                           </div>
 
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
-
+                                <br>
                                   <label for="video">Instagram:</label>
-                                  <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
+                                  <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="Url:instagram" type="text">
 
                               </div>
                           </div>
 
                       </div>
-                      <div class="container center">
-                              <div class="col-md-8">
-                                  <input type="submit" id="btn_insert" class="btn btn-success" value="Agregar" name="btn_registrar">
+
+                              <div class="col-md-12 container"  align="right">
+
+                                  <input type="submit" id="btn_insert" class="btn" value="Agregar" name="btn_registrar" align="left">
+                                  <br>
+                                  <br>
+                                  <div class="container col-md-10" align="left">
+                                    <a class="nav-link col-md-3 animated-panel zoomIn" align="center" href="./administracion_empresas.php">&nbsp;&nbsp;ATRAS<span class="sr-only">(current)</span></a>
+                                  </div>
+                                  <br>
+                                  <br>
                               </div>
-                      </div>
+
                   </fieldset>
               </form>
-              </div>
-              </div>
-              </div>
-
+                      </div>
+                  </div>
+            </div>
   </body>
+  <script type="text/javascript">
+  function eliminarCamposEmpresa(){ /*AQUI LE DOY UN NOMBRE CUALQUIERA A LA FUNCION*/
+       $("#txt_nombre_empresa").val("");
+       $("#txt_descripcion_empresa").val("");
+       $("#categoria_empresa").val("");
+       $("#estado_empresa").val("");
+       $("#txt_video_empresa").val("");
+       $("#txt_coordenadas_empresa").val("");
+       $("#txt_facebook").val("");
+       $("#txt_instagram").val("");
+
+                        }
+  </script>
+
 </html>

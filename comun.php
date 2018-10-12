@@ -235,9 +235,6 @@ function cargarMenuPrincipal(){
             <li class="nav-item active">
               <a class="nav-link" href="contactanos.php">&nbsp;&nbsp;CONTACTANOS<span class="sr-only">(current)</span></a>
             </li>
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="contactanos.php" data-toggle="modal" data-target="#modal-id-1">:0<span class="sr-only">(current)</span></a>
-            </li> -->
           </ul>
       </div>
     </nav>

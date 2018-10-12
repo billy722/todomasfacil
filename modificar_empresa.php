@@ -40,14 +40,21 @@ require_once './comun.php';
 
  ?>
 
-<div class="container-fluid">
-      <div class="col-md-12-centered">
-        <div class="card">
-    <div class="card-header">
-      Modificar Mantenedor Empresa
-    </div>
-    <div class="card bg-light mb-3">
-                     <!-- <form> -->
+ <div class="container-fluid">
+
+       <div class="col-md-12-centered">
+       <div class="card border-danger mb-3">
+  <div class="card-header border-danger mb-3" style="background-color:rgb(255, 176, 0);
+                                                     background: -moz-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,146,10,1)), color-stop(72%, rgba(255,175,75,1)), color-stop(100%, rgba(255,175,75,1)));
+                                                     background: -webkit-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                     background: -o-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                     background: -ms-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                     background: linear-gradient(to right, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
+                                                     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', endColorstr='#ffaf4b', GradientType=1 );">
+     <h5><B><FONT COLOR="white">  Editar Empresa</FONT></h5>
+   </div>
+ <div class="container">
               <form action="javascript:modificar_empresa()" id="mantenedor_modificar_empresa" name="mantenedor_modificar_empresa" method="POST">
 
                         <input type="hidden" name="id_empresa" value="<?php echo $filas['id_empresa'];?>">
@@ -63,14 +70,14 @@ require_once './comun.php';
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="descripcion">Descripcion Empresa:</label>
-                                  <textarea name="txt_descripcion_empresa" class="form-control" rows="8" cols="80"><?php echo $filas['descripcion_empresa']; ?></textarea>
+                                  <textarea name="txt_descripcion_empresa" class="form-control" rows="5" cols="100"><?php echo $filas['descripcion_empresa']; ?></textarea>
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
+                          <div style="animation-delay: 0.5s;" class="col-md-2 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="categoria">Categoria</label>
-                                       <select  class="form-control" required name="categoria_empresa" id="categoria_empresa">
+                                       <select style="width:130px" class="form-control" required name="categoria_empresa" id="categoria_empresa">
                                          <option value="" selected disabled>Seleccione categoria:</option>
                                           <?php
                                               require_once './clases/Categoria.php';
@@ -90,10 +97,10 @@ require_once './comun.php';
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.5s;" class="col-md-3 animated-panel zoomIn">
+                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="estado">Estado empresa</label>
-                                       <select class="form-control" required name="estado_empresa" id="estado_empresa">
+                                       <select style="width:130px" class="form-control" required name="estado_empresa" id="estado_empresa">
                                          <option value="" selected disabled>Seleccione estado:</option>
                                           <?php
                                               require_once './clases/Estado.php';
@@ -113,6 +120,13 @@ require_once './comun.php';
                               </div>
                           </div>
 
+                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
+                              <div class="form-group">
+                                  <label for="video">Imagen:</label>
+                                  <input value="<?php echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text">
+                              </div>
+                          </div>
+
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                   <label for="video">Video:</label>
@@ -125,7 +139,7 @@ require_once './comun.php';
                                 <?php //echo $filas['coordenadas']; ?>
 
                                   <label for="coordenadas">Cambiar Mapa:</label>
-                                  <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="8" cols="80"><?php echo $filas['coordenadas']; ?></textarea>
+                                  <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="5" cols="100"><?php echo $filas['coordenadas']; ?></textarea>
                               </div>
                           </div>
 
@@ -143,16 +157,24 @@ require_once './comun.php';
                               </div>
                           </div>
 
-                      </div>
-                      <div class="container">
-                              <div class="col-md-8">
-                                  <input type="submit" id="btn_insert" class="btn btn-warning" value="Editar" name="btn_registrar">
-                              </div>
-                      </div>
+                        </div>
 
-              </form>
-              </div>
-              </div>
+                                <div class="col-md-12 container"  align="right">
+
+                                    <input type="submit" id="btn_insert" class="btn" value="Agregar" name="btn_registrar" align="left">
+                                    <br>
+                                    <br>
+                                    <div class="container col-md-10" align="left">
+                                      <a class="nav-link col-md-3 animated-panel zoomIn" align="center" href="./administracion_empresas.php">&nbsp;&nbsp;ATRAS<span class="sr-only">(current)</span></a>
+                                    </div>
+                                    <br>
+                                    <br>
+                                </div>
+
+                    </fieldset>
+                </form>
+                        </div>
+                    </div>
               </div>
 
   </body>

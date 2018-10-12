@@ -8,7 +8,7 @@ require("./clases/Empresa.php");
 <html lang="es">
      <head>
 
-       <title>Quienes somos</title>
+       <title>Empresa</title>
        <?php
        cargarHead();
         ?>
@@ -76,7 +76,25 @@ require("./clases/Empresa.php");
 
     </head>
     <body>
-
+      <style>
+      #facebook{
+          background-color: #0154A0!important;
+          color:white!important;
+          font-size: 20px;
+          margin-right: 2px;
+          padding-top:15px;
+          padding-bottom:15px;  /*inferior*/
+      }
+      #instagram{
+          background-image: url("./img/images.jpg")!important;
+          background-size:100%;
+          color:white!important;
+          font-size: 20px;
+          margin-right: 2px;
+          padding-top:15px;
+          padding-bottom:15px;  /*inferior*/
+      }
+      </style>
 
   <div class="container-fluid">
 <?php
@@ -146,7 +164,6 @@ require("./clases/Empresa.php");
               <div class="container">
                   <div class="row">
                       <div class="col-sm-7">
-
                         <div class="card">
                           <div class="card-body">
                             <img class="img-thumbnail" width="100" height="100" src="./imagenes/empresas/<?php echo $filas['ruta_foto']; ?>" alt="">
@@ -231,9 +248,19 @@ require("./clases/Empresa.php");
                       </div>
                 </div>
               <br>
-              <div class="col-sm-5">
-                <button type="button" class="btn btn-lg btn-fb"><i class="fa fa-facebook pr-1"></i> Facebook</button>
-              </div>
+              <div class="row col-sm-12 justify-content-md-center">
+                  <div class="col-sm-4">
+
+                    <a class="nav-link" data-icon="facebook-square" id="facebook" align="center" href="https://www.facebook.com/profile.php?id=100004766229491">
+                                        &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
+                  </div>
+                  <div class="col-sm-4">
+                    <!-- <img class="card-img-top"  src="./img/instragram-logo.jpg" alt="Card image"> -->
+                    <a class="nav-link"  id="instagram" align="center" href="index.php">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                  </div>
+             </div>
+                <br>
+          </div>
       </div>
 
 

@@ -47,14 +47,14 @@ function comprobarSession(){
       text-decoration: none;
       display: inline;
       color:white;
-      font-size: 20px;
+      font-size: 17px;
       padding-bottom: 0px;
     }
     #listado_categorias .categorias-md{
       text-decoration: none;
       display: inline;
       color:white;
-      font-size: 25px;
+      font-size: 24px;
       padding-bottom: 0px;
     }
     </style>

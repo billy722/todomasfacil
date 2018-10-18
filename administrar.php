@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
      <head>
@@ -192,12 +194,13 @@ $("#formulario").submit(function(event){
         url:"./metodos_ajax/login/verificarDatos.php?u="+usuario+"&c="+contrasena,
         success:function(respuesta){
           // alert(respuesta);
+
             if(respuesta==1){
               $('#botonIngreso').removeClass("btn-warning");
               $('#botonIngreso').addClass("btn-success");
               $('#botonIngreso').html('<span class="glyphicon glyphicon-ok"> </span>  Redireccionando...');
               setTimeout(function(){
-                window.location="./inicio.php";
+                window.location="./administracion_empresas.php";
               },2000);
 
             }else if(respuesta==2){

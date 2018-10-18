@@ -40,16 +40,7 @@ require("./clases/Categoria.php");
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="./lightslider-master/src/js/lightslider.js"></script>
         <script>
-           $(document).ready(function() {
-          $("#content-slider").lightSlider({
-                    loop:true,
-                    keyPress:true,
-                    auto:true,
-                    speed:600,
-                    item:4,
-                    thumbItem:9,
-                    slideMargin: 2,
-                });
+
           // $("#content-slider-principal").lightSlider({
           //           loop:true,
           //           keyPress:true,
@@ -63,18 +54,36 @@ require("./clases/Categoria.php");
         });
         </script>
         <script>
-           $(document).ready(function() {
-          $("#content-slider2").lightSlider({
-                    loop:true,
-                    keyPress:true,
-                    auto:true,
-                    speed:500,
-                    item:1,
-                    thumbItem:9,
-                    slideMargin: 1,
-                });
 
-        });
+        var ancho_pantalla = screen.width;
+
+        if(ancho_pantalla < 800){
+           $(document).ready(function() {
+                 $("#content-slider").lightSlider({
+                      loop:true,
+                      keyPress:true,
+                      auto:true,
+                      speed:500,
+                      item:1,
+                      thumbItem:9,
+                      slideMargin: 1,
+                  });
+
+          });
+        }else{
+          $(document).ready(function() {
+
+              $("#content-slider").lightSlider({
+                        loop:true,
+                        keyPress:true,
+                        auto:true,
+                        speed:600,
+                        item:4,
+                        thumbItem:9,
+                        slideMargin: 2,
+                    });
+          });
+        }
         </script>
 
         <link href="./css/camera.css" rel="stylesheet" type="text/css"/>
@@ -277,7 +286,7 @@ if(ancho_pantalla < 800){
 <br>
 
 <!-- BANNER EMPRESAS -->
-<div class="container-fluid d-none d-md-block">
+<div class="container-fluid">
 <div class="item">
     <ul id="content-slider" class="content-slider">
       <?php
@@ -298,27 +307,7 @@ if(ancho_pantalla < 800){
     </ul>
 </div>
 </div>
-<div class="container-fluid d-md-none">
-   <div class="item">
-       <ul id="content-slider2" class="content-slider">
-         <?php
-             $Empresa = new Empresa(); //instancio lo de la clase categoria
-             $respuesta = $Empresa->obtenerEmpresasActivas();
 
-               while ($filas = $respuesta->fetch_array()) {
-                 echo '
-                       <div>
-                         <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
-                           <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
-                         </a>
-                       </div>
-                     ';
-              }
-          ?>
-
-       </ul>
-   </div>
-</div>
 
 
 

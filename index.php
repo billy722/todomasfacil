@@ -173,10 +173,7 @@ require("./clases/Categoria.php");
 <script>
 
 var ancho_pantalla = screen.width;
-
 // alert(ancho_pantalla);
-
-//Camera Slide-Show Custom Js Here.
 $(function () {
 
 if(ancho_pantalla < 800){

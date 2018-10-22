@@ -6,6 +6,7 @@
 
        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
        <title>Agenda Daem</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='./css/fullcalendar.min.css' rel='stylesheet' />

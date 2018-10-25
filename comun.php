@@ -167,8 +167,19 @@ function cargarMenuConfiguraciones(){
   }else{
       echo '<a href="./administracion_empresas.php" class="btn btn-info col-12">Empresas </a>';
   }
+  echo'<hr>';
 
-     echo'<hr>';
+  if($url=="administrar_descuentos.php"){
+      echo '<a href="./administrar_descuentos.php" class="active btn btn-info col-12">Descuentos </a>';
+  }else{
+      echo '<a href="./administrar_descuentos.php" class="btn btn-info col-12">Descuentos </a>';
+  }
+
+  echo'<hr>';
+
+  echo '<a href="./cerrarSesion.php" class=" btn btn-danger col-12">Cerrar Sesión </a>';
+
+  echo'<hr>';
   //
   // if($url=="usuarios.php"){
   //     echo '<a href="./usuarios.php" class="active btn btn-info col-12">Usuarios </a>';

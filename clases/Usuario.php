@@ -294,7 +294,7 @@ class Usuario{
     @session_start();
 
     if(!isset($_SESSION['run'])){
-        header("location: ../index.php");
+        header("location: ./administrar.php");
     }
   }
   public function cerrarSesion($rutaInicial){

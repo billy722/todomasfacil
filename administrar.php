@@ -5,7 +5,7 @@
      <head>
 
        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
-       <title>Agenda Daem</title>
+       <title>Administrar Todofacil</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
 
   <style>
         body{
-        	background-image: url("./img/principal.jpg");
+        	background-image: url("./img/fondotf2.jpg");
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-size: cover;
@@ -36,12 +36,17 @@
 
         .card{
             background-color:rgba(50, 46, 42, 0.73);
-            padding:10px;
+            padding:5px;
             border-radius: 4px;
             border-style: solid;
-            border-color:rgb(12, 135, 152);
+            border-color:#da3400;
             border-width: 1px;
+            margin-top: 10px;
 
+        }
+        #botonIngreso{
+          background: #da3400;
+          color:white;
         }
   </style>
 
@@ -53,7 +58,7 @@
 
 
 
-       <div class="col-md-4 offset-md-8">
+       <div class="col-md-3 offset-md-8">
 
     		<div class="container card card-info" style="" id="login">
 
@@ -61,7 +66,7 @@
                      <div clas="col-xs-12">
                        <br>
                         <center>
-                          <img src="./img/logo_daem.png" alt="">
+                          <img src="./img/logo.png" alt="">
                         </center>
                      </div>
                 </div>
@@ -85,7 +90,7 @@
                        </div>
 
                        <div class="form-group">
-                         <button class="btn btn-info btn-block" id="botonIngreso" type="submit" >Entrar</button>
+                         <button class="btn btn-block" id="botonIngreso" type="submit" >Entrar</button>
                        </div>
                        <div class="form-group">
                          <div class="input-group">
@@ -115,17 +120,17 @@
           font-weight: lighter;
           color:white;
           padding:5px;
-          background: rgba(42, 181, 200, 0.76);
+          background: #0A415B;
         }
       </style>
 
-      <div class="col-md-4 offset-md-8">
+      <div class="col-md-3 offset-md-8">
         <br>
 
           <div class="text-center">
             <br>
             <div >
-              <span class="titulos2">Ingreso Administracion</span>
+              <span class="titulos2">Administración</span>
             </div>
           </div>
 

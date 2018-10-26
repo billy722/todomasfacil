@@ -41,37 +41,7 @@ require("./clases/Empresa.php");
            height: auto;
         }
         </style>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="./lightslider-master/src/js/lightslider.js"></script>
-        <script>
-        	 $(document).ready(function() {
-    			$("#content-slider").lightSlider({
-                    loop:true,
-                    keyPress:true,
-                    auto:true,
-                    speed:500,
-                    item:4,
-                    thumbItem:9,
-                    slideMargin: 1,
-                });
 
-    		});
-        </script>
-<!-- Slider movil -->
-        <script>
-           $(document).ready(function() {
-          $("#content-slider2").lightSlider({
-                    loop:true,
-                    keyPress:true,
-                    auto:true,
-                    speed:500,
-                    item:1,
-                    thumbItem:9,
-                    slideMargin: 1,
-                });
-
-        });
-        </script>
 
 
     </head>
@@ -126,30 +96,7 @@ require("./clases/Empresa.php");
            </ul>
        </div>
 </div>
-    <div class="container-fluid d-md-none">
-       <div class="item">
-           <ul id="content-slider2" class="content-slider">
-              <?php
-                 $id_empresa = $_REQUEST['idEmpresa'];
-                 $empresa_creada = new Empresa();
-                 $empresa_creada->setId($id_empresa);
-                 $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
 
-                    while ($filas = $respuesta->fetch_array()) {
-                      // echo "\".$id_empresa\".";
-                     echo '
-                     <li>
-                       <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
-                     </li>';
-                    }
-              ?>
-           </ul>
-       </div>
-</div>
-
-<!-- CONTENEDOR IMAGEN PRINCIPAL -->
-
-<!-- https://demoapus.com/apuslisting/listings/az-food-fast/ -->
 
 <br>
 <!-- DESCRIPCION DE LA EMPRESA -->
@@ -175,7 +122,7 @@ require("./clases/Empresa.php");
                           </div>
                         </div>
                       </div>
-<br>
+        <br>
                       <div class="col-sm-5">
                         <div class="card">
                             <center>
@@ -186,7 +133,7 @@ require("./clases/Empresa.php");
                       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101271.86828621128!2d-72.46913273385088!3d-37.513911183838786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bdd37d17f8c73%3A0x3714945f62c6c00f!2zRXJjaWxsYSAxOTUsIExvcyBBbmdlbGVzLCBMb3Mgw4FuZ2VsZXMsIFJlZ2nDs24gZGVsIELDrW8gQsOtbw!5e0!3m2!1ses-419!2scl!4v1538367631655" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
                     </div>
 
-<br>
+        <br>
 
                   <div class="row">
                       <div class="col-sm-7">
@@ -248,7 +195,7 @@ require("./clases/Empresa.php");
                           </div>
                         </div>
                       </div>
-                </div>
+                 </div>
               <br>
               <div class="row col-sm-12 justify-content-md-center">
                   <div class="col-sm-4">
@@ -275,11 +222,42 @@ require("./clases/Empresa.php");
       ?>
       </footer>
 
-      <script type = "text / javascript" >
-  $ ( documento ). listo ( función () {
-    $ ( "#lightSlider" ). lightSlider ();
-  });
-</script>
+
+      <script src="./lightslider-master/src/js/lightslider.js"></script>
+      <script>
+
+      var ancho_pantalla = screen.width;
+
+      if(ancho_pantalla < 800){
+         $(document).ready(function() {
+             $("#content-slider").lightSlider({
+                   loop:true,
+                   keyPress:true,
+                   auto:true,
+                   speed:500,
+                   item:1,
+                   thumbItem:9,
+                   slideMargin: 1,
+              });
+          });
+        }else{
+
+          $(document).ready(function() {
+
+              $("#content-slider").lightSlider({
+                       loop:true,
+                       keyPress:true,
+                       auto:true,
+                       speed:500,
+                       item:4,
+                       thumbItem:9,
+                       slideMargin: 1,
+              });
+
+           });
+        }
+      </script>
+
 
 </body>
 </html>

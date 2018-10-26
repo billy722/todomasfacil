@@ -35,56 +35,7 @@ require("./clases/Categoria.php");
           width: 800px;
         }
         </style>
-        <script src="./js/jquery-3.1.0.min.js"></script>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="./lightslider-master/src/js/lightslider.js"></script>
-        <script>
-
-          // $("#content-slider-principal").lightSlider({
-          //           loop:true,
-          //           keyPress:true,
-          //           auto:true,
-          //           speed:3000,
-          //           item:1,
-          //           thumbItem:9,
-          //           slideMargin: 1,
-          //       });
-
-        });
-        </script>
-        <script>
-
-        var ancho_pantalla = screen.width;
-
-        if(ancho_pantalla < 800){
-           $(document).ready(function() {
-                 $("#content-slider").lightSlider({
-                      loop:true,
-                      keyPress:true,
-                      auto:true,
-                      speed:500,
-                      item:1,
-                      thumbItem:9,
-                      slideMargin: 1,
-                  });
-
-          });
-        }else{
-          $(document).ready(function() {
-
-              $("#content-slider").lightSlider({
-                        loop:true,
-                        keyPress:true,
-                        auto:true,
-                        speed:600,
-                        item:4,
-                        thumbItem:9,
-                        slideMargin: 2,
-                    });
-          });
-        }
-        </script>
 
         <link href="./css/camera.css" rel="stylesheet" type="text/css"/>
 
@@ -173,57 +124,7 @@ require("./clases/Categoria.php");
 
 </style>
 
-<script src="./js/easing.min.js" type="text/javascript"></script>
-<script src="./js/camera.min.js" type="text/javascript"></script>
-<!-- Custom JS --->
-<script src="./js/plugins.js"></script>
 
-
-<script>
-
-var ancho_pantalla = screen.width;
-// alert(ancho_pantalla);
-$(function () {
-
-if(ancho_pantalla < 800){
-  $('.camera_wrap').camera({
-    playPause: false,
-    navigation: false,
-    navigationHover: true,
-    hover: false,
-    loader: 'bar',
-    loaderColor: '#fc8132',
-    loaderBgColor: '#222222',
-    loaderOpacity: 1,
-    loaderPadding: 0,
-    time: 2000,
-    transPeriod: 1500,
-    pauseOnClick: true,
-    pagination: false,
-    height: '100%',
-  });
-}else{
-  $('.camera_wrap').camera({
-    playPause: false,
-    navigation: false,
-    navigationHover: true,
-    hover: false,
-    loader: 'bar',
-    loaderColor: '#fc8132',
-    loaderBgColor: '#222222',
-    loaderOpacity: 1,
-    loaderPadding: 0,
-    time: 2000,
-    transPeriod: 1500,
-    pauseOnClick: true,
-    pagination: false,
-    height: '35%',
-  });
-}
-
-
-});
-</script>
 
 <div class="container-fluid">
 
@@ -261,26 +162,6 @@ if(ancho_pantalla < 800){
 </div>  <!--************** Container End-->
 
 
-
-    <!-- <div id="imagen_index" class="img-fluid d-flex" alt="Responsive image" >
-       <div class="row justify-content-center align-self-center col-12  ">
-
-           <br>
-
-         <form action="" class="form">
-             <div class="form-group">
-                <label for="campo_busqueda"><h1 id="label_campo_busqueda">¿Que estás buscando?</h1></label>
-                <div class="row">
-                  <input id="campo_busqueda" type="text" class="form-control col-10" placeholder="Buscar">
-                  <button id="boton_buscar" class="btn btn-default btn-warning col-2" type="submit" ><i class="fas fa-search"></i></button>
-                </div>
-             </div>
-         </form>
-
-       </div>
-
-    </div> -->
-
   <?php cargarCategorias(); ?>
 
 <br>
@@ -316,14 +197,102 @@ if(ancho_pantalla < 800){
 
     <footer>
 
-      <!-- <a href="">
-        <img src="./img/instragram-logo.jpg" style="height:50px; width:50px;" alt="">
-      </a> -->
     <?php
       sub_footer();
       ?>
 	</footer>
 
+
+
+
+  <!-- <script src="./js/jquery-3.1.0.min.js"></script> -->
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+  <script src="./lightslider-master/src/js/lightslider.js"></script>
+
+  <script>
+
+  var ancho_pantalla = screen.width;
+
+  if(ancho_pantalla < 800){
+     $(document).ready(function() {
+           $("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true,
+                auto:true,
+                speed:500,
+                item:1,
+                thumbItem:9,
+                slideMargin: 1,
+            });
+
+    });
+  }else{
+    $(document).ready(function() {
+
+        $("#content-slider").lightSlider({
+                  loop:true,
+                  keyPress:true,
+                  auto:true,
+                  speed:600,
+                  item:4,
+                  thumbItem:9,
+                  slideMargin: 2,
+              });
+    });
+  }
+  </script>
+
+  <script src="./js/easing.min.js" type="text/javascript"></script>
+  <script src="./js/camera.min.js" type="text/javascript"></script>
+  <!-- Custom JS --->
+  <script src="./js/plugins.js"></script>
+
+
+  <script>
+
+  var ancho_pantalla = screen.width;
+  // alert(ancho_pantalla);
+  $(function () {
+
+  if(ancho_pantalla < 800){
+    $('.camera_wrap').camera({
+      playPause: false,
+      navigation: false,
+      navigationHover: true,
+      hover: false,
+      loader: 'bar',
+      loaderColor: '#fc8132',
+      loaderBgColor: '#222222',
+      loaderOpacity: 1,
+      loaderPadding: 0,
+      time: 2000,
+      transPeriod: 1500,
+      pauseOnClick: true,
+      pagination: false,
+      height: '100%',
+    });
+  }else{
+    $('.camera_wrap').camera({
+      playPause: false,
+      navigation: false,
+      navigationHover: true,
+      hover: false,
+      loader: 'bar',
+      loaderColor: '#fc8132',
+      loaderBgColor: '#222222',
+      loaderOpacity: 1,
+      loaderPadding: 0,
+      time: 2000,
+      transPeriod: 1500,
+      pauseOnClick: true,
+      pagination: false,
+      height: '35%',
+    });
+  }
+
+
+  });
+  </script>
 
 
 </body>

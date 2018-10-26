@@ -57,7 +57,7 @@ $comprobar->verificarSesion();
      <h5><B><FONT COLOR="white">  Editar Empresa</FONT></h5>
    </div>
  <div class="container">
-              <form action="javascript:modificar_empresa()" id="mantenedor_modificar_empresa" name="mantenedor_modificar_empresa" method="POST">
+              <form action="javascript:modificar_empresa()" id="mantenedor_modificar_empresa" name="mantenedor_modificar_empresa" method="POST" enctype="multipart/form-data">
 
                         <input type="hidden" name="id_empresa" value="<?php echo $filas['id_empresa'];?>">
 
@@ -173,6 +173,7 @@ $comprobar->verificarSesion();
 
                     						<div id="divSuperiorSubirImagenes">
 
+
                     							<div class="row col-12 ">
                     								<input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
                     								<input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
@@ -180,7 +181,7 @@ $comprobar->verificarSesion();
 
                     							<table class="table table-bordered" id="tablaFotosIngreso">
 
-                    								<input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
+                    								<input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
 
                     								<thead>
                     									<th>Archivo</th>

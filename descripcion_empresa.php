@@ -200,13 +200,13 @@ require("./clases/Empresa.php");
               <div class="row col-sm-12 justify-content-md-center">
                   <div class="col-sm-4">
 
-                    <a class="nav-link" id="facebook" align="center" href="https://www.facebook.com/profile.php?id=100004766229491"><img src="./img/face.png" style="height:35px; width:35px;" alt="">
+                    <a class="nav-link" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:35px; width:35px;" alt="">
                                         &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
                   </div>
                   <br>
                   <div class="col-sm-4">
                     <!-- <img class="card-img-top"  src="./img/instragram-logo.jpg" alt="Card image"> -->
-                    <a class="nav-link"  id="instagram" align="center" href="https://www.instagram.com/?hl=es-la"><img src="./img/insta.png" style="height:35px; width:35px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                    <a class="nav-link"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:35px; width:35px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
                   </div>
              </div>
                 <br>

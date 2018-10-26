@@ -35,7 +35,7 @@ $comprobar->verificarSesion();
                                                     background: -o-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
                                                     background: -ms-linear-gradient(left, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
                                                     background: linear-gradient(to right, rgba(255,146,10,1) 0%, rgba(255,175,75,1) 72%, rgba(255,175,75,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', endColorstr='#ffaf4b', GradientType=1 );">
+                                                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', endColorstr='#ffaf4b', GradientType=1 );">
     <h5><B><FONT COLOR="white">  Ingresar Mantenedor Empresa</FONT></h5>
   </div>
 <div class="container">
@@ -99,15 +99,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                                       </select>
                               </div>
                           </div>
-
-
-                          <!-- <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="video">Imagen:</label>
-                                  <input class="form-control" style="width:130px" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="Imagen" type="text">
-                              </div>
-                          </div> -->
 
                           <div>
                               <div class="form-group">

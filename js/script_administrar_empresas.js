@@ -15,11 +15,16 @@ function listarEmpresas(){
 
 function guardar_nueva_empresa(){
 
+	var formData = new FormData(document.getElementById("mantenedor_ingresar_empresa"));
 
 			$.ajax({
 				url:"./metodos_ajax/empresas/crear_empresa.php",
-				method:"POST",
-				data: $("#mantenedor_ingresar_empresa").serialize(),
+				dataType: "html",
+				type:'post',
+				data: formData,
+				cache: false,
+				contentType: false,
+				processData:false,
 				success:function(respuesta){
 					 // alert(respuesta);
 

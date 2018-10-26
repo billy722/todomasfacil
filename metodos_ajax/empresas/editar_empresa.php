@@ -14,7 +14,7 @@ $nombre_empresa = $Funciones->limpiarTexto($_REQUEST['txt_nombre_empresa']);
 $descripcion_empresa = $Funciones->limpiarTexto($_REQUEST['txt_descripcion_empresa']);
 $categoria_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['categoria_empresa']);
 $estado_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['estado_empresa']);
-$video_empresa = $_REQUEST['txt_video_empresa'];
+$video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
 $coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
 $facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
 $instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
@@ -35,7 +35,7 @@ $Empresa->setFacebook($facebook);
 $Empresa->setInstagram($instagram);
 
 if($Empresa->modificarEmpresa()){
-   // echo "1";
+   echo "1";
 
 
    $contadorFotos = $Funciones->limpiarNumeroEntero($_REQUEST['contadorFotos']);
@@ -60,33 +60,38 @@ if($Empresa->modificarEmpresa()){
 
                      $numeroRandom= rand(5,1000).date("d").date("m").date("Y");
                      $nombreImagenActual=$numeroRandom.basename( $_FILES[$campo]['name']);
-                     // $nombreImagenActual= str_replace("�","n",$nombreImagenActual);
-                     // $nombreImagenActual= str_replace("ñ","n",$nombreImagenActual);
-                     // $nombreImagenActual= str_replace("Ñ","N",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("�","n",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("ñ","n",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("Ñ","N",$nombreImagenActual);
 
-                         $target_path = "./imagenes/empresas/";
+                         $target_path = "../../imagenes/empresas/";
                          $target_path = $target_path.$nombreImagenActual;
 
 
-                               if(move_uploaded_file ( $_FILES[$campo]['tmp_name'],"./imagenes/empresas/".$_FILES[$campo]['name'])){
-                                    // echo " Ha sido subido satisfactoriamente";
-                                    echo "se subio la imagen";
-                               }else{
-                                 echo "no se subio";
-                               }
+                         $target_path= str_replace("�","n",$target_path);
+                         $target_path= str_replace("ñ","n",$target_path);
+                         $target_path= str_replace("Ñ","N",$target_path);
+
+                                 //--------------cambia a jpg---------------
+                                       $imagen=getimagesize($_FILES[$campo]['tmp_name']);//obtenemos el tipo
+                                       $extencion=image_type_to_extension($imagen[2],false);//aqui obtenemos la extencion de la imagen
+                                       $imagecreate=$Empresa->gen_fun_create($extencion);//generamos el nombre de la funcion a la que hay que llamar
+                                       $nimagent=$imagecreate($_FILES[$campo]['tmp_name']);//creamos la imagen con la funcion creada
+                                           $archivo=$target_path;
+                                           if(imagejpeg($nimagent,$target_path)){
+
+                                               $conexion = new Conexion();
+                                               $conexion = $conexion->conectar();
 
 
-                               $conexion = new Conexion();
-                               $conexion = $conexion->conectar();
+                                               $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
 
-                              $consultaFotos="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
-
-                              if($conexion->query($consultaFotos)){
-                                echo "agrega foto";
-                              }else{
-                                echo "error al agregar foto";
-                              }
-
+                                               if($conexion->query($consulta)){
+                                                 // echo "agrega foto";
+                                               }else{
+                                                 echo "error al agregar foto";
+                                               }
+                                           }
 
          }
 
@@ -95,5 +100,34 @@ if($Empresa->modificarEmpresa()){
    echo "2";
 }
 
+//
+// $numeroRandom= rand(5,1000).date("d").date("m").date("Y");
+// $nombreImagenActual=$numeroRandom.basename( $_FILES[$campo]['name']);
+// // $nombreImagenActual= str_replace("�","n",$nombreImagenActual);
+// // $nombreImagenActual= str_replace("ñ","n",$nombreImagenActual);
+// // $nombreImagenActual= str_replace("Ñ","N",$nombreImagenActual);
+//
+//     $target_path = "./imagenes/empresas/";
+//     $target_path = $target_path.$nombreImagenActual;
+//     $file = $_FILES[$campo];
+//
+//           if(move_uploaded_file($file['tmp_name'],"../../imagenes/empresas/".$file['name'])){
+//                // echo " Ha sido subido satisfactoriamente";
+//                echo "se subio la imagen";
+//           }else{
+//             echo "no se subio";
+//           }
+//
+//
+//           $conexion = new Conexion();
+//           $conexion = $conexion->conectar();
+//
+//          $consultaFotos="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
+//
+//          if($conexion->query($consultaFotos)){
+//            echo "agrega foto";
+//          }else{
+//            echo "error al agregar foto";
+//          }
 
  ?>

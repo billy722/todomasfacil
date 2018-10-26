@@ -35,22 +35,29 @@ function guardar_nueva_empresa(){
 }
 
 function modificar_empresa(){
+  alert("contador: "+$("#contadorFotos").val());
+
+	var formData = new FormData(document.getElementById("mantenedor_modificar_empresa"));
 
 			$.ajax({
 				url:"./metodos_ajax/empresas/editar_empresa.php",
-				method:"POST",
-				data: $("#mantenedor_modificar_empresa").serialize(),
-				success:function(respuesta){
-					 alert(respuesta);
+				dataType: "html",
+				type:'post',
+				data: formData,
+				cache: false,
+				contentType: false,
+				processData:false,
+				success:function(resultado){
+             alert(resultado);
 
-					 if(respuesta==1){
-						 swal("Guardado","Los datos se han guardado correctamente.","success");
-						 listarEmpresas();
-						 eliminarCamposEmpresa();
-					 }else if(respuesta==2){
-						 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
+						 if(respuesta==1){
+							 swal("Guardado","Los datos se han guardado correctamente.","success");
+							 listarEmpresas();
+							 eliminarCamposEmpresa();
+						 }else if(respuesta==2){
+							 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
 
-				   }
+					   }
 				}
 			});
 }

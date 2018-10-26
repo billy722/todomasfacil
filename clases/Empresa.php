@@ -207,6 +207,16 @@ Class Empresa{
          return $resultado_consulta;
 
       }
+
+       public function mostrarImagenesUnaEmpresaParaModificar(){
+         $Conexion = new Conexion();
+         $Conexion = $Conexion->conectar();
+
+         $resultado_consulta = $Conexion->query("SELECT * from tb_imagenes_empresa
+                                                  where id_empresa=".$this->id_empresa);
+         return $resultado_consulta;
+
+      }
 }
 
 

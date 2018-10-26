@@ -1,8 +1,10 @@
 <?php
-@session_start();
 require_once 'comun.php';
 require_once './clases/Empresa.php';
-// comprobarSession();
+
+require_once './clases/Usuario.php';
+$comprobar = new Usuario();
+$comprobar->verificarSesion();
 
 ?>
 
@@ -46,6 +48,7 @@ require_once './clases/Empresa.php';
 
           <div  style="" class=" card col-12">
             <div class="container">
+              <br>
                  <a href="./nueva_empresa.php" class="btn btn-success" >Crear nueva empresa</a>
             </div>
             <div class="container">

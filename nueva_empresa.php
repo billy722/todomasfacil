@@ -1,10 +1,13 @@
 <?php
-@session_start();
+
 require_once './clases/Conexion.php';
 require_once './clases/Funciones.php';
 require_once './clases/Empresa.php';
 require_once './comun.php';
-// comprobarSession();
+
+require_once './clases/Usuario.php';
+$comprobar = new Usuario();
+$comprobar->verificarSesion();
 
 ?>
 

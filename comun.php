@@ -24,16 +24,12 @@ function comprobarSession(){
         <!-- <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
 
         <script src='./js/jquery-3.1.0.min.js'></script>
-        <script src='./js/moment.min.js'></script>
+        <!-- <script src='./js/moment.min.js'></script> -->
         <script src='./js/bootstrap.min.js'></script>
-        <script src="./js/scriptLogin.js"></script>
-        <script src="./js/validaciones.js"></script>
+
+        <!-- <script src="./js/validaciones.js"></script> -->
         <script src="./js/fontawesome-all.min.js"></script>
         <script src="./js/sweetalert.min.js"></script>
-        <!-- <script src="./js/lightbox.js"></script> -->
-        <!-- <script src="./js/lightbox.min.js"></script> -->
-
-
 
 
         </script>
@@ -58,6 +54,7 @@ function comprobarSession(){
       padding-bottom: 0px;
     }
     </style>
+
       <div id="listado_categorias" class="container-fluid">
         <center>
            <div class="row justify-content-center">
@@ -68,6 +65,7 @@ function comprobarSession(){
 
 
                    while ($filas = $respuesta->fetch_array()) {
+                     
                      echo '<div class=" d-none d-md-block categorias-md">
                              <a href="categorias.php?id='.$filas['id_categoria'].'">
                                 <span class="'.$filas['icono'].'"></span>
@@ -167,8 +165,19 @@ function cargarMenuConfiguraciones(){
   }else{
       echo '<a href="./administracion_empresas.php" class="btn btn-info col-12">Empresas </a>';
   }
+  echo'<hr>';
 
-     echo'<hr>';
+  if($url=="administrar_descuentos.php"){
+      echo '<a href="./administrar_descuentos.php" class="active btn btn-info col-12">Descuentos </a>';
+  }else{
+      echo '<a href="./administrar_descuentos.php" class="btn btn-info col-12">Descuentos </a>';
+  }
+
+  echo'<hr>';
+
+  echo '<a href="./cerrarSesion.php" class=" btn btn-danger col-12">Cerrar Sesión </a>';
+
+  echo'<hr>';
   //
   // if($url=="usuarios.php"){
   //     echo '<a href="./usuarios.php" class="active btn btn-info col-12">Usuarios </a>';

@@ -84,9 +84,15 @@ $comprobar->verificarSesion();
                                     <?php //echo $filas['coordenadas']; ?>
 
                                       <label for="coordenadas">Cambiar Mapa:</label>
-                                      <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="5" cols="100"><?php echo $filas['coordenadas']; ?></textarea>
+                                      <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="3" cols="100"><?php echo $filas['coordenadas']; ?></textarea>
                                   </div>
                               </div>
+
+
+                                <div class="form-group">
+                                    <label for="horario">Horario:</label>
+                                    <textarea class="form-control" id="txt_horario" name="txt_horario" rows="3" cols="100"></textarea>
+                                </div>
 
                         </div>
 
@@ -139,13 +145,12 @@ $comprobar->verificarSesion();
                                 </div>
                               </div>
 
-                              <div  class=" ">
-                                <div class="form-group">
+
+                              <div class="form-group">
                                   <label for="video">Video:</label>
                                   <textarea class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" cols="30" rows="2"><?php echo $filas['video_empresa']; ?></textarea>
-                                  <!-- <input value="<?php// echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text"> -->
+                                <!-- <input value="<?php// echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text"> -->
                                 </div>
-                              </div>
 
 
 

@@ -167,17 +167,8 @@ require("./clases/Empresa.php");
                         <div class="card">
                           <div class="card-body">
                             <h1 class="card-head">Horario</h1>
-                            <table class="table">
-                              <tbody>
-                                <tr>
-                                  <td>Lunes a Viernes</td>
-                                  <td>De 09:00 a 19:30</td>
-                                </tr>
-                                <tr>
-                                  <td>Sabados</td>
-                                  <td>De 09:00 a 13:30</td>
-                                </tr>
-                            </table>
+                                   <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario'];  ?>
+                                   </textarea>
                           </div>
                         </div>
                       </div>

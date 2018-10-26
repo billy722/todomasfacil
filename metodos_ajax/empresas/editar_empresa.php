@@ -18,6 +18,7 @@ $video_empresa = $Funciones->limpiarTexto($_REQUEST['txt_video_empresa']);
 $coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
 $facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
 $instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
+$horario = $Funciones->limpiarTexto($_REQUEST['txt_horario']);
 
 
 // $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
@@ -33,6 +34,7 @@ $Empresa->setVideo($video_empresa);
 $Empresa->setCoordenadas($coordenadas_empresa);
 $Empresa->setFacebook($facebook);
 $Empresa->setInstagram($instagram);
+$Empresa->setHorario($horario);
 
 if($Empresa->modificarEmpresa()){
    echo "1";

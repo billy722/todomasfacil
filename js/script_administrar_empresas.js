@@ -26,7 +26,7 @@ function guardar_nueva_empresa(){
 				contentType: false,
 				processData:false,
 				success:function(respuesta){
-					 // alert(respuesta);
+					 alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");

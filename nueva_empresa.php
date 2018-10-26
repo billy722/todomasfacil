@@ -146,7 +146,7 @@ $comprobar->verificarSesion();
 
                              <table class="table table-bordered" id="tablaFotosIngreso">
 
-                               <input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
+                               <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
 
                                <thead>
                                  <th>Archivo</th>

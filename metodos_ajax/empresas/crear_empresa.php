@@ -33,11 +33,13 @@ $Empresa->setFacebook($facebook);
 $Empresa->setInstagram($instagram);
 $Empresa->setHorario($horario);
 
-if($Empresa->crearEmpresa()){
+if($idCreada = $Empresa->crearEmpresa()){
    echo "1";
+echo "la empresa creada es id_ ".$idCreada;
 
    $contadorFotos = $Funciones->limpiarNumeroEntero($_REQUEST['contadorFotos']);
 
+  // echo "contador es: ".$contadorFotos;
    for($c=1;$c<=$contadorFotos;$c++){
          $campo= "foto".$c;
          $principal= "principal".$c;
@@ -47,47 +49,47 @@ if($Empresa->crearEmpresa()){
 
          if(isset($_REQUEST[$principal])){
            $tipoImagenFinal = "1";
-         }else{
-           $tipoImagenFinal = "1";
          }
          if(isset($_REQUEST[$afiche])){
-           $tipoImagenFinal = "2";
-         }else{
            $tipoImagenFinal = "2";
          }
 
                      $numeroRandom= rand(5,1000).date("d").date("m").date("Y");
                      $nombreImagenActual=$numeroRandom.basename( $_FILES[$campo]['name']);
-                     // $nombreImagenActual= str_replace("�","n",$nombreImagenActual);
-                     // $nombreImagenActual= str_replace("ñ","n",$nombreImagenActual);
-                     // $nombreImagenActual= str_replace("Ñ","N",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("�","n",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("ñ","n",$nombreImagenActual);
+                     $nombreImagenActual= str_replace("Ñ","N",$nombreImagenActual);
 
-                         $target_path = "./imagenes/empresas/";
+                         $target_path = "../../imagenes/empresas/";
                          $target_path = $target_path.$nombreImagenActual;
 
 
-                               if(move_uploaded_file ( $_FILES[$campo]['tmp_name'],"./imagenes/empresas/".$_FILES[$campo]['name'])){
-                                    // echo " Ha sido subido satisfactoriamente";
-                                    echo "se subio la imagen";
-                               }else{
-                                 echo "no se subio";
-                               }
+                         $target_path= str_replace("�","n",$target_path);
+                         $target_path= str_replace("ñ","n",$target_path);
+                         $target_path= str_replace("Ñ","N",$target_path);
+
+                                 //--------------cambia a jpg---------------
+                                       $imagen=getimagesize($_FILES[$campo]['tmp_name']);//obtenemos el tipo
+                                       $extencion=image_type_to_extension($imagen[2],false);//aqui obtenemos la extencion de la imagen
+                                       $imagecreate=$Empresa->gen_fun_create($extencion);//generamos el nombre de la funcion a la que hay que llamar
+                                       $nimagent=$imagecreate($_FILES[$campo]['tmp_name']);//creamos la imagen con la funcion creada
+                                           $archivo=$target_path;
+                                           if(imagejpeg($nimagent,$target_path)){
+
+                                               $conexion = new Conexion();
+                                               $conexion = $conexion->conectar();
 
 
-                               $conexion = new Conexion();
-                               $conexion = $conexion->conectar();
+                                               $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$idCreada.",".$tipoImagenFinal.")";
 
-                              $consultaFotos="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
-
-                              if($conexion->query($consultaFotos)){
-                                echo "agrega foto";
-                              }else{
-                                echo "error al agregar foto";
-                              }
-
+                                               if($conexion->query($consulta)){
+                                                 echo "agrega foto";
+                                               }else{
+                                                 echo "error al agregar foto ".$consulta;
+                                               }
+                                           }
 
          }
-
 }else{
    echo "2";
 }

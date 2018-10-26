@@ -66,10 +66,12 @@ Class Empresa{
                         VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."','".$this->horario."');";
 
     if($Conexion->query($consulta)){
-        return true;
+          $resultadoNuevoId = $Conexion->query("SELECT LAST_INSERT_ID() as id");
+          $resultadoNuevoId = $resultadoNuevoId->fetch_array();
+          return $resultadoNuevoId['id'];
     }else{
-        echo $consulta;
-        // return false;
+        // echo $consulta;
+        return false;
     }
   }
 
@@ -85,7 +87,8 @@ Class Empresa{
           video_empresa = '".$this->video_empresa."',
           coordenadas = '".$this->coordenadas_empresa."',
           facebook = '".$this->facebook."',
-          instagram = '".$this->instagram."'
+          instagram = '".$this->instagram."',
+          horario = '".$this->horario."'
            WHERE (id_empresa = '".$this->id_empresa."');";
 
     if($Conexion->query($consulta)){

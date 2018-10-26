@@ -190,7 +190,8 @@ require("./clases/Empresa.php");
                         <div class="card">
                           <div class="card-body">
                             <div class="embed-responsive embed-responsive-21by9">
-                                <iframe class="embed-responsive-item" src="./imagenes/empresas/<?php echo $filas['video_empresa']; ?>" allowfullscreen></iframe>
+                              <?php echo $filas['video_empresa']; ?>
+                                <!-- <iframe class="embed-responsive-item" src="<?php// echo $filas['video_empresa']; ?>" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
                             </div>
                           </div>
                         </div>

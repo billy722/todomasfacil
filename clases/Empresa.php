@@ -217,6 +217,10 @@ Class Empresa{
          return $resultado_consulta;
 
       }
+
+      function gen_fun_create($ext){
+        return "imagecreatefrom".$ext;
+      }
 }
 
 

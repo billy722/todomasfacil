@@ -142,7 +142,8 @@ $comprobar->verificarSesion();
                               <div  class=" ">
                                 <div class="form-group">
                                   <label for="video">Video:</label>
-                                  <input value="<?php echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text">
+                                  <textarea class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" cols="30" rows="2"><?php echo $filas['video_empresa']; ?></textarea>
+                                  <!-- <input value="<?php// echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text"> -->
                                 </div>
                               </div>
 

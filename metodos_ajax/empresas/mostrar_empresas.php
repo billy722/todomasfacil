@@ -29,11 +29,17 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
 
 
                    <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['nombre_empresa'].'</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.substr($filas['descripcion_empresa'], 0, 50).'...</span></td>
-                   <td class=""><span id="txt_nombre_'.$contador.'" >'.$filas['video_empresa'].'</span></td>
+                   <td class=""><span id="txt_descripcion_empresa_'.$contador.'" >'.substr($filas['descripcion_empresa'], 0, 50).'...</span></td>
+                   <td class=""><span id="txt_horario'.$contador.'" >'.$filas['horario'].'</span></td>
+                   <td class=""><span id="estado_empresa'.$contador.'" >';
 
+                   if($filas['estado_empresa']==1) {
+                    echo "Activo";
+                  }else {
+                    echo "Inactivo";
+                  }
 
-
+                   echo '</span></td>
 
 
 

@@ -43,153 +43,134 @@ $comprobar->verificarSesion();
               <form action="javascript:guardar_nueva_empresa()" id="mantenedor_ingresar_empresa" name="mantenedor_Ingresar_Empresa" method="POST">
                   <fieldset>
                       <div class="row">
-                        <div class="col-12 col-md-3">
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="nombreEmpresa">Nombre Empresa:</label>
-                                  <input class="form-control" title="Debe ingresar empresa" required id="txt_nombre_empresa" name="txt_nombre_empresa" placeholder="Nombre empresa" type="text">
-                              </div>
-                          </div>
 
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="descripcion">Descripcion Empresa:</label>
-                                  <textarea name="txt_descripcion_empresa" id="txt_descripcion_empresa" class="form-control" rows="4" cols="100"></textarea>
-                              </div>
-                          </div>
-               </div>
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="categoria">Categoria:</label>
-                                       <select style="width:130px" class="form-control" required name="categoria_empresa" id="categoria_empresa">
-                                         <option value="" selected disabled>Seleccione:</option>
-                                          <?php
-                                              require_once './clases/Categoria.php';
-                                              $TipoC= new Categoria();
-                                              $filasTipoC= $TipoC->obtenerCategorias();
+                     <div class="col-12 col-md-4">
+                         <div>
+                             <div class="form-group">
+                                 <label for="nombreEmpresa">Nombre Empresa:</label>
+                                 <input class="form-control" title="Debe ingresar empresa" required id="txt_nombre_empresa" name="txt_nombre_empresa" placeholder="Nombre empresa" type="text">
+                             </div>
+                         </div>
 
-                                              foreach($filasTipoC as $tipo){
-                                                  echo '<option value="'.$tipo['id_categoria'].'" >'.$tipo['descripcion_categoria'].'</option>';
-                                              }
-                                           ?>
-                                      </select>
-                              </div>
-                          </div>
+                         <div>
+                             <div class="form-group">
+                               <br>
+                                 <label for="descripcion">Descripcion Empresa:</label>
+                                 <textarea name="txt_descripcion_empresa" id="txt_descripcion_empresa" class="form-control" rows="4" cols="100"></textarea>
+                             </div>
+                         </div>
+
+                                 <div class="form-group">
+                                   <br>
+                                     <label for="coordenadas">Coordenadas:</label>
+                                     <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="4" cols="100"></textarea>
+                                 </div>
 
 
-                      <div class="col-12 col-md-3">
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="estado">Estado:</label>
-                                       <select style="width:130px" class="form-control" required name="estado_empresa" id="estado_empresa">
-                                         <option value="" selected disabled>Seleccione:</option>
-                                          <?php
-                                              require_once './clases/Estado.php';
-                                              $TipoE= new Estado();
-                                              $filasTipoC= $TipoE->obtenerEstadoEmpresa();
+                         <div class="form-group">
+                             <label for="horario">Horario:</label>
+                             <textarea class="form-control" id="txt_horario" name="txt_horario" rows="4" cols="100"></textarea>
+                         </div>
 
-                                              foreach($filasTipoC as $tipo){
-                                                  echo '<option value="'.$tipo['id_estado'].'" >'.$tipo['descripcion_estado'].'</option>';
-                                              }
-                                           ?>
-                                      </select>
-                              </div>
-                          </div>
+                     </div>
+                     <div class="col-12 col-md-3">
+                             <div class="form-group">
 
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="video">Video:</label>
-                                  <input class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="Url:video" type="text">
-                              </div>
-                          </div>
+                                 <label for="categoria">Categoria:</label>
+                                      <select class="form-control" required name="categoria_empresa" id="categoria_empresa">
+                                        <option value="" selected disabled>Seleccione:</option>
+                                         <?php
+                                             require_once './clases/Categoria.php';
+                                             $TipoC= new Categoria();
+                                             $filasTipoC= $TipoC->obtenerCategorias();
 
-                          <div>
-                      <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="coordenadas">Coordenadas:</label>
-                                  <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="4" cols="100"></textarea>
-                              </div>
-                          </div>
-                          </div>
+                                             foreach($filasTipoC as $tipo){
+                                                 echo '<option value="'.$tipo['id_categoria'].'" >'.$tipo['descripcion_categoria'].'</option>';
+                                             }
+                                          ?>
+                                     </select>
+                             </div>
+
+                             <div class="form-group">
+
+                                 <label for="estado">Estado:</label>
+                                      <select  class="form-control" required name="estado_empresa" id="estado_empresa">
+                                        <option value="" selected disabled>Seleccione:</option>
+                                         <?php
+                                             require_once './clases/Estado.php';
+                                             $TipoE= new Estado();
+                                             $filasTipoC= $TipoE->obtenerEstadoEmpresa();
+
+                                             foreach($filasTipoC as $tipo){
+                                                 echo '<option value="'.$tipo['id_estado'].'" >'.$tipo['descripcion_estado'].'</option>';
+                                             }
+                                          ?>
+                                     </select>
+                             </div>
+
+                         <div>
+                           <div class="form-group">
+                             <label for="video">Video:</label>
+                             <textarea class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" cols="30" rows="2"></textarea>
+                             <!-- <input value="<?php// echo $filas['video_empresa']; ?>" class="form-control" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="iframe video" type="text"> -->
+                           </div>
+                         </div>
+
+                             <div class="form-group">
+                                 <label for="video">Facebook:</label>
+                                 <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="Url:facebook" type="text">
+
+                             </div>
+
+                             <div class="form-group">
+                               <br>
+                                 <label for="video">Instagram:</label>
+                                 <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="Url:instagram" type="text">
+
+                             </div>
+
+
+                     </div>
+                     <div class="card col-12 col-md-5">
+                       <h5 class="card-header">Agregar Imagenes</h5>
+                       <div class="card-body">
+
+                         <div class="" id="divFotos">
+
+                           <div id="divSuperiorSubirImagenes">
+
+                             <div class="row col-12 ">
+                               <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
+                               <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
+                             </div>
+
+                             <table class="table table-bordered" id="tablaFotosIngreso">
+
+                               <input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
+
+                               <thead>
+                                 <th>Archivo</th>
+                                <th>Principal</th>
+                                 <th>Afiche</th>
+                               </thead>
+                               <tbody>
+                                 <tr>
+                                   <td><input class="form-control" name="foto1" type="file"></input></td>
+                                  <td><input class="form-control" type="checkbox" name="principal1"></td>
+                                   <td><input class="form-control" type="checkbox" name="afiche1"></td>
+                                 </tr>
+                             </tbody>
+                             </table>
+
+                           </div>
+
+
+                       </div>
+                     </div>
                   </div>
-                  <div class="col-12 col-md-3">
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="horario">Horario:</label>
-                                  <textarea class="form-control" id="txt_horario" name="txt_horario" rows="4" cols="100"></textarea>
-                              </div>
-                          </div>
-
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="video">Facebook:</label>
-                                  <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="Url:facebook" type="text">
-
-                              </div>
-                          </div>
-
-                          <div>
-                              <div class="form-group">
-                                <br>
-                                  <label for="video">Instagram:</label>
-                                  <input value="" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="Url:instagram" type="text">
-
-                              </div>
-                          </div>
-</div>
 
 
-
-
-                      <div class="card col-md-5">
-
-                          <h5 class="card-header">Agregar Imagenes</h5>
-                          <div class="card-body">
-
-                            <div class="" id="divFotos">
-
-                              <div id="divSuperiorSubirImagenes">
-
-                                <div class="row col-12 ">
-                                  <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
-                                  <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
-                                </div>
-
-                                <table class="table table-bordered" id="tablaFotosIngreso">
-
-                                  <input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
-
-                                  <thead>
-                                    <th>Archivo</th>
-                                   <th>Principal</th>
-                                    <th>Afiche</th>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td><input class="form-control" name="foto1" type="file"></input></td>
-                                     <td><input class="form-control" type="checkbox" name="principal1"></td>
-                                      <td><input class="form-control" type="checkbox" name="afiche1"></td>
-                                    </tr>
-                                </tbody>
-                                </table>
-
-                              </div>
-
-
-                          </div>
-                        </div>
-
-                      </div>
-
-                              <div class="col-md-12 container"  align="right">
+                          <div class="col-md-12 container"  align="right">
 
                                   <input type="submit" id="btn_insert" class="btn" value="Agregar" name="btn_registrar" align="left">
                                   <br>

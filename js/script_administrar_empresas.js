@@ -146,14 +146,14 @@ function removerCampoFoto(){
 							}
 }
 
-function eliminarFoto(idFoto,run){
+function eliminarImagenEmpresa(idFoto){
 					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+
 					$.ajax({
-						url:"controladorMantenedores.php?mant=7&func=5",
-						data:"idFoto="+idFoto+"&run="+run,
+						url:"./metodos_ajax/empresas/eliminarImagen.php?id="+idFoto,
 						success:function(respuesta){
 							 if(respuesta==1){
-								 cargarImagenesActuales(run);
+								 // cargarImagenesActuales(run);
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");
 							 }
 							 else if(respuesta==2){

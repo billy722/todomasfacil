@@ -43,7 +43,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
               <form action="javascript:guardar_nueva_empresa()" id="mantenedor_ingresar_empresa" name="mantenedor_Ingresar_Empresa" method="POST">
                   <fieldset>
                       <div class="row">
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                        <div class="col-12 col-md-3">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="nombreEmpresa">Nombre Empresa:</label>
@@ -51,15 +52,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="descripcion">Descripcion Empresa:</label>
                                   <textarea name="txt_descripcion_empresa" id="txt_descripcion_empresa" class="form-control" rows="4" cols="100"></textarea>
                               </div>
                           </div>
-
-                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
+               </div>
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="categoria">Categoria:</label>
@@ -78,7 +79,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.5s;" class="col-md-2 animated-panel zoomIn">
+
+                      <div class="col-12 col-md-3">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="estado">Estado:</label>
@@ -97,15 +100,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.2s;" class="col-md-2 animated-panel zoomIn">
+
+                          <!-- <div>
                               <div class="form-group">
                                 <br>
                                   <label for="video">Imagen:</label>
                                   <input class="form-control" style="width:130px" title="iframe video" required id="txt_video_empresa" name="txt_video_empresa" placeholder="Imagen" type="text">
                               </div>
-                          </div>
+                          </div> -->
 
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="video">Video:</label>
@@ -113,23 +117,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          <div>
+                      <div>
                               <div class="form-group">
                                 <br>
                                   <label for="coordenadas">Coordenadas:</label>
                                   <textarea class="form-control" id="txt_coordenadas_empresa" name="txt_coordenadas_empresa" rows="4" cols="100"></textarea>
                               </div>
                           </div>
-
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          </div>
+                  </div>
+                  <div class="col-12 col-md-3">
+                          <div>
                               <div class="form-group">
                                 <br>
-                                  <label for="coordenadas">Horario:</label>
+                                  <label for="horario">Horario:</label>
                                   <textarea class="form-control" id="txt_horario" name="txt_horario" rows="4" cols="100"></textarea>
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="video">Facebook:</label>
@@ -138,7 +145,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                               </div>
                           </div>
 
-                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                          <div>
                               <div class="form-group">
                                 <br>
                                   <label for="video">Instagram:</label>
@@ -146,6 +153,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
 
                               </div>
                           </div>
+</div>
+
+
+
+
+                      <div class="card col-md-5">
+
+                          <h5 class="card-header">Agregar Imagenes</h5>
+                          <div class="card-body">
+
+                            <div class="" id="divFotos">
+
+                              <div id="divSuperiorSubirImagenes">
+
+                                <div class="row col-12 ">
+                                  <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
+                                  <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
+                                </div>
+
+                                <table class="table table-bordered" id="tablaFotosIngreso">
+
+                                  <input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
+
+                                  <thead>
+                                    <th>Archivo</th>
+                                   <th>Principal</th>
+                                    <th>Afiche</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td><input class="form-control" name="foto1" type="file"></input></td>
+                                     <td><input class="form-control" type="checkbox" name="principal1"></td>
+                                      <td><input class="form-control" type="checkbox" name="afiche1"></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+
+                              </div>
+
+
+                          </div>
+                        </div>
 
                       </div>
 
@@ -166,6 +215,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                       </div>
                   </div>
             </div>
+          </div>
+        </div>
+      </div>
   </body>
   <script type="text/javascript">
   function eliminarCamposEmpresa(){ /*AQUI LE DOY UN NOMBRE CUALQUIERA A LA FUNCION*/

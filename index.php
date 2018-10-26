@@ -247,7 +247,7 @@ if(ancho_pantalla < 800){
         <!--Camera Slide-->
          <div class="camera_wrap">
             <div data-src="./img/principal.jpg">
-                <img src="./img/principal.jpg">
+                <img src="./img/principall.jpg">
             </div>
             <div data-src="./img/principal2.jpg">
                 <img src="./img/principal2.jpg" class="img-responsive">

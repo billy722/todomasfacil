@@ -13,6 +13,7 @@ Class Empresa{
   private $coordenadas_empresa;
   private $facebook;
   private $instagram;
+  private $horario;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
@@ -53,12 +54,16 @@ Class Empresa{
       $this->instagram=$instagram;
     }
 
+    public function setHorario ($horario){
+      $this->horario=$horario;
+    }
+
   public function crearEmpresa(){
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
     $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas, facebook, instagram)
-                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."');";
+                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."','".$this->horario."');";
 
     if($Conexion->query($consulta)){
         return true;

@@ -121,6 +121,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff920a', end
                           <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
                               <div class="form-group">
                                 <br>
+                                  <label for="coordenadas">Horario:</label>
+                                  <textarea class="form-control" id="txt_horario" name="txt_horario" rows="4" cols="100"></textarea>
+                              </div>
+                          </div>
+
+                          <div style="animation-delay: 0.2s;" class="col-md-3 animated-panel zoomIn">
+                              <div class="form-group">
+                                <br>
                                   <label for="video">Facebook:</label>
                                   <input value="" class="form-control" title="facebook" required id="txt_facebook" name="txt_facebook" placeholder="Url:facebook" type="text">
 

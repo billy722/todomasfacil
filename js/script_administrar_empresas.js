@@ -150,14 +150,15 @@ function eliminarImagenEmpresa(idFoto){
 					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 					$.ajax({
-						url:"./metodos_ajax/empresas/eliminarImagen.php?id="+idFoto,
+						url:"./metodos_ajax/empresas/eliminar_imagen.php?id_imagen="+idFoto,
 						success:function(respuesta){
+							alert(respuesta);
 							 if(respuesta==1){
-								 // cargarImagenesActuales(run);
+								 // listarImagenesEmpresa();
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");
 							 }
 							 else if(respuesta==2){
-								 swal("Sospechoso debe tener al menos una imagen!", "", "warning");
+								 swal("Empresa debe tener al menos una imagen!", "", "warning");
 							 }
 							 else{
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");

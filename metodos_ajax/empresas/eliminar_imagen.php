@@ -5,13 +5,13 @@ require_once '../../clases/Empresa.php';
 
 $Funciones = new Funciones();
 
-$id_empresa = $Funciones->limpiarNumeroEntero($_REQUEST['id_empresa']);
+$id_imagen = $_REQUEST['id_imagen'];
 
 $Empresa = new Empresa();
-$Empresa->setId($id_empresa);
+$Empresa->setIdImagen($id_imagen);
 
 
-if($Empresa->eliminarEmpresa()){
+if($Empresa->eliminarImgEmpresa()){
    echo "1";
 }else{
    echo "2";

@@ -14,6 +14,7 @@ Class Empresa{
   private $facebook;
   private $instagram;
   private $horario;
+  private $id_imagen;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
@@ -56,6 +57,10 @@ Class Empresa{
 
     public function setHorario ($horario){
       $this->horario=$horario;
+    }
+
+    public function setIdImagen ($id_imagen){
+      $this->id_imagen=$id_imagen;
     }
 
   public function crearEmpresa(){
@@ -104,6 +109,21 @@ Class Empresa{
     $Conexion = $Conexion->conectar();
 
     $consulta = "update tb_empresas set estado_empresa='3' WHERE (id_empresa = ".$this->id_empresa.") ";
+
+    if($Conexion->query($consulta)){
+        return true;
+    }else{
+        echo $consulta;
+        // return false;
+    }
+
+  }
+
+  public function eliminarImgEmpresa(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = "delete from tb_imagenes_empresa WHERE (id_imagen = ".$this->id_imagen.") ";
 
     if($Conexion->query($consulta)){
         return true;

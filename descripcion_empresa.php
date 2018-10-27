@@ -167,7 +167,7 @@ require("./clases/Empresa.php");
                         <div class="card">
                           <div class="card-body">
                             <h1 class="card-head">Horario</h1>
-                                   <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario'];  ?>
+                                   <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario']; ?>
                                    </textarea>
                           </div>
                         </div>

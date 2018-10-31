@@ -114,6 +114,7 @@ function listarImagenesEmpresa(){
 			});
 }
 
+
 function soloUnaPrincipal(id){//permite presionar solo un checkbox
 	 var cantidad= $("#contadorFotos").val();
 

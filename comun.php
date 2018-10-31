@@ -233,7 +233,7 @@ function cargarMenuPrincipal(){
               <a class="nav-link" href="index.php">&nbsp;&nbsp;INICIO<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="nuestros_clientes.php">&nbsp;&nbsp;NUESTROS CLIENTES<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="Descuentos.php">&nbsp;&nbsp;DESCUENTOS<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="eventos.php">&nbsp;&nbsp;EVENTOS<span class="sr-only">(current)</span></a>

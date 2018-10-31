@@ -10,13 +10,6 @@
     private $bd;
 
     function __construct(){
-      // ini_set("session.cookie_lifetime","7200");
-      // ini_set("session.gc_maxlifetime","7200");
-
-      // $this->servidor= "146.66.99.89";
-      // $this->usuario= "daemmulc_agenda";
-      // $this->clave= "agenda_daem";
-      // $this->bd= "daemmulc_agenda";
 
       $this->servidor= "todomasfacil.cl";
       $this->usuario= "billy722";

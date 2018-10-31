@@ -1,3 +1,4 @@
+
 listarEmpresas();
 
 function listarEmpresas(){
@@ -101,11 +102,11 @@ function eliminarEmpresa(id){
 		}
 
 
-function listarImagenesEmpresa(id){
+function listarImagenesEmpresa(){
 
 
 			$.ajax({
-				url:"./metodos_ajax/empresas/mostrar_imagenes_empresa.php?id_empresa="+id,
+				url:"./metodos_ajax/empresas/mostrar_imagenes_empresa.php?id_empresa="+id_empresa,
 				method:"POST",
 				success:function(respuesta){
 					$("#divInferiorImagenesActuales").html(respuesta);
@@ -154,7 +155,8 @@ function eliminarImagenEmpresa(idFoto){
 						success:function(respuesta){
 							alert(respuesta);
 							 if(respuesta==1){
-								 // listarImagenesEmpresa();
+
+								 listarImagenesEmpresa();
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");
 							 }
 							 else if(respuesta==2){

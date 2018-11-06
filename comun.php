@@ -50,8 +50,9 @@ function comprobarSession(){
       text-decoration: none;
       display: inline;
       color:white;
-      font-size: 24px;
+      font-size: 17px;
       padding-bottom: 0px;
+      margin-left: 0px;
     }
     </style>
 
@@ -66,18 +67,26 @@ function comprobarSession(){
 
                    while ($filas = $respuesta->fetch_array()) {
 
-                     echo '<div class=" d-none d-md-block categorias-md">
+                     echo '<div class=" d-none d-md-block categorias-md col-md-1">
+                           <center>
                              <a href="categorias.php?id='.$filas['id_categoria'].'">
                                 <span class="'.$filas['icono'].'"></span>
+                                <br />
                                 <label for="">'.$filas['descripcion_categoria'].'</label>
                               </a>
+                           </center>
                               <span>&nbsp&nbsp</span>
                            </div>';
 
                      echo '<div class="col-3 d-md-none col-md-3 categorias">
+                            <center>
                              <a href="categorias.php?id='.$filas['id_categoria'].'">
-                                <span class="'.$filas['icono'].'"></span> '.$filas['descripcion_categoria'].'
+                                <span class="'.$filas['icono'].'"></span>
+                                <br />
+                                <label for="">'.$filas['descripcion_categoria'].'</label>
                               </a>
+                            </center>
+
                            </div>';
                   }
               ?>

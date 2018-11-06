@@ -33,6 +33,8 @@ $comprobar->verificarSesion();
  // echo "hola el id es: ".$_REQUEST['id_empresa'];
 
  $id_empresa = $_REQUEST['id_empresa'];
+echo '<script> var id_empresa = '.$id_empresa.'; </script>';
+
 
  $empresa_creada = new Empresa();
  $empresa_creada->setId($id_empresa);

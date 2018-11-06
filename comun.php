@@ -184,6 +184,14 @@ function cargarMenuConfiguraciones(){
 
   echo'<hr>';
 
+  if($url=="administrar_eventos.php"){
+      echo '<a href="./administracion_eventos.php" class="active btn btn-info col-12">Eventos </a>';
+  }else{
+      echo '<a href="./administracion_eventos.php" class="btn btn-info col-12">Eventos </a>';
+  }
+
+  echo'<hr>';
+  
   echo '<a href="./cerrarSesion.php" class=" btn btn-danger col-12">Cerrar Sesión </a>';
 
   echo'<hr>';

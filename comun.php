@@ -247,7 +247,8 @@ function cargarMenuPrincipal(){
           </ul>
       </div>
     </nav>
-  </div>
+
+ </div>
 
   <!-- modal -->
 

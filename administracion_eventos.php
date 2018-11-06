@@ -1,0 +1,119 @@
+<?php
+require_once 'comun.php';
+require_once './clases/Empresa.php';
+
+require_once './clases/Usuario.php';
+$comprobar = new Usuario();
+$comprobar->verificarSesion();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+
+
+</style>
+   <title>Administracion de empresas</title>
+   <?php cargarHead(); ?>
+
+  <script src="./js/script_administrar_eventos.js"></script>
+</head>
+<body>
+
+<?php cargarMenuPrincipal(); ?>
+
+<br>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+      <div class="col-12 col-md-3">
+
+          <div class="card text-dark">
+            <div class="card-header ">
+                OPCIONES
+            </div>
+            <div class="card-body">
+                 <?php cargarMenuConfiguraciones(); ?>
+            </div>
+          </div>
+
+      </div>
+       <div class="col-12 col-md-9">
+
+          <div  style="" class=" card col-12">
+
+            <div class="container">
+              <br>
+
+
+<div class="row">
+
+
+     <form action="javascript:agregar_eventos()" id="formulario_eventos_imagen" name="formulario_eventos_imagen" method="POST" enctype="multipart/form-data">
+
+              <div class="card col-md-5">
+
+                  <h5 class="card-header">Agregar Imagenes</h5>
+                  <div class="card-body">
+
+                    <div class="" id="divFotos">
+
+                      <div id="divSuperiorSubirImagenes">
+
+
+                        <div class="row col-12 ">
+                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
+                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
+                        </div>
+
+                        <table class="table table-bordered" id="tablaFotosIngreso">
+
+                          <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
+
+                          <thead>
+                            <th>Archivo</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><input class="form-control" name="foto1" type="file"></input></td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                      </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+
+              <input type="submit" name="agregar" value="Guardar">
+          </form>
+
+              <div id="contedorImgEventos" class="card col-md-7">
+
+              </div>
+  </div>
+
+
+              <script type="text/javascript">
+                listarImagenesEventos();
+              </script>
+            </div>
+
+          </div>
+
+       </div>
+
+  </div>
+
+</div>
+
+</html>

@@ -52,55 +52,62 @@ $comprobar->verificarSesion();
               <br>
 
 
-<div class="row">
+                <div class="row">
 
 
-     <form action="javascript:agregar_descuento()" id="formulario_descuento_imagen" name="formulario_descuento_imagen" method="POST" enctype="multipart/form-data">
 
-              <div class="card col-md-5">
+                              <div class="card col-md-8">
 
-                  <h5 class="card-header">Agregar Imagenes</h5>
-                  <div class="card-body">
+                                <form action="javascript:agregar_descuento()" id="formulario_descuento_imagen" name="formulario_descuento_imagen" method="POST" enctype="multipart/form-data">
 
-                    <div class="" id="divFotos">
+                                  <!-- <h5 class="card-header">Agregar Imagenes</h5> -->
+                                  <div class="card-body">
 
-                      <div id="divSuperiorSubirImagenes">
+                                    <div class="" id="divFotos">
 
-
-                        <div class="row col-12 ">
-                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
-                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
-                        </div>
-
-                        <table class="table table-bordered" id="tablaFotosIngreso">
-
-                          <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
-
-                          <thead>
-                            <th>Archivo</th>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><input class="form-control" name="foto1" type="file"></input></td>
-                            </tr>
-                        </tbody>
-                        </table>
-
-                      </div>
+                                      <div id="divSuperiorSubirImagenes">
 
 
+                                        <div class="row col-12 ">
+                                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
+                                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
+                                        </div>
+
+                                        <table class="table table-bordered" id="tablaFotosIngreso">
+
+                                          <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
+
+                                          <thead>
+                                            <th>Archivo</th>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><input class="form-control" name="foto1" type="file"></input></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+
+                                      </div>
+
+
+                                  </div>
+                                </div>
+                                </form>
+                                <input class="form-control btn btn-success" type="submit" name="agregar" value="Guardar">
+                                <div><hr></div>
+
+                                <br>
+                              </div>
+
+                              <div id="" class="card col-md-8">
+
+                                <!-- <h3>Imagenes subidas</h3> -->
+                                <!-- <div><hr></div> -->
+
+                              <div id="contedorImgDescuentos" class="">
+
+                              </div>
                   </div>
-                </div>
-
-              </div>
-
-              <input type="submit" name="agregar" value="Guardar">
-          </form>
-
-              <div id="contedorImgDescuentos" class="card col-md-7">
-
-              </div>
-  </div>
 
 
               <script type="text/javascript">

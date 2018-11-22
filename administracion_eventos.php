@@ -44,75 +44,82 @@ $comprobar->verificarSesion();
           </div>
 
       </div>
-       <div class="col-12 col-md-9">
+      <div class="col-12 col-md-9">
 
-          <div  style="" class=" card col-12">
+         <div  style="" class=" card col-12">
 
-            <div class="container">
-              <br>
-
-
-<div class="row">
+           <div class="container">
+             <br>
 
 
-     <form action="javascript:agregar_eventos()" id="formulario_eventos_imagen" name="formulario_eventos_imagen" method="POST" enctype="multipart/form-data">
-
-              <div class="card col-md-5">
-
-                  <h5 class="card-header">Agregar Imagenes</h5>
-                  <div class="card-body">
-
-                    <div class="" id="divFotos">
-
-                      <div id="divSuperiorSubirImagenes">
+               <div class="row">
 
 
-                        <div class="row col-12 ">
-                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
-                          <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
-                        </div>
 
-                        <table class="table table-bordered" id="tablaFotosIngreso">
+                             <div class="card col-md-8">
 
-                          <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
+                               <form action="javascript:agregar_eventos()" id="formulario_evento_imagen" name="formulario_evento_imagen" method="POST" enctype="multipart/form-data">
 
-                          <thead>
-                            <th>Archivo</th>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><input class="form-control" name="foto1" type="file"></input></td>
-                            </tr>
-                        </tbody>
-                        </table>
+                                 <!-- <h5 class="card-header">Agregar Imagenes</h5> -->
+                                 <div class="card-body">
 
-                      </div>
+                                   <div class="" id="divFotos">
+
+                                     <div id="divSuperiorSubirImagenes">
 
 
-                  </div>
-                </div>
+                                       <div class="row col-12 ">
+                                         <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonAgregar" onclick="agregarCampoFoto();" value="+ Imagenes" />
+                                         <input class="btn btn-primary col-6 btn-sm"  type="button" id="botonRemover" onclick="removerCampoFoto();" value="- Imagenes" />
+                                       </div>
 
-              </div>
+                                       <table class="table table-bordered" id="tablaFotosIngreso">
 
-              <input type="submit" name="agregar" value="Guardar">
-          </form>
+                                         <input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
 
-              <div id="contedorImgEventos" class="card col-md-7">
+                                         <thead>
+                                           <th>Archivo</th>
+                                         </thead>
+                                         <tbody>
+                                           <tr>
+                                             <td><input class="form-control" name="foto1" type="file"></input></td>
+                                           </tr>
+                                       </tbody>
+                                       </table>
 
-              </div>
-  </div>
+                                     </div>
 
 
-              <script type="text/javascript">
-                listarImagenesEventos();
-              </script>
-            </div>
+                                 </div>
+                               </div>
+                               </form>
+                               <input class="form-control btn btn-success" type="submit" name="agregar" value="Guardar">
+                               <div><hr></div>
 
-          </div>
+                               <br>
+                             </div>
 
-       </div>
+                             <div id="" class="card col-md-8">
 
-  </div>
+                               <!-- <h3>Imagenes subidas</h3> -->
+                               <!-- <div><hr></div> -->
+
+                             <div id="contedorImgEventos" class="">
+
+                             </div>
+                 </div>
+
+
+             <script type="text/javascript">
+               listarImagenesEventos();
+             </script>
+           </div>
+
+         </div>
+
+      </div>
+
+ </div>
 
 </div>
 

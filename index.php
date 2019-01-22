@@ -8,6 +8,7 @@ require("./clases/Categoria.php");
      <head>
        <title>Todo Fácil</title>
 
+
        <?php
        cargarHead();
 

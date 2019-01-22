@@ -36,6 +36,8 @@ $Empresa->setFacebook($facebook);
 $Empresa->setInstagram($instagram);
 $Empresa->setHorario($horario);
 
+
+
 if($Empresa->modificarEmpresa()){
    echo "1";
 

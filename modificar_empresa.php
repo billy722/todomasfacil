@@ -93,7 +93,7 @@ echo '<script> var id_empresa = '.$id_empresa.'; </script>';
 
                                 <div class="form-group">
                                     <label for="horario">Horario:</label>
-                                    <textarea class="form-control" id="txt_horario" name="txt_horario" rows="3" cols="100"></textarea>
+                                    <textarea class="form-control" id="txt_horario" name="txt_horario" rows="3" cols="100"><?php echo $filas['horario']; ?></textarea>
                                 </div>
 
                         </div>
@@ -189,7 +189,7 @@ echo '<script> var id_empresa = '.$id_empresa.'; </script>';
 
                     							<table class="table table-bordered" id="tablaFotosIngreso">
 
-                    								<input type="hidden" id="contadorFotos" name="contadorFotos" value="1">
+                    								<input type="hidden" id="contadorFotos" name="contadorFotos" value="0">
 
                     								<thead>
                     									<th>Archivo</th>
@@ -197,11 +197,11 @@ echo '<script> var id_empresa = '.$id_empresa.'; </script>';
                     									<th>Afiche</th>
                     								</thead>
                     								<tbody>
-                    									<tr>
+                    									<!-- <tr>
                     										<td><input class="form-control" name="foto1" type="file"></input></td>
                                        <td><input class="form-control" type="checkbox" name="principal1"></td>
                     										<td><input class="form-control" type="checkbox" name="afiche1"></td>
-                    									</tr>
+                    									</tr> -->
                     							</tbody>
                     							</table>
 
@@ -220,7 +220,7 @@ echo '<script> var id_empresa = '.$id_empresa.'; </script>';
 
                         <div class="col-md-12 container" >
                               <br>
-                                <input type="submit" class="btn btn-block btn-info col-12 " id="btn_insert" value="GUARDAR CAMBIOS" name="btn_registrar" align="right">
+                                <input type="submit" class="btn btn-block btn-info col-12 " id="btn_guardar_cambios" value="GUARDAR CAMBIOS" name="btn_registrar" align="right">
                                 <!-- <a class="nav-link col-md-3 animated-panel zoomIn"  href="./administracion_empresas.php">&nbsp;&nbsp;ATRAS<span class="sr-only">(current)</span></a> -->
                               <br>
                         </div>

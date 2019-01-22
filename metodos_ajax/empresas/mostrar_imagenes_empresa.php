@@ -20,7 +20,26 @@ $listado_empresas = $Empresa->mostrarImagenesUnaEmpresaParaModificar();
                 <div class="card col-12 col-md-3" >
                     <img class="card-img-top" style="height:100px;" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
                     <div class="card-body" style="padding:5px;">
-                      <a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm btn-danger">Eliminar</a>
+
+                     <div class="row">
+                      ';
+
+                      if($filas['tipo_imagen']==1){
+                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-success">Principal</a>';
+                      }else{
+                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-secondary">Principal</a>';
+                      }
+
+                      if($filas['tipo_imagen']==2){
+                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-info">Afiche</a>';
+                      }else{
+                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-secondary">Afiche</a>';
+                      }
+
+                  echo '
+                        <a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-danger">X</a>
+
+                  </div>
                     </div>
                 </div>';
          }

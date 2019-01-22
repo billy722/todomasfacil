@@ -27,7 +27,7 @@ function guardar_nueva_empresa(){
 				contentType: false,
 				processData:false,
 				success:function(respuesta){
-					 alert(respuesta);
+					 // alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");
@@ -41,9 +41,12 @@ function guardar_nueva_empresa(){
 }
 
 function modificar_empresa(){
-  alert("contador: "+$("#contadorFotos").val());
+  // alert("contador: "+$("#contadorFotos").val());
 
 	var formData = new FormData(document.getElementById("mantenedor_modificar_empresa"));
+
+   $("#btn_guardar_cambios").val("GUARDANDO...");
+   $("#btn_guardar_cambios").addClass("btn-danger");
 
 			$.ajax({
 				url:"./metodos_ajax/empresas/editar_empresa.php",
@@ -53,13 +56,20 @@ function modificar_empresa(){
 				cache: false,
 				contentType: false,
 				processData:false,
-				success:function(resultado){
-             alert(resultado);
+				success:function(respuesta){
+             // alert(respuesta);
 
 						 if(respuesta==1){
 							 swal("Guardado","Los datos se han guardado correctamente.","success");
-							 listarEmpresas();
-							 eliminarCamposEmpresa();
+							 listarImagenesEmpresa();
+
+							 $(document).ready(function() {
+								 $("#btn_guardar_cambios").val("GUARDAR CAMBIOS");
+								 $("#btn_guardar_cambios").removeClass("btn-danger");
+								 $("#btn_guardar_cambios").addClass("btn-primary");
+							 });
+
+							 // eliminarCamposEmpresa();
 						 }else if(respuesta==2){
 							 swal("Ocurrió un error","Recargue la página e intente nuevamente.","error");
 
@@ -154,7 +164,7 @@ function eliminarImagenEmpresa(idFoto){
 					$.ajax({
 						url:"./metodos_ajax/empresas/eliminar_imagen.php?id_imagen="+idFoto,
 						success:function(respuesta){
-							alert(respuesta);
+							// alert(respuesta);
 							 if(respuesta==1){
 
 								 listarImagenesEmpresa();

@@ -84,6 +84,7 @@ Class Empresa{
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
+
     $consulta = "update tb_empresas
          SET nombre_empresa = '".$this->nombre_empresa."',
           descripcion_empresa = '".$this->descripcion_empresa."',

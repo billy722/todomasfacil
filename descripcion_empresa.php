@@ -129,7 +129,29 @@ require("./clases/Empresa.php");
                           <?php echo $filas['coordenadas']; ?>
                             </center>
                         </div>
+
+                        <br>
+                        <div class="row col-sm-12 justify-content-md-center">
+                            <div class="col-sm-12">
+
+                              <center>
+                                 <a class="nav-link" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; width:35px;" alt="">
+                                &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
+                              </center>
+
+                            </div>
+                            <br>
+                            <div class="col-sm-12">
+                              <center>
+                                  <a class="nav-link"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; width:35px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                              </center>
+                            </div>
+                       </div>
                       </div>
+
+
+
+
                       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101271.86828621128!2d-72.46913273385088!3d-37.513911183838786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bdd37d17f8c73%3A0x3714945f62c6c00f!2zRXJjaWxsYSAxOTUsIExvcyBBbmdlbGVzLCBMb3Mgw4FuZ2VsZXMsIFJlZ2nDs24gZGVsIELDrW8gQsOtbw!5e0!3m2!1ses-419!2scl!4v1538367631655" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
                     </div>
 
@@ -182,26 +204,14 @@ require("./clases/Empresa.php");
                           <div class="card-body">
                             <div class="embed-responsive embed-responsive-21by9">
                               <?php echo $filas['video_empresa']; ?>
-                                <!-- <iframe class="embed-responsive-item" src="<?php// echo $filas['video_empresa']; ?>" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                                <!-- <iframe class="embed-responsive-item" src="<?php //echo $filas['video_empresa']; ?>" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
                             </div>
                           </div>
                         </div>
                       </div>
                  </div>
               <br>
-              <div class="row col-sm-12 justify-content-md-center">
-                  <div class="col-sm-4">
 
-                    <a class="nav-link" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:35px; width:35px;" alt="">
-                                        &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
-                  </div>
-                  <br>
-                  <div class="col-sm-4">
-                    <!-- <img class="card-img-top"  src="./img/instragram-logo.jpg" alt="Card image"> -->
-                    <a class="nav-link"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:35px; width:35px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
-                  </div>
-             </div>
-                <br>
           </div>
       </div>
 

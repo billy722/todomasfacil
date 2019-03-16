@@ -19,7 +19,7 @@ $comprobar->verificarSesion();
    <title>Administracion de empresas</title>
    <?php cargarHead(); ?>
 
-  <script src="./js/script_administrar_empresa.js"></script>
+  <script src="./js/script_administrar_empresas.js"></script>
 </head>
 <body>
 

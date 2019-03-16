@@ -14,7 +14,7 @@ $clave_encriptada = crypt($clave, '$2y$10$' . $salt);
 
 $conexion = new Conexion();
 $conexion= $conexion->conectar();
-if($conexion->query("update tb_usuarios set clave='".$clave_encriptada."' where rut=".$rut)){
+if($conexion->query("update tb_usuario set clave='".$clave_encriptada."' where rut=".$rut)){
   echo "1";
 }else{
   echo "2";

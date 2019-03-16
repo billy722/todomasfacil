@@ -146,6 +146,17 @@ Class Empresa{
 
   }
 
+  public function obtenerEmpresasActivasDescendentes(){
+     $Conexion = new Conexion();
+     $Conexion = $Conexion->conectar();
+
+     $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
+                                              left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
+                                              where ie.tipo_imagen=1 AND estado_empresa=1 order by e.id_empresa desc");
+     return $resultado_consulta;
+
+  }
+
   public function obtenerEmpresasActivasInactivas(){
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();

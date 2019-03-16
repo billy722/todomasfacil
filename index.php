@@ -51,7 +51,7 @@ require("./clases/Categoria.php");
 
   <!-- imagen principal -->
 
-<style >
+<style>
   .imagen_principal{
     background-image: url('./img/principal');
   }
@@ -146,21 +146,48 @@ require("./clases/Categoria.php");
 
     <div class="row">
 
+
+      <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+
+          <div  data-src="./img/principal.jpg">
+          <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
+          </div>
+
+          <div  data-src="./img/principal2.jpg">
+          <!-- <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div> -->
+          </div>
+
+          <div  data-src="./img/principal3.jpg">
+            <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
+          </div>
+
+      </div>
+      <!-- #camera_wrap_1 -->
+
+
+      <!-- #camera_wrap_2 -->
+
         <!--Camera Slide-->
-         <div class="camera_wrap">
-            <div data-src="./img/principal.jpg">
+         <!-- <div id="camera_wrap">
+            <div data-src="./img/principal.jpg" data-thumb="./img/principal.jpg">
                 <img src="./img/principall.jpg">
             </div>
-            <div data-src="./img/principal2.jpg">
+            <div data-src="./img/principal2.jpg" data-thumb="./img/principal2.jpg">
                 <img src="./img/principal2.jpg" class="img-responsive">
             </div>
-            <div data-src="./img/principal3.jpg">
+            <div data-src="./img/principal3.jpg" data-thumb="./img/principal3.jpg">
                 <img src="./img/principal3.jpg">
             </div>
 
-        </div>   <!--------Camera Slide End-->
-    </div>   <!--***********  Row End-->
-</div>  <!--************** Container End-->
+        </div> -->
+
+    </div>
+
+</div>
+
+
+
+</div>
 
 
   <?php cargarCategorias(); ?>
@@ -169,31 +196,77 @@ require("./clases/Categoria.php");
 
 <!-- BANNER EMPRESAS -->
 <div class="container-fluid">
-<div class="item">
-    <ul id="content-slider" class="content-slider">
-      <?php
-          $Empresa = new Empresa(); //instancio lo de la clase categoria
-          $respuesta = $Empresa->obtenerEmpresasActivas();
+    <div class="item">
+        <ul id="content-slider" class="content-slider">
+          <?php
+              $Empresa = new Empresa(); //instancio lo de la clase categoria
+              $respuesta = $Empresa->obtenerEmpresasActivas();
 
-            while ($filas = $respuesta->fetch_array()) {
-              echo '
-                    <div>
-                      <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
-                        <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
-                      </a>
-                    </div>
-                  ';
-           }
-       ?>
+                while ($filas = $respuesta->fetch_array()) {
+                  echo '
+                        <div>
+                          <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
+                            <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                          </a>
+                        </div>
+                      ';
+               }
+           ?>
 
-    </ul>
+        </ul>
+    </div>
 </div>
+
+<br>
+<!-- BANNER EMPRESAS -->
+<div class="container-fluid">
+    <div class="item">
+        <ul id="content-slider-2" class="content-slider-2">
+          <?php
+              $Empresa = new Empresa(); //instancio lo de la clase categoria
+              $respuesta = $Empresa->obtenerEmpresasActivasDescendentes();
+
+                while ($filas = $respuesta->fetch_array()) {
+                  echo '
+                        <div>
+                          <a href="./descripcion_empresa.php?idEmpresa='.$filas['id_empresa'].'">
+                            <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" /></a>
+                          </a>
+                        </div>
+                      ';
+               }
+           ?>
+
+        </ul>
+    </div>
 </div>
 
 
+<div class="row">
 
+  <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2">
 
-       </div>
+      <div  data-src="./img/banner/banner1.png"></div>
+      <div  data-src="./img/banner/banner2.png"></div>
+      <div  data-src="./img/banner/banner3.png"></div>
+  </div>
+
+    <!--Camera Slide-->
+     <!-- <div id="camera_wrap_2">
+        <div data-src="./img/principal.jpg" data-thumb="./img/principal.jpg">
+            <img src="./img/principall.jpg">
+        </div>
+        <div data-src="./img/principal2.jpg" data-thumb="./img/principal2.jpg">
+            <img src="./img/principal2.jpg" class="img-responsive">
+        </div>
+        <div data-src="./img/principal3.jpg" data-thumb="./img/principal3.jpg">
+            <img src="./img/principal3.jpg">
+        </div>
+
+    </div> -->
+</div>
+
+ </div>
 
 
     <footer>
@@ -212,87 +285,211 @@ require("./clases/Categoria.php");
 
   <script>
 
-  var ancho_pantalla = screen.width;
-
-  if(ancho_pantalla < 800){
      $(document).ready(function() {
            $("#content-slider").lightSlider({
                 loop:true,
                 keyPress:true,
                 auto:true,
-                speed:500,
-                item:1,
-                thumbItem:9,
+                speed:2000,
+                item:4,
                 slideMargin: 1,
+                responsive : [
+                              {
+                                  breakpoint:900,
+                                  settings: {
+                                      item:3,
+                                      slideMove:1,
+                                      slideMargin:6,
+                                    }
+                              },
+                              {
+                                  breakpoint:800,
+                                  settings: {
+                                      item:2,
+                                      slideMove:1,
+                                      slideMargin:6,
+                                    }
+                              },
+                              {
+                                  breakpoint:480,
+                                  settings: {
+                                      item:1,
+                                      slideMove:1
+                                    }
+                              }
+                          ]
             });
 
     });
-  }else{
-    $(document).ready(function() {
 
-        $("#content-slider").lightSlider({
-                  loop:true,
-                  keyPress:true,
-                  auto:true,
-                  speed:600,
-                  item:4,
-                  thumbItem:9,
-                  slideMargin: 2,
-              });
-    });
-  }
   </script>
 
-  <script src="./js/easing.min.js" type="text/javascript"></script>
-  <script src="./js/camera.min.js" type="text/javascript"></script>
+  <script>
+
+     $(document).ready(function() {
+           $("#content-slider-2").lightSlider({
+                loop:true,
+                keyPress:true,
+                auto:true,
+                speed:3000,
+                item:4,
+                slideMargin: 1,
+                responsive : [
+                              {
+                                  breakpoint:900,
+                                  settings: {
+                                      item:3,
+                                      slideMove:1,
+                                      slideMargin:6,
+                                    }
+                              },
+                              {
+                                  breakpoint:800,
+                                  settings: {
+                                      item:2,
+                                      slideMove:1,
+                                      slideMargin:6,
+                                    }
+                              },
+                              {
+                                  breakpoint:480,
+                                  settings: {
+                                      item:1,
+                                      slideMove:1
+                                    }
+                              }
+                          ]
+            });
+
+    });
+
+  </script>
+
+  <!-- <script src="./js/easing.min.js" type="text/javascript"></script>
+  <script src="./js/camera.min.js" type="text/javascript"></script> -->
+  <script type='text/javascript' src='./js/jquery.min.js'></script>
+  <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
+  <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script>
+  <script type='text/javascript' src='./js/camera.min.js'></script>
   <!-- Custom JS --->
   <script src="./js/plugins.js"></script>
 
+  <script>
+  		jQuery(function(){
+
+        jQuery('#camera_wrap_1').camera({
+  				height: '500px',
+  				loader: 'pie',
+          playPause: false,
+          navigation: false,
+          time: 900,
+          transPeriod: 1300,
+  				// thumbnails: true
+  			});
+
+  			jQuery('#camera_wrap_2').camera({
+  				height: '500px',
+  				loader: 'pie',
+          playPause: false,
+          navigation: false,
+          time: 900,
+          transPeriod: 1300,
+          height: '35%',
+  				// thumbnails: true
+  			});
+  		});
+  </script>
 
   <script>
 
   var ancho_pantalla = screen.width;
   // alert(ancho_pantalla);
-  $(function () {
+  //
+  // jQuery(function(){
+  //
+  //
+  // if(ancho_pantalla < 800){
+  //   jQuery('#camera_wrap').camera({
+  //     playPause: false,
+  //     navigation: false,
+  //     navigationHover: true,
+  //     hover: false,
+  //     loader: 'bar',
+  //     loaderColor: '#fc8132',
+  //     loaderBgColor: '#222222',
+  //     loaderOpacity: 1,
+  //     loaderPadding: 0,
+  //     time: 2000,
+  //     transPeriod: 1500,
+  //     pauseOnClick: true,
+  //     pagination: false,
+  //     height: '100%',
+  //   });
+  // }else{
+  //   jQuery('#camera_wrap').camera({
+  //     playPause: false,
+  //     navigation: false,
+  //     navigationHover: true,
+  //     hover: false,
+  //     loader: 'bar',
+  //     loaderColor: '#fc8132',
+  //     loaderBgColor: '#222222',
+  //     loaderOpacity: 1,
+  //     loaderPadding: 0,
+  //     time: 2000,
+  //     transPeriod: 1500,
+  //     pauseOnClick: true,
+  //     pagination: false,
+  //     height: '35%',
+  //   });
+  // }
+  //
+  //
+  // });
 
-  if(ancho_pantalla < 800){
-    $('.camera_wrap').camera({
-      playPause: false,
-      navigation: false,
-      navigationHover: true,
-      hover: false,
-      loader: 'bar',
-      loaderColor: '#fc8132',
-      loaderBgColor: '#222222',
-      loaderOpacity: 1,
-      loaderPadding: 0,
-      time: 2000,
-      transPeriod: 1500,
-      pauseOnClick: true,
-      pagination: false,
-      height: '100%',
-    });
-  }else{
-    $('.camera_wrap').camera({
-      playPause: false,
-      navigation: false,
-      navigationHover: true,
-      hover: false,
-      loader: 'bar',
-      loaderColor: '#fc8132',
-      loaderBgColor: '#222222',
-      loaderOpacity: 1,
-      loaderPadding: 0,
-      time: 2000,
-      transPeriod: 1500,
-      pauseOnClick: true,
-      pagination: false,
-      height: '35%',
-    });
-  }
 
 
-  });
+  //BANNER TODOMASFACIL
+  // jQuery(function () {
+  //
+  // if(ancho_pantalla < 800){
+  //   jQuery('#camera_wrap_2').camera({
+  //     playPause: false,
+  //     navigation: false,
+  //     navigationHover: true,
+  //     hover: false,
+  //     loader: false,
+  //     loaderColor: '#fc8132',
+  //     loaderBgColor: '#222222',
+  //     loaderOpacity: 1,
+  //     loaderPadding: 0,
+  //     time: 2000,
+  //     transPeriod: 1500,
+  //     pauseOnClick: true,
+  //     pagination: false,
+  //     height: '100%',
+  //   });
+  // }else{
+  //   jQuery('#camera_wrap_2').camera({
+  //     playPause: false,
+  //     navigation: false,
+  //     navigationHover: true,
+  //     hover: false,
+  //     loader: false,
+  //     loaderColor: '#fc8132',
+  //     loaderBgColor: '#222222',
+  //     loaderOpacity: 1,
+  //     loaderPadding: 0,
+  //     time: 2000,
+  //     transPeriod: 1500,
+  //     pauseOnClick: true,
+  //     pagination: true,
+  //     height: '35%',
+  //   });
+  // }
+  //
+  //
+  // });
   </script>
 
 

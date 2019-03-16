@@ -12,33 +12,30 @@ require("./clases/Empresa.php");
        <?php
        cargarHead();
         ?>
-<!-- Slider 4 imagenes -->
+
+
         <link rel="stylesheet"  href="./lightslider-master/src/css/lightslider.css"/>
+
         <style>
-        	ul{
-    			list-style: none outside none;
-    		    padding-left: 0;
+          ul{
+          list-style: none outside none;
+            padding-left: 0;
                 margin: 0;
-    		}
-            .demo .item{
+        }
+           .item{
                 margin-bottom: 60px;
             }
-    		.content-slider li{
-    		    background-color: #ed3020;
-    		    text-align: center;
-    		    color: #FFF;
-    		}
-    		.content-slider h3 {
-    		    margin: 0;
-    		    padding: 70px 0;
-    		}
-    		.demo{
-    			width: 800px;
-    		}
-
-        iframe {
-           max-width: 100%;
-           height: auto;
+        .content-slider li{
+            background-color: #ed3020;
+            text-align: center;
+            color: #FFF;
+        }
+        .content-slider h3 {
+            margin: 0;
+            padding: 70px 0;
+        }
+        .demo{
+          width: 800px;
         }
         </style>
 
@@ -48,23 +45,25 @@ require("./clases/Empresa.php");
     <body>
       <style>
       #facebook{
-          background-color: #0154A0!important;
+          background-color: #49a5f9!important;
           color:white!important;
-          font-size: 25px;
+          font-size: 20px;
           margin-right: 2px;
-          padding-top:5px;
-          padding-bottom:5px;  /*inferior*/
+          padding-top:0px;
+          padding-bottom:0px;  /*inferior*/
           border-radius: 5px;
+          margin-bottom: 5px;
       }
       #instagram{
-          background-image: url("./img/images.jpg")!important;
+          background-color: #f0ac80!important;
           background-size:100%;
           color:white!important;
-          font-size: 25px;
+          font-size: 20px;
           margin-right: 2px;
-          padding-top:5px;
-          padding-bottom:5px;  /*inferior*/
+          padding-top:0px;
+          padding-bottom:0px;  /*inferior*/
           border-radius: 5px;
+          margin-bottom: 5px;
       }
       </style>
 
@@ -72,30 +71,54 @@ require("./clases/Empresa.php");
 <?php
       cargarMenuPrincipal();
  ?>
-       <!-- <div class="item ">
-           <div class="clearfix" style="max-width:474px;">
 
-           </div> -->
-  <div class="container-fluid d-none d-md-block">
+ <!-- BANNER EMPRESAS -->
+ <div >
+     <div class="item">
+         <ul id="content-slider" class="content-slider">
+         <?php
+             $id_empresa = $_REQUEST['idEmpresa'];
+             $empresa_creada = new Empresa();
+             $empresa_creada->setId($id_empresa);
+             $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
+
+                while ($filas = $respuesta->fetch_array()) {
+
+                 echo '
+                 <li>
+                   <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
+                 </li>';
+                }
+          ?>
+
+         </ul>
+     </div>
+ </div>
+
+
+  <!-- <div class="container-fluid d-none d-md-block">
        <div class="item">
-           <ul id="content-slider" class="content-slider">
-             <?php
-                 $id_empresa = $_REQUEST['idEmpresa'];
-                 $empresa_creada = new Empresa();
-                 $empresa_creada->setId($id_empresa);
-                 $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
+         <div class="clearfix" style="max-width:474px;">
+          <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
 
-                    while ($filas = $respuesta->fetch_array()) {
-                      // echo "\".$id_empresa\".";
-                     echo '
-                     <li>
-                       <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
-                     </li>';
-                    }
+             <?php
+                 // $id_empresa = $_REQUEST['idEmpresa'];
+                 // $empresa_creada = new Empresa();
+                 // $empresa_creada->setId($id_empresa);
+                 // $respuesta = $empresa_creada->obtenerImgEmpresasTodas();
+                 //
+                 //    while ($filas = $respuesta->fetch_array()) {
+                 //
+                 //     echo '
+                 //     <li>
+                 //       <img class="card-img-top" style="height:250px" src="./imagenes/empresas/'.$filas['ruta_foto'].'" alt="Card image cap">
+                 //     </li>';
+                 //    }
               ?>
            </ul>
        </div>
-</div>
+  </div>
+</div> -->
 
 
 <br>
@@ -131,22 +154,7 @@ require("./clases/Empresa.php");
                         </div>
 
                         <br>
-                        <div class="row col-sm-12 justify-content-md-center">
-                            <div class="col-sm-12">
 
-                              <center>
-                                 <a class="nav-link" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; width:35px;" alt="">
-                                &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
-                              </center>
-
-                            </div>
-                            <br>
-                            <div class="col-sm-12">
-                              <center>
-                                  <a class="nav-link"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; width:35px;" alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
-                              </center>
-                            </div>
-                       </div>
                       </div>
 
 
@@ -188,10 +196,33 @@ require("./clases/Empresa.php");
                       <div class="col-sm-5">
                         <div class="card">
                           <div class="card-body">
-                            <h1 class="card-head">Horario</h1>
+
+                                  <h1 class="card-head">Horario</h1>
                                    <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario']; ?>
                                    </textarea>
+
+<br>
+                                   <div class="row col-12 ">
+                                      <div class="col-12">
+
+                                       <center>
+                                         <a class="btn btn-block" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; " alt="">
+                                           &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
+                                         </center>
+
+                                       </div>
+                                       <br>
+                                       <div class="col-12">
+                                         <center>
+                                           <a class="btn btn-block"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; " alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                                         </center>
+                                       </div>
+                                     </div>
                           </div>
+
+                         <br>
+
+
                         </div>
                       </div>
 
@@ -216,6 +247,9 @@ require("./clases/Empresa.php");
       </div>
 
 
+
+
+
   <?php cargarCategorias(); ?>
 
 <footer>
@@ -225,41 +259,66 @@ require("./clases/Empresa.php");
       </footer>
 
 
+      <!-- <script src="./lightslider-master/src/js/lightslider.js"></script> -->
       <script src="./lightslider-master/src/js/lightslider.js"></script>
+
       <script>
 
-      var ancho_pantalla = screen.width;
-
-      if(ancho_pantalla < 800){
+      // var ancho_pantalla = screen.width;
+      //
+      // if(ancho_pantalla < 800){
          $(document).ready(function() {
-             $("#content-slider").lightSlider({
-                   loop:true,
-                   keyPress:true,
-                   auto:true,
-                   speed:500,
-                   item:1,
-                   thumbItem:9,
-                   slideMargin: 1,
-              });
-          });
-        }else{
+               $("#content-slider").lightSlider({
+                    loop:true,
+                    keyPress:true,
+                    auto:true,
+                    speed:2000,
+                    item:4,
+                    // thumbItem:9,
+                    slideMargin: 1,
+                    responsive : [
+                                  {
+                                      breakpoint:900,
+                                      settings: {
+                                          item:3,
+                                          slideMove:1,
+                                          slideMargin:6,
+                                        }
+                                  },
+                                  {
+                                      breakpoint:800,
+                                      settings: {
+                                          item:2,
+                                          slideMove:1,
+                                          slideMargin:6,
+                                        }
+                                  },
+                                  {
+                                      breakpoint:480,
+                                      settings: {
+                                          item:1,
+                                          slideMove:1
+                                        }
+                                  }
+                              ]
+                });
 
-          $(document).ready(function() {
-
-              $("#content-slider").lightSlider({
-                       loop:true,
-                       keyPress:true,
-                       auto:true,
-                       speed:500,
-                       item:4,
-                       thumbItem:9,
-                       slideMargin: 1,
-              });
-
-           });
-        }
+        });
+      // }else{
+      //   $(document).ready(function() {
+      //
+      //       $("#content-slider").lightSlider({
+      //                 loop:true,
+      //                 keyPress:true,
+      //                 auto:true,
+      //                 speed:2000,
+      //                 item:4,
+      //                 thumbItem:9,
+      //                 slideMargin: 2,
+      //             });
+      //   });
+      // }
       </script>
-
 
 </body>
 </html>

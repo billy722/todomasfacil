@@ -135,6 +135,51 @@ Class Empresa{
 
   }
 
+
+  public function cambiarImagenPrincipal(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = "update tb_imagenes_empresa set tipo_imagen=0 WHERE (id_empresa = ".$this->id_empresa." and tipo_imagen=1)";
+
+    if($Conexion->query($consulta)){
+            $consulta = "update tb_imagenes_empresa set tipo_imagen=1 WHERE (id_imagen = ".$this->id_imagen.")";
+
+            if($Conexion->query($consulta)){
+                return true;
+            }else{
+                echo $consulta;
+                return false;
+            }
+    }else{
+        echo $consulta;
+        return false;
+    }
+
+  }
+
+  public function cambiarImagenAfiche(){
+    $Conexion = new Conexion();
+    $Conexion = $Conexion->conectar();
+
+    $consulta = "update tb_imagenes_empresa set tipo_imagen=0 WHERE (id_empresa = ".$this->id_empresa." and tipo_imagen=2)";
+
+    if($Conexion->query($consulta)){
+          $consulta = "update tb_imagenes_empresa set tipo_imagen=2 WHERE (id_imagen = ".$this->id_imagen.")";
+
+          if($Conexion->query($consulta)){
+              return true;
+          }else{
+              echo $consulta;
+              return false;
+          }
+    }else{
+        echo $consulta;
+        return false;
+    }
+
+  }
+
   public function obtenerEmpresasActivas(){
      $Conexion = new Conexion();
      $Conexion = $Conexion->conectar();
@@ -186,7 +231,7 @@ Class Empresa{
        $resultado_consulta = $Conexion->query("SELECT * from tb_empresas e
                                                 inner join categoria_empresas c on e.categoria_empresa=c.id_categoria
                                                 left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
-                                                where tipo_imagen=1 and
+                                                where tipo_imagen=1 and estado_empresa=1 and
                                                 (e.nombre_empresa like '%".$texto_buscar."%'
                                                 or e.descripcion_empresa like '%".$texto_buscar."%'
                                                 or c.descripcion_categoria like '%".$texto_buscar."%'

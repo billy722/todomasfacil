@@ -128,10 +128,22 @@ function listarImagenesEmpresa(){
 function soloUnaPrincipal(id){//permite presionar solo un checkbox
 	 var cantidad= $("#contadorFotos").val();
 
+
 	 for(var c=1;c<=cantidad;c++){
-			 $('#tipoFoto'+c).prop('checked', false);
+			 $('#principal'+c).prop('checked', false);
 	 }
-	 $("#tipoFoto"+id).prop('checked', true);
+	 $("#principal"+id).prop('checked', true);
+
+}
+
+function soloUnAfiche(id){//permite presionar solo un checkbox
+	 var cantidad= $("#contadorFotos").val();
+
+
+	 for(var c=1;c<=cantidad;c++){
+			 $('#afiche'+c).prop('checked', false);
+	 }
+	 $("#afiche"+id).prop('checked', true);
 
 }
 
@@ -142,7 +154,7 @@ function agregarCampoFoto(){
 					contadorTr++;
 
 					//alert(contadorTr);
-							$("#tablaFotosIngreso").append('<tr><td><input required class="form-control" name="foto'+contadorTr+'" type="file"></input></td><td><input class="form-control" type="checkbox" onclick="soloUnaPrincipal('+contadorTr+')" name="principal'+contadorTr+'" id="principal'+contadorTr+'"></td><td><input class="form-control" type="checkbox" onclick="soloUnaPrincipal('+contadorTr+')" name="afiche'+contadorTr+'" id="afiche'+contadorTr+'"></td></tr>');
+							$("#tablaFotosIngreso").append('<tr><td><input required class="form-control" name="foto'+contadorTr+'" type="file"></input></td><td><input class="form-control" type="checkbox" onclick="soloUnaPrincipal('+contadorTr+')" name="principal'+contadorTr+'" id="principal'+contadorTr+'"></td><td><input class="form-control" type="checkbox" onclick="soloUnAfiche('+contadorTr+')" name="afiche'+contadorTr+'" id="afiche'+contadorTr+'"></td></tr>');
 							$("#contadorFotos").val(contadorTr);
 }
 
@@ -180,14 +192,27 @@ function eliminarImagenEmpresa(idFoto){
 					});
 }
 
-function fotoPrincipal(idFoto,run){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+function seleccionarImagenPrincipalEmpresa(idFoto,idEmpresa){
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 					$.ajax({
-						url:"controladorMantenedores.php?mant=7&func=6",
-						data:"idFoto="+idFoto+"&run="+run,
+						url:"./metodos_ajax/empresas/seleccionar_imagen_principal.php?id_imagen="+idFoto+"&id_empresa="+idEmpresa,
 						success:function(respuesta){
 							 if(respuesta==1){
-								 cargarImagenesActuales(run);
+								 listarImagenesEmpresa();
+								 swal("Operacion exitosa!", "Imagen Principal Cambiada", "success");
+							 }
+						}
+					});
+}
+
+function seleccionarAficheEmpresa(idFoto,idEmpresa){
+
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					$.ajax({
+						url:"./metodos_ajax/empresas/seleccionar_afiche_empresa.php?id_imagen="+idFoto+"&id_empresa="+idEmpresa,
+						success:function(respuesta){
+							 if(respuesta==1){
+								 listarImagenesEmpresa();
 								 swal("Operacion exitosa!", "Imagen Principal Cambiada", "success");
 							 }
 						}

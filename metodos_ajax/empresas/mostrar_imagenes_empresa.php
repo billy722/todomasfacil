@@ -25,15 +25,15 @@ $listado_empresas = $Empresa->mostrarImagenesUnaEmpresaParaModificar();
                       ';
 
                       if($filas['tipo_imagen']==1){
-                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-success">Principal</a>';
+                        echo '<a href="javascript:seleccionarImagenPrincipalEmpresa('.$filas['id_imagen'].','.$id_empresa.')" class="btn btn-sm col-4 btn-success">Principal</a>';
                       }else{
-                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-secondary">Principal</a>';
+                        echo '<a href="javascript:seleccionarImagenPrincipalEmpresa('.$filas['id_imagen'].','.$id_empresa.')" class="btn btn-sm col-4 btn-secondary">Principal</a>';
                       }
 
                       if($filas['tipo_imagen']==2){
-                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-info">Afiche</a>';
+                        echo '<a href="javascript:seleccionarAficheEmpresa('.$filas['id_imagen'].','.$id_empresa.')" class="btn btn-sm col-4 btn-info">Afiche</a>';
                       }else{
-                        echo '<a href="javascript:eliminarImagenEmpresa('.$filas['id_imagen'].')" class="btn btn-sm col-4 btn-secondary">Afiche</a>';
+                        echo '<a href="javascript:seleccionarAficheEmpresa('.$filas['id_imagen'].','.$id_empresa.')" class="btn btn-sm col-4 btn-secondary">Afiche</a>';
                       }
 
                   echo '

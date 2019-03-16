@@ -53,12 +53,8 @@ if($Empresa->modificarEmpresa()){
 
          if(isset($_REQUEST[$principal])){
            $tipoImagenFinal = "1";
-         }else{
-           $tipoImagenFinal = "1";
          }
          if(isset($_REQUEST[$afiche])){
-           $tipoImagenFinal = "2";
-         }else{
            $tipoImagenFinal = "2";
          }
 
@@ -87,14 +83,42 @@ if($Empresa->modificarEmpresa()){
                                                $conexion = new Conexion();
                                                $conexion = $conexion->conectar();
 
+                                               if($tipoImagenFinal=="1"){
+                                                 $consulta = "update tb_imagenes_empresa set tipo_imagen=0 WHERE (id_empresa = ".$id_empresa." and tipo_imagen=1)";
+                                                 if($conexion->query($consulta)){
+                                                     $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
 
-                                               $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
+                                                     if($conexion->query($consulta)){
+                                                       // echo "agrega foto";
+                                                     }else{
+                                                       echo "error al agregar foto";
+                                                     }
+                                                 }else{
+                                                 echo "errr en las consultas primeras";}
+                                               }else if($tipoImagenFinal=="2"){
+                                                 $consulta = "update tb_imagenes_empresa set tipo_imagen=0 WHERE (id_empresa = ".$id_empresa." and tipo_imagen=2)";
+                                                 if($conexion->query($consulta)){
+                                                     $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
 
-                                               if($conexion->query($consulta)){
-                                                 // echo "agrega foto";
-                                               }else{
-                                                 echo "error al agregar foto";
+                                                     if($conexion->query($consulta)){
+                                                       // echo "agrega foto";
+                                                     }else{
+                                                       echo "error al agregar foto";
+                                                     }
+                                                 }else{
+                                                 echo "errr en las consultas primeras";}
+                                               }else if($tipoImagenFinal=="0"){
+                                                     $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$id_empresa.",".$tipoImagenFinal.")";
+
+                                                     if($conexion->query($consulta)){
+                                                       // echo "agrega foto";
+                                                     }else{
+                                                       echo "error al agregar foto";
+                                                     }
                                                }
+
+
+
                                            }
 
          }

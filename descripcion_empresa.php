@@ -148,9 +148,33 @@ require("./clases/Empresa.php");
         <br>
                       <div class="col-sm-5">
                         <div class="card">
-                            <center>
-                          <?php echo $filas['coordenadas']; ?>
-                            </center>
+                          <div class="card-body">
+                            <div class="embed-responsive embed-responsive-21by9">
+                              <center>
+                                <?php echo $filas['coordenadas']; ?>
+                              </center>
+
+                            </div>
+
+                            <br>
+                                   <div class="row col-12 ">
+                                      <div class="col-12">
+
+                                       <center>
+                                         <a class="btn btn-block" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; " alt="">
+                                           &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
+                                         </center>
+
+                                       </div>
+                                       <br>
+                                       <div class="col-12">
+                                         <center>
+                                           <a class="btn btn-block"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; " alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
+                                         </center>
+                                       </div>
+                                     </div>
+
+                          </div>
                         </div>
 
                         <br>
@@ -158,9 +182,6 @@ require("./clases/Empresa.php");
                       </div>
 
 
-
-
-                      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101271.86828621128!2d-72.46913273385088!3d-37.513911183838786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bdd37d17f8c73%3A0x3714945f62c6c00f!2zRXJjaWxsYSAxOTUsIExvcyBBbmdlbGVzLCBMb3Mgw4FuZ2VsZXMsIFJlZ2nDs24gZGVsIELDrW8gQsOtbw!5e0!3m2!1ses-419!2scl!4v1538367631655" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
                     </div>
 
         <br>
@@ -201,23 +222,7 @@ require("./clases/Empresa.php");
                                    <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario']; ?>
                                    </textarea>
 
-<br>
-                                   <div class="row col-12 ">
-                                      <div class="col-12">
 
-                                       <center>
-                                         <a class="btn btn-block" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; " alt="">
-                                           &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
-                                         </center>
-
-                                       </div>
-                                       <br>
-                                       <div class="col-12">
-                                         <center>
-                                           <a class="btn btn-block"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; " alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
-                                         </center>
-                                       </div>
-                                     </div>
                           </div>
 
                          <br>

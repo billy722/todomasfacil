@@ -11,7 +11,6 @@ require("./clases/Eventos.php");
        <?php
        cargarHead();
         ?>
-        <link href="./css/camera.css" rel="stylesheet" type="text/css"/>
 
      </head>
 <body>
@@ -54,42 +53,87 @@ require("./clases/Eventos.php");
     background-size: cover;
   }
 
+
+.tarjeta_evento{
+  height: 300px;
+background-position: center;
+background-position: top;
+background-size: cover;
+background-repeat:no-repeat;
+}
+
+.tarjeta_evento:hover{
+opacity: 0.8;
+}
+
 </style>
 
 
 
-<div class="container-fluid">
+<div class="container card">
     <div class="row">
         <!--Camera Slide-->
-        <div class="camera_wrap camera_azure_skin" id="camera_wrap">
+           <!-- <div class="card-deck"> -->
 
+              <?php
+              $eventos = new Eventos();
+              $listado_eventos = $eventos->listarImagenesEventos();
 
-            <?php
-            $eventos = new Eventos();
-            $listado_eventos = $eventos->listarImagenesEventos();
+              while($filas = $listado_eventos->fetch_array()) {
 
-            while($filas = $listado_eventos->fetch_array()) {
+                echo '
+                  <a href="#" data-toggle="modal" data-target="#modal_imagen_'.$filas['id_eventos'].'" class="card col-12 col-md-4 tarjeta_evento"  style="background-image: url(\'./imagenes/eventos/'.$filas['ruta_imagen'].'\');"></a>
 
-                       echo '
-                       <div data-src="./imagenes/eventos/'.$filas['ruta_imagen'].'">
-                           <img src="./imagenes/eventos/'.$filas['ruta_imagen'].'">
-                       </div>
-                       ';
+                ';
 
-            }
+              }
 
               ?>
 
-        </div>   <!--------Camera Slide End-->
+
+        <!-- </div> -->
     </div>   <!--***********  Row End-->
+    <br>
 </div>  <!--************** Container End-->
 
-
+<br>
   <?php cargarCategorias(); ?>
 
 <br>
 
 
+<?php
+$eventos = new Eventos();
+$listado_eventos = $eventos->listarImagenesEventos();
+
+while($filas = $listado_eventos->fetch_array()) {
+
+  echo '
+
+      <div class="modal" id="modal_imagen_'.$filas['id_eventos'].'" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+
+              <div class="row">
+                  <img class="col-12" style="height:100%;" src="./imagenes/eventos/'.$filas['ruta_imagen'].'" alt="" />
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+  ';
+
+}
+
+?>
 
        </div>
 
@@ -104,28 +148,7 @@ require("./clases/Eventos.php");
 
 
     <script type='text/javascript' src='./js/jquery.min.js'></script>
-    <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script>
-    <script type='text/javascript' src='./js/camera.min.js'></script>
-    <!-- Custom JS --->
-    <script src="./js/plugins.js"></script>
 
-
-    <script>
-    		jQuery(function(){
-
-            jQuery('#camera_wrap').camera({
-      				height: '500px',
-      				loader: 'pie',
-              playPause: false,
-              navigation: false,
-              time: 900,
-              transPeriod: 1300,
-      				// thumbnails: true
-      			});
-    	 });
-
-    </script>
 
 </body>
 </html>

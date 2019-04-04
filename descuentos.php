@@ -11,7 +11,7 @@ require("./clases/Descuento.php");
        <?php
        cargarHead();
         ?>
-        <link href="./css/camera.css" rel="stylesheet" type="text/css"/>
+
      </head>
 <body>
 
@@ -53,16 +53,27 @@ require("./clases/Descuento.php");
     background-size: cover;
   }
 
+
+  .tarjeta_descuento{
+    height: 300px;
+  background-position: center;
+  background-position: top;
+  background-size: cover;
+  background-repeat:no-repeat;
+  }
+
+  .tarjeta_descuento:hover{
+  opacity: 0.8;
+  }
 </style>
 
 
 
-<div class="container-fluid">
+<div class="container card">
     <div class="row">
         <!--Camera Slide-->
 
 
-         <div class="camera_wrap camera_azure_skin" id="camera_wrap">
 
             <?php
             $descuentos = new Descuento();
@@ -70,18 +81,18 @@ require("./clases/Descuento.php");
 
             while($filas = $listado_descuentos->fetch_array()) {
 
-                       echo '
-                       <div data-src="./imagenes/descuentos/'.$filas['ruta_imagen'].'">
-                           <img src="./imagenes/descuentos/'.$filas['ruta_imagen'].'">
-                       </div>
-                       ';
+              echo '
+                <a href="#" data-toggle="modal" data-target="#modal_imagen_'.$filas['id_descuento'].'" class="card col-12 col-md-4 tarjeta_descuento"  style="background-image: url(\'./imagenes/descuentos/'.$filas['ruta_imagen'].'\');"></a>
+
+              ';
 
             }
 
               ?>
 
-        </div>   <!--------Camera Slide End-->
     </div>   <!--***********  Row End-->
+  <br>
+
 </div>  <!--************** Container End-->
 
 
@@ -91,6 +102,37 @@ require("./clases/Descuento.php");
 
 
 
+<?php
+$descuentos = new Descuento();
+$listado_descuentos = $descuentos->listarImagenesDescuentos();
+
+while($filas = $listado_descuentos->fetch_array()) {
+
+  echo '
+
+      <div class="modal" id="modal_imagen_'.$filas['id_descuento'].'" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+
+              <div class="row">
+                  <img class="col-12" style="height:100%;" src="./imagenes/descuentos/'.$filas['ruta_imagen'].'" alt="" />
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+  ';
+}
+
+?>
 
 
 
@@ -105,28 +147,7 @@ require("./clases/Descuento.php");
 	</footer>
 
   <script type='text/javascript' src='./js/jquery.min.js'></script>
-  <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
-  <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script>
-  <script type='text/javascript' src='./js/camera.min.js'></script>
-  <!-- Custom JS --->
-  <script src="./js/plugins.js"></script>
 
-
-  <script>
-  		jQuery(function(){
-
-          jQuery('#camera_wrap').camera({
-    				height: '500px',
-    				loader: 'pie',
-            playPause: false,
-            navigation: false,
-            time: 900,
-            transPeriod: 1300,
-    				// thumbnails: true
-    			});
-  	 });
-
-  </script>
 
 </body>
 </html>

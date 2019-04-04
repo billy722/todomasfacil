@@ -19,8 +19,8 @@
       $mail->CharSet = 'UTF-8';                                // Set mailer to use SMTP
       $mail->Host = 'a2plcpnl0592.prod.iad2.secureserver.net';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
-      $mail->Username = 'formulario_contacto@todomasfacil.cl';   // SMTP username
-      $mail->Password = 'todomasfacil123';                           // SMTP password
+      $mail->Username = 'marketing@todomasfacil.cl';   // SMTP username
+      $mail->Password = 'elchicokeny30';                           // SMTP password
       $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 465;                               // TCP port to connect to
 

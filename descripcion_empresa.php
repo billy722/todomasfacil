@@ -42,29 +42,31 @@ require("./clases/Empresa.php");
 
 
     </head>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=123609474978715"></script>
+
     <body>
       <style>
       #facebook{
-          background-color: #49a5f9!important;
+          background-color: #0A425B;
           color:white!important;
-          font-size: 20px;
-          margin-right: 2px;
-          padding-top:0px;
-          padding-bottom:0px;  /*inferior*/
-          border-radius: 5px;
-          margin-bottom: 5px;
+          font-size: 80px;
+          border-radius: 30px;
+          padding:8px;
+          height: 35px;
+          width: 35px;
       }
       #instagram{
-          background-color: #f0ac80!important;
-          background-size:100%;
+          background-color: #EF4723;
           color:white!important;
-          font-size: 20px;
-          margin-right: 2px;
-          padding-top:0px;
-          padding-bottom:0px;  /*inferior*/
-          border-radius: 5px;
-          margin-bottom: 5px;
+          font-size: 80px;
+          border-radius: 30px;
+          padding:5px;
+          height: 35px;
+          width: 35px;
       }
+
       </style>
 
   <div class="container-fluid">
@@ -148,6 +150,9 @@ require("./clases/Empresa.php");
         <br>
                       <div class="col-sm-5">
                         <div class="card">
+                          <div class="card-header" style="background:white;">
+                            <h3>Nuestra Ubicación</h3>
+                          </div>
                           <div class="card-body">
                             <div class="embed-responsive embed-responsive-21by9">
                               <center>
@@ -155,24 +160,6 @@ require("./clases/Empresa.php");
                               </center>
 
                             </div>
-
-                            <br>
-                                   <div class="row col-12 ">
-                                      <div class="col-12">
-
-                                       <center>
-                                         <a class="btn btn-block" id="facebook" align="center" href="<?php echo $filas['facebook']; ?>"><img src="./img/face.png" style="height:30px; " alt="">
-                                           &nbsp;&nbsp;Facebook<span class="sr-only">(current)</span></a>
-                                         </center>
-
-                                       </div>
-                                       <br>
-                                       <div class="col-12">
-                                         <center>
-                                           <a class="btn btn-block"  id="instagram" align="center" href="<?php echo $filas['instagram']; ?>"><img src="./img/insta.png" style="height:30px; " alt="">&nbsp;&nbsp;Instagram<span class="sr-only">(current)</span></a>
-                                         </center>
-                                       </div>
-                                     </div>
 
                           </div>
                         </div>
@@ -216,19 +203,48 @@ require("./clases/Empresa.php");
 
                       <div class="col-sm-5">
                         <div class="card">
+                          <div class="card-header" style="background:white;">
+                            <h3>Horario de atención</h3>
+                          </div>
                           <div class="card-body">
 
-                                  <h1 class="card-head">Horario</h1>
-                                   <textarea class="form-control" readonly name="name" rows="4" cols="80"><?php echo $filas['horario']; ?>
+                                   <textarea class="form-control" readonly name="name" rows="3" cols="80"><?php echo $filas['horario']; ?>
                                    </textarea>
-
 
                           </div>
 
-                         <br>
+                             <div class=" col-12 ">
+                               <div class="card ">
+                                   <!-- <div class="card-header" style="background:white;">
+                                     <h3>Redes Sociales</h3>
+                                   </div> -->
+                                   <div class="card-body">
 
+                                    <div class="row">
+                                       <div class="col-6">
+                                         <h4 style="vertical-align: middle;">Redes Sociales</h4>
+                                       </div>
+                                       <div class="col-6">
+                                         <a class="col-6"  href="<?php echo $filas['facebook']; ?>">
+                                            <i id="facebook" class="fab fa-facebook-f"></i>
+                                         </a>
+                                         <a class="col-6" href="<?php echo $filas['instagram']; ?>">
+                                            <i id="instagram" class="fab fa-instagram"></i>
+                                         </a>
+                                       </div>
+                                    </div>
+
+
+                                   </div>
+
+                               </div>
+                             </div>
+
+                             <br>
 
                         </div>
+
+
                       </div>
 
                 </div>
@@ -248,6 +264,19 @@ require("./clases/Empresa.php");
                  </div>
               <br>
 
+                  <div class="row">
+                      <div class="col-sm-7">
+                        <div class="card">
+                          <div class="card-body">
+                             <div class="fb-comments" data-href="http://www.todomasfacil.cl/todomasfacil/descripcion_empresa.php?idEmpresa=<?php echo $id_empresa; ?>" data-numposts="5"></div>
+
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+              <br>
+
+
           </div>
       </div>
 
@@ -257,10 +286,10 @@ require("./clases/Empresa.php");
 
   <?php cargarCategorias(); ?>
 
-<footer>
-    <?php
-      sub_footer();
-      ?>
+      <footer>
+        <?php
+          sub_footer();
+        ?>
       </footer>
 
 

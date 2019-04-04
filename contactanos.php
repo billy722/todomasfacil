@@ -21,37 +21,39 @@ require("./clases/Empresa.php");
 
   <!-- imagen principal -->
 <br>
-<main class="contenido-principal"><!--contenido-principal-->
+
 <div class="container">
+  <div class="card col-12 col-md-6">
 
-    <form action="" id="formularioMensajes" name="formularioMensajes" method="POST" class="col-md-8 col-md-offset-2">
-      <legend align="center">Contacto</legend>
-                <div class="form-group">
-                   <label for="nombre">Nombre:</label>
-                   <input class="form-control" required id="nombre" name="nombre" type="text" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input class="form-control" required id="apellido" name="apellido" type="text" placeholder="Apellido">
-                </div>
-                <div class="form-group">
-                   <label for="correo">Correo Electrónico:</label>
-                   <input class="form-control" required id="correo" name="correo" type="email" placeholder="Correo">
-                </div>
-                <div class="form-group">
-                   <label for="mensaje">Mensaje</label>
-                   <textarea class="form-control col-xs-12" required id="mensaje"  name="mensaje" placeholder="Escriba su mensaje"></textarea>
-                </div>
-                <div class="form-group">
-                  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-                      <br><input type="submit" class="btn btn-lg btn-primary btn-block"></input>
+      <form action="" id="formularioMensajes" name="formularioMensajes" method="POST" class="">
+        <legend align="center">Contacto</legend>
+
+        <div class="row">
+                  <div class="form-group col-12 col-md-6">
+                     <label for="nombre">Nombre:</label>
+                     <input class="form-control" required id="nombre" name="nombre" type="text" placeholder="Nombre">
                   </div>
-                </div>
-           </form>
+                  <div class="form-group col-12 col-md-6">
+                      <label for="apellido">Apellido</label>
+                      <input class="form-control" required id="apellido" name="apellido" type="text" placeholder="Apellido">
+                  </div>
+                  <div class="form-group col-12 col-md-12">
+                     <label for="correo">Correo Electrónico:</label>
+                     <input class="form-control" required id="correo" name="correo" type="email" placeholder="Correo">
+                  </div>
+                  <div class="form-group col-12 col-md-12">
+                     <label for="mensaje">Mensaje</label>
+                     <textarea class="form-control col-xs-12" rows="5" required id="mensaje"  name="mensaje" placeholder="Escriba su mensaje"></textarea>
+                  </div>
+                  <div class="form-group col-12 col-md-12">
+                        <label for="">&nbsp;</label>
+                        <br><input type="submit" class="btn btn-lg btn-primary btn-block" style=""></input>
+                  </div>
+          </div>
+      </form>
 
-    </div>
-
-</main><!--contenido-principal-->
+  </div>
+</div>
 
 <br>
 
@@ -81,7 +83,7 @@ require("./clases/Empresa.php");
               success:function(respuesta){
                   // alert(respuesta);
                   if(respuesta == 1){
-                      swal("Mensaje enviado correctamente.","","success");
+                      swal("Mensaje Enviado.","Le responderemos a la brevedad","success");
                   }else{
                     swal("Ha ocurrido un error","","danger");
 

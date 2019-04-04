@@ -241,6 +241,26 @@ require("./clases/Categoria.php");
     </div>
 </div>
 
+<style>
+
+#contenedor_mensaje_nuestros_servicios{
+  background: #FF4000;
+  padding: 35px;
+  color:white;
+  margin-bottom: 20px;
+}
+#txt_nuestros_servicios{
+  font-weight: bold;
+}
+</style>
+
+<div id="contenedor_mensaje_nuestros_servicios">
+
+<center>
+  <h2 id="txt_nuestros_servicios" class="text-white">Nuestros Servicios Profesionales</h2>
+</center>
+
+</div>
 
 <div class="row">
 
@@ -249,6 +269,8 @@ require("./clases/Categoria.php");
       <div  data-src="./img/banner/banner1.png"></div>
       <div  data-src="./img/banner/banner2.png"></div>
       <div  data-src="./img/banner/banner3.png"></div>
+      <div  data-src="./img/banner/banner4.png"></div>
+      <div  data-src="./img/banner/banner5.png"></div>
   </div>
 
     <!--Camera Slide-->
@@ -400,97 +422,6 @@ require("./clases/Categoria.php");
   		});
   </script>
 
-  <script>
-
-  var ancho_pantalla = screen.width;
-  // alert(ancho_pantalla);
-  //
-  // jQuery(function(){
-  //
-  //
-  // if(ancho_pantalla < 800){
-  //   jQuery('#camera_wrap').camera({
-  //     playPause: false,
-  //     navigation: false,
-  //     navigationHover: true,
-  //     hover: false,
-  //     loader: 'bar',
-  //     loaderColor: '#fc8132',
-  //     loaderBgColor: '#222222',
-  //     loaderOpacity: 1,
-  //     loaderPadding: 0,
-  //     time: 2000,
-  //     transPeriod: 1500,
-  //     pauseOnClick: true,
-  //     pagination: false,
-  //     height: '100%',
-  //   });
-  // }else{
-  //   jQuery('#camera_wrap').camera({
-  //     playPause: false,
-  //     navigation: false,
-  //     navigationHover: true,
-  //     hover: false,
-  //     loader: 'bar',
-  //     loaderColor: '#fc8132',
-  //     loaderBgColor: '#222222',
-  //     loaderOpacity: 1,
-  //     loaderPadding: 0,
-  //     time: 2000,
-  //     transPeriod: 1500,
-  //     pauseOnClick: true,
-  //     pagination: false,
-  //     height: '35%',
-  //   });
-  // }
-  //
-  //
-  // });
-
-
-
-  //BANNER TODOMASFACIL
-  // jQuery(function () {
-  //
-  // if(ancho_pantalla < 800){
-  //   jQuery('#camera_wrap_2').camera({
-  //     playPause: false,
-  //     navigation: false,
-  //     navigationHover: true,
-  //     hover: false,
-  //     loader: false,
-  //     loaderColor: '#fc8132',
-  //     loaderBgColor: '#222222',
-  //     loaderOpacity: 1,
-  //     loaderPadding: 0,
-  //     time: 2000,
-  //     transPeriod: 1500,
-  //     pauseOnClick: true,
-  //     pagination: false,
-  //     height: '100%',
-  //   });
-  // }else{
-  //   jQuery('#camera_wrap_2').camera({
-  //     playPause: false,
-  //     navigation: false,
-  //     navigationHover: true,
-  //     hover: false,
-  //     loader: false,
-  //     loaderColor: '#fc8132',
-  //     loaderBgColor: '#222222',
-  //     loaderOpacity: 1,
-  //     loaderPadding: 0,
-  //     time: 2000,
-  //     transPeriod: 1500,
-  //     pauseOnClick: true,
-  //     pagination: true,
-  //     height: '35%',
-  //   });
-  // }
-  //
-  //
-  // });
-  </script>
 
 
 </body>

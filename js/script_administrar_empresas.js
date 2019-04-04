@@ -15,6 +15,7 @@ function listarEmpresas(){
 
 
 function guardar_nueva_empresa(){
+	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 	var formData = new FormData(document.getElementById("mantenedor_ingresar_empresa"));
 
@@ -42,6 +43,9 @@ function guardar_nueva_empresa(){
 
 function modificar_empresa(){
   // alert("contador: "+$("#contadorFotos").val());
+
+	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+
 
 	var formData = new FormData(document.getElementById("mantenedor_modificar_empresa"));
 
@@ -79,6 +83,8 @@ function modificar_empresa(){
 }
 
 function eliminarEmpresa(id){
+	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+
 
 	swal({
 			title: "¿Eliminar Usuario?",
@@ -126,6 +132,7 @@ function listarImagenesEmpresa(){
 
 
 function soloUnaPrincipal(id){//permite presionar solo un checkbox
+
 	 var cantidad= $("#contadorFotos").val();
 
 
@@ -171,7 +178,7 @@ function removerCampoFoto(){
 }
 
 function eliminarImagenEmpresa(idFoto){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 					$.ajax({
 						url:"./metodos_ajax/empresas/eliminar_imagen.php?id_imagen="+idFoto,

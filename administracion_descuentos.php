@@ -92,8 +92,8 @@ $comprobar->verificarSesion();
 
                                   </div>
                                 </div>
+                                   <input class="form-control btn btn-success" type="submit" name="agregar" value="Guardar">
                                 </form>
-                                <input class="form-control btn btn-success" type="submit" name="agregar" value="Guardar">
                                 <div><hr></div>
 
                                 <br>

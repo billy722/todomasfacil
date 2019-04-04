@@ -58,7 +58,7 @@ $comprobar->verificarSesion();
 
                              <div class="card col-md-8">
 
-                               <form action="javascript:agregar_eventos()" id="formulario_evento_imagen" name="formulario_evento_imagen" method="POST" enctype="multipart/form-data">
+                               <form action="javascript:agregar_eventos()" id="formulario_eventos_imagen" name="formulario_eventos_imagen" method="POST" enctype="multipart/form-data">
 
                                  <!-- <h5 class="card-header">Agregar Imagenes</h5> -->
                                  <div class="card-body">
@@ -92,8 +92,9 @@ $comprobar->verificarSesion();
 
                                  </div>
                                </div>
-                               </form>
                                <input class="form-control btn btn-success" type="submit" name="agregar" value="Guardar">
+                               </form>
+
                                <div><hr></div>
 
                                <br>

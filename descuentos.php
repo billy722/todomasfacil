@@ -60,7 +60,9 @@ require("./clases/Descuento.php");
 <div class="container-fluid">
     <div class="row">
         <!--Camera Slide-->
-         <div class="camera_wrap">
+
+
+         <div class="camera_wrap camera_azure_skin" id="camera_wrap">
 
             <?php
             $descuentos = new Descuento();
@@ -102,56 +104,29 @@ require("./clases/Descuento.php");
       ?>
 	</footer>
 
-  <script src="./js/easing.min.js" type="text/javascript"></script>
-  <script src="./js/camera.min.js" type="text/javascript"></script>
+  <script type='text/javascript' src='./js/jquery.min.js'></script>
+  <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
+  <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script>
+  <script type='text/javascript' src='./js/camera.min.js'></script>
   <!-- Custom JS --->
   <script src="./js/plugins.js"></script>
 
 
   <script>
+  		jQuery(function(){
 
-  var ancho_pantalla = screen.width;
-  // alert(ancho_pantalla);
-  $(function () {
+          jQuery('#camera_wrap').camera({
+    				height: '500px',
+    				loader: 'pie',
+            playPause: false,
+            navigation: false,
+            time: 900,
+            transPeriod: 1300,
+    				// thumbnails: true
+    			});
+  	 });
 
-  if(ancho_pantalla < 800){
-    $('.camera_wrap').camera({
-      playPause: false,
-      navigation: false,
-      navigationHover: true,
-      hover: false,
-      loader: 'bar',
-      loaderColor: '#fc8132',
-      loaderBgColor: '#222222',
-      loaderOpacity: 1,
-      loaderPadding: 0,
-      time: 2000,
-      transPeriod: 1500,
-      pauseOnClick: true,
-      pagination: false,
-      height: '100%',
-    });
-  }else{
-    $('.camera_wrap').camera({
-      playPause: false,
-      navigation: false,
-      navigationHover: true,
-      hover: false,
-      loader: 'bar',
-      loaderColor: '#fc8132',
-      loaderBgColor: '#222222',
-      loaderOpacity: 1,
-      loaderPadding: 0,
-      time: 2000,
-      transPeriod: 1500,
-      pauseOnClick: true,
-      pagination: false,
-      height: '35%',
-    });
-  }
-
-
-  });
   </script>
+
 </body>
 </html>

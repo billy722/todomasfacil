@@ -14,6 +14,7 @@ function listarImagenesDescuentos(){
 
 
 function agregar_descuento(){
+	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 	var formData = new FormData(document.getElementById("formulario_descuento_imagen"));
 
@@ -26,7 +27,7 @@ function agregar_descuento(){
 				contentType: false,
 				processData:false,
 				success:function(respuesta){
-					 alert(respuesta);
+					 // alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");
@@ -74,12 +75,12 @@ function removerCampoFoto(){
 }
 
 function eliminarImagenEmpresa(idDescuento){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 					$.ajax({
 						url:"./metodos_ajax/descuentos/eliminar_imagen.php?id_descuento="+idDescuento,
 						success:function(respuesta){
-							alert(respuesta);
+							// alert(respuesta);
 							 if(respuesta==1){
 								 listarImagenesDescuentos();
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");
@@ -95,7 +96,7 @@ function eliminarImagenEmpresa(idDescuento){
 }
 
 function fotoPrincipal(idFoto,run){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 					$.ajax({
 						url:"controladorMantenedores.php?mant=7&func=6",
 						data:"idFoto="+idFoto+"&run="+run,

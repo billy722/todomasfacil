@@ -191,7 +191,7 @@ function cargarMenuConfiguraciones(){
   }
 
   echo'<hr>';
-  
+
   echo '<a href="./cerrarSesion.php" class=" btn btn-danger col-12">Cerrar Sesión </a>';
 
   echo'<hr>';
@@ -250,7 +250,7 @@ function cargarMenuPrincipal(){
               <a class="nav-link" href="index.php">&nbsp;&nbsp;INICIO<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="Descuentos.php">&nbsp;&nbsp;DESCUENTOS<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="descuentos.php">&nbsp;&nbsp;DESCUENTOS<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="eventos.php">&nbsp;&nbsp;EVENTOS<span class="sr-only">(current)</span></a>
@@ -259,7 +259,7 @@ function cargarMenuPrincipal(){
               <a class="nav-link" href="quienes_somos.php">&nbsp;&nbsp;QUIENES SOMOS<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="contactanos.php">&nbsp;&nbsp;CONTACTANOS<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="contactanos.php">&nbsp;&nbsp;CONTÁCTANOS<span class="sr-only">(current)</span></a>
             </li>
           </ul>
       </div>
@@ -313,9 +313,116 @@ function cargarMenuPrincipal(){
 }
 function sub_footer(){
  ?>
+ <style>
+
+ #facebook_footer, #instagram_footer, #correo_footer, #telefono,#direccion,#whatsapp{
+   background-color: #ffffff;
+   color:#F04622!important;
+   font-size: 80px;
+   border-radius: 30px;
+   padding:5px;
+   height: 35px;
+   width: 35px;
+ }
+ #facebook_footer{
+     padding:8px !important;
+ }
+ #telefono{
+     padding:8px !important;
+ }
+ #direccion{
+     padding:8px !important;
+ }
+ #correo_footer{
+     padding:8px !important;
+ }
+ .logos_contacto{
+     padding: 5px;
+     float: left;
+ }
+ .span_texto_icono_footer{
+     font-size: 14px;
+ }
+
+ </style>
 
 <div class="sub_footer">
-    <span>&copy;Todos Los Derechos Reservados</span>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-md-4">
+                 <!-- <h4>Encuentranos</h4> -->
+
+                    <div class="col-12">
+                      <h4 style="vertical-align: middle;">Redes Sociales</h4>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12"  href="https://www.facebook.com/todomasfacil.cl/">
+                         <i id="facebook_footer" class="fab fa-facebook-f"></i> <span class="span_texto_icono_footer">Facebook</span>
+                      </a>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12" href="https://www.instagram.com/todofacil_publicidad/">
+                         <i id="instagram_footer" class="fab fa-instagram"></i> <span class="span_texto_icono_footer">Instagram</span>
+                      </a>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12" href="#">
+                        <i id="whatsapp" class="fab fa-whatsapp"></i> <span class="span_texto_icono_footer">+56983414738</span>
+                      </a>
+                    </div>
+
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                 <!-- <h4>Encuentranos</h4> -->
+
+                    <div class="col-12">
+                      <h4 style="vertical-align: middle;">Contáctanos</h4>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12"  href="#">
+                         <i id="telefono" class="fas fa-phone"></i> <span class="span_texto_icono_footer">9 8341 4738</span>
+                      </a>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12" href="#">
+                         <i id="direccion" class="far fa-building"></i> <span class="span_texto_icono_footer">Jardines de Luxemburgo 2086-Los Ángeles</span>
+                      </a>
+                    </div>
+
+                    <div class="col-12 logos_contacto">
+                      <a class="col-12" href="./contactanos.php">
+                         <i id="correo_footer" class="fas fa-envelope"></i> <span class="span_texto_icono_footer">Marketing@todomasfacil.cl</span>
+                      </a>
+                    </div>
+
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+
+                    <div class="col-12">
+
+                        <img src="./img/logo.png" width="100%" height="auto" class="d-inline-block align-top" alt="">
+
+                    </div>
+
+            </div>
+
+
+        </div>
+<br>
+        <center>
+          <p>Todos los derechos reservados <a href="./administrar.php">@</a></p>
+        </center>
+
+    </div>
 
 </div>
 

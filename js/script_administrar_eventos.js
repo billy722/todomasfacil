@@ -15,6 +15,9 @@ function listarImagenesEventos(){
 
 function agregar_eventos(){
 
+	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+
+
 	var formData = new FormData(document.getElementById("formulario_eventos_imagen"));
 
 			$.ajax({
@@ -26,7 +29,7 @@ function agregar_eventos(){
 				contentType: false,
 				processData:false,
 				success:function(respuesta){
-					 alert(respuesta);
+					 // alert(respuesta);
 
 					 if(respuesta==1){
 						 swal("Guardado","Los datos se han guardado correctamente.","success");
@@ -74,12 +77,12 @@ function removerCampoFoto(){
 }
 
 function eliminarImagenEmpresa(idEventos){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 					$.ajax({
 						url:"./metodos_ajax/eventos/eliminar_imagen.php?id_eventos="+idEventos,
 						success:function(respuesta){
-							alert(respuesta);
+							// alert(respuesta);
 							 if(respuesta==1){
 								 listarImagenesEventos();
 								 swal("Operacion exitosa!", "Imagen Eliminada", "success");
@@ -95,7 +98,7 @@ function eliminarImagenEmpresa(idEventos){
 }
 
 function fotoPrincipal(idFoto,run){
-					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:true,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
+					swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 					$.ajax({
 						url:"controladorMantenedores.php?mant=7&func=6",
 						data:"idFoto="+idFoto+"&run="+run,

@@ -87,7 +87,7 @@ function eliminarEmpresa(id){
 
 
 	swal({
-			title: "¿Eliminar Usuario?",
+			title: "¿Eliminar Empresa?",
 			text: "",
 			type: "warning",
 			showCancelButton: true,

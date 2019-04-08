@@ -35,7 +35,7 @@ $Empresa->setHorario($horario);
 
 if($idCreada = $Empresa->crearEmpresa()){
    echo "1";
-echo "la empresa creada es id_ ".$idCreada;
+// echo "la empresa creada es id_ ".$idCreada;
 
    $contadorFotos = $Funciones->limpiarNumeroEntero($_REQUEST['contadorFotos']);
 
@@ -83,7 +83,7 @@ echo "la empresa creada es id_ ".$idCreada;
                                                $consulta="insert into tb_imagenes_empresa(ruta_foto,id_empresa,tipo_imagen) values('".$nombreImagenActual."',".$idCreada.",".$tipoImagenFinal.")";
 
                                                if($conexion->query($consulta)){
-                                                 echo "agrega foto";
+                                                 // echo "agrega foto";
                                                }else{
                                                  echo "error al agregar foto ".$consulta;
                                                }

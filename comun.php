@@ -355,7 +355,7 @@ function sub_footer(){
                  <!-- <h4>Encuentranos</h4> -->
 
                     <div class="col-12">
-                      <h4 style="vertical-align: middle;">Redes Sociales</h4>
+                      <h4 style="vertical-align: middle;">Síguenos</h4>
                     </div>
 
                     <div class="col-12 logos_contacto">

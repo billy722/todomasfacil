@@ -33,7 +33,6 @@ require_once '../../clases/Descuento.php';
                                                $conexion = new Conexion();
                                                $conexion = $conexion->conectar();
 
-
                                                $consulta="insert into tb_descuentos (ruta_imagen) values('".$nombreImagenActual."')";
 
                                                if($conexion->query($consulta)){

@@ -70,6 +70,8 @@ Class Empresa{
     $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas, facebook, instagram, horario)
                         VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."','".$this->horario."');";
 
+//echo $consulta;
+
     if($Conexion->query($consulta)){
           $resultadoNuevoId = $Conexion->query("SELECT LAST_INSERT_ID() as id");
           $resultadoNuevoId = $resultadoNuevoId->fetch_array();
@@ -187,6 +189,8 @@ Class Empresa{
      $resultado_consulta = $Conexion->query("SELECT * FROM tb_empresas e
                                               left join tb_imagenes_empresa ie on e.id_empresa=ie.id_empresa
                                               where ie.tipo_imagen=1 AND estado_empresa=1");
+
+     echo "";
      return $resultado_consulta;
 
   }

@@ -15,6 +15,8 @@ Class Empresa{
   private $instagram;
   private $horario;
   private $id_imagen;
+  // private $telefono;
+  // private $correo;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
@@ -62,6 +64,14 @@ Class Empresa{
     public function setIdImagen ($id_imagen){
       $this->id_imagen=$id_imagen;
     }
+
+    // public function setTelefono ($telefono){
+    //   $this->telefono=$telefono;
+    // }
+    //
+    // public function setCorreo ($correo){
+    //   $this->correo=$correo;
+    // }
 
   public function crearEmpresa(){
     $Conexion = new Conexion();

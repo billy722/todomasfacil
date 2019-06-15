@@ -234,6 +234,29 @@ require("./clases/Empresa.php");
                                        </div>
                                     </div>
 
+                                    <div><hr></div>
+
+                                    <div class="row">
+                                       <div class="col-4">
+                                         <h4 style="vertical-align: middle;">Telefono</h4>
+                                       </div>
+                                       <div class="col-8">
+                                         <h6 class="card-text"> <?php echo $filas['telefono']; ?></h6>
+                                       </div>
+                                    </div>
+
+                                    <div><hr></div>
+
+                                    <div class="row">
+                                       <div class="col-4">
+                                         <h4 style="vertical-align: middle;">Correo </h4>
+                                       </div>
+                                       <div class="col-8">
+                                         <h6 class="card-text"><?php echo $filas['correo']; ?></h6>
+                                       </div>
+                                    </div>
+
+
                                    </div>
 
 
@@ -242,17 +265,15 @@ require("./clases/Empresa.php");
 
                              <br>
 
-                             <div class="card-body">
-                             <div class="row">
-                                <div class="col-6">
-                                  <center>  <p class="card-text"> <?php echo $filas['telefono']; ?></p></center>
-                                  </a>
-                                  <center>  <p class="card-text"><?php echo $filas['correo']; ?></p></center>
-                                  </a>
-                                </div>
-                             </div>
-
-                              </div>
+                             <!-- <div class="card-body">
+                               <div class="row">
+                                  <div class="col-6">
+                                      <p class="card-text"> <?php// echo $filas['telefono']; ?></p>
+                                      <p class="card-text"><?php //echo $filas['correo']; ?></p>
+                                    </a>
+                                  </div>
+                               </div>
+                              </div> -->
 
 
                         </div>

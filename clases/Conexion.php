@@ -11,7 +11,7 @@
 
     function __construct(){
 
-       $this->servidor= "localhost";
+       $this->servidor= "146.66.99.89";
        $this->usuario= "daemmulc_facil";
        $this->clave= "todomasfacil123";
        $this->bd= "daemmulc_todomasfacil";

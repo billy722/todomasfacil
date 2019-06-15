@@ -65,8 +65,8 @@ Class Empresa{
       $this->id_imagen=$id_imagen;
     }
 
-    public function setTelefono ($telefono){
-      $this->telefono=$telefono;
+    public function setTelefono ($parametro){
+      $this->telefono=$parametro;
     }
 
     public function setCorreo ($correo){

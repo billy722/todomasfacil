@@ -15,8 +15,8 @@ Class Empresa{
   private $instagram;
   private $horario;
   private $id_imagen;
-  // private $telefono;
-  // private $correo;
+  private $telefono;
+  private $correo;
 
   public function setCategoria($id_recibido){
     $this->categoria_empresa = $id_recibido;
@@ -65,20 +65,20 @@ Class Empresa{
       $this->id_imagen=$id_imagen;
     }
 
-    // public function setTelefono ($telefono){
-    //   $this->telefono=$telefono;
-    // }
-    //
-    // public function setCorreo ($correo){
-    //   $this->correo=$correo;
-    // }
+    public function setTelefono ($telefono){
+      $this->telefono=$telefono;
+    }
+
+    public function setCorreo ($correo){
+      $this->correo=$correo;
+    }
 
   public function crearEmpresa(){
     $Conexion = new Conexion();
     $Conexion = $Conexion->conectar();
 
-    $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas, facebook, instagram, horario)
-                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."','".$this->horario."');";
+    $consulta = "insert INTO tb_empresas (nombre_empresa, descripcion_empresa, categoria_empresa, video_empresa, coordenadas, facebook, instagram, horario, telefono, correo)
+                        VALUES ('".$this->nombre_empresa."', '".$this->descripcion_empresa."', '".$this->categoria_empresa."', '".$this->video_empresa."', '".$this->coordenadas_empresa."', '".$this->facebook."', '".$this->instagram."','".$this->horario."','".$this->telefono."','".$this->correo."');";
 
 //echo $consulta;
 
@@ -106,13 +106,17 @@ Class Empresa{
           coordenadas = '".$this->coordenadas_empresa."',
           facebook = '".$this->facebook."',
           instagram = '".$this->instagram."',
-          horario = '".$this->horario."'
-           WHERE (id_empresa = '".$this->id_empresa."');";
+          horario = '".$this->horario."',
+          telefono = '".$this->telefono."',
+          correo = '".$this->correo."'
+          WHERE (id_empresa = '".$this->id_empresa."')";
 
     if($Conexion->query($consulta)){
+      // echo $consulta;
+
         return true;
     }else{
-        echo $consulta;
+        // echo $consulta;
         // return false;
     }
   }

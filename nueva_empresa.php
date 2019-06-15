@@ -129,6 +129,19 @@ $comprobar->verificarSesion();
 
                              </div>
 
+                             <div class="form-group">
+                                 <label for="telefono">Telefono:</label>
+                                 <input value="" class="form-control" title="telefono" required id="txt_telefono" name="txt_telefono" placeholder="telefono" type="text">
+
+                             </div>
+
+                             <div class="form-group">
+                               <br>
+                                 <label for="correo">Correo:</label>
+                                 <input value="" class="form-control" title="instagram" required id="txt_correo" name="txt_correo" placeholder="Correo electronico" type="text">
+
+                             </div>
+
 
                      </div>
                      <div class="card col-12 col-md-5">

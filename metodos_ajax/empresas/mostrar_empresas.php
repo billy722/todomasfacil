@@ -11,7 +11,8 @@ $listado_empresas = $Empresa->obtenerEmpresasActivasInactivas();
        <thead>
            <th>Nombre</th>
            <th>Descripcion</th>
-           <th>Video</th>
+           <th></th>
+           <th></th>
 
            <th>Opciones</th>
        </thead>

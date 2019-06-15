@@ -6,6 +6,7 @@ require_once '../../clases/Empresa.php';
 $Funciones = new Funciones();
 
 
+
 //SE DEFINEN VARIABLES
 //SE ASIGNAN LOS VALORES RECIBIDOS
 //SE LIMPIAN LOS DATOS RECIBIDOS DE CARACTERES EXTRAÑOS
@@ -19,7 +20,13 @@ $coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
 $facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
 $instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
 $horario = $Funciones->limpiarTexto($_REQUEST['txt_horario']);
-
+$telefono = $Funciones->limpiarTexto($_REQUEST['txt_telefono']);
+$correo = $Funciones->limpiarTexto($_REQUEST['txt_correo']);
+// echo "face: " .$facebook;
+// echo "insta: " .$instagram;
+// echo "horario: " .$horario;
+// echo "telefono: " .$telefono;
+// echo "correo: " .$correo;
 
 // $estado = $Funciones->limpiarNumeroEntero($_REQUEST['select_estado_usuario']);
 
@@ -35,6 +42,8 @@ $Empresa->setCoordenadas($coordenadas_empresa);
 $Empresa->setFacebook($facebook);
 $Empresa->setInstagram($instagram);
 $Empresa->setHorario($horario);
+$Empresa->setTelefono($telefono);
+$Empresa->setCorreo($correo);
 
 
 

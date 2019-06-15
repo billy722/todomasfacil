@@ -11,16 +11,17 @@
 
     function __construct(){
 
-      // $this->servidor= "todomasfacil.cl";
-      // $this->usuario= "billy722";
-      // $this->clave= "ixLnTbyd";
-      // $this->bd= "todomasfacil";
+       $this->servidor= "localhost";
+       $this->usuario= "daemmulc_facil";
+       $this->clave= "todomasfacil123";
+       $this->bd= "daemmulc_todomasfacil";
 
-      
-      $this->servidor= "127.0.0.1";
-      $this->usuario= "root";
-      $this->clave= "johnnyjohnny";
-      $this->bd= "todomasfacil";
+
+
+      // $this->servidor= "127.0.0.1";
+      // $this->usuario= "root";
+      // $this->clave= "";
+      // $this->bd= "todomasfacil";
 
 
     }

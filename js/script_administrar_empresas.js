@@ -45,7 +45,6 @@ function guardar_nueva_empresa(){
 
 function modificar_empresa(){
   // alert("contador: "+$("#contadorFotos").val());
-
 	swal({title:"Cargando", text:"Espere un momento.", showConfirmButton:false,allowOutsideClick:false,showCancelButton: false,closeOnConfirm: false});
 
 

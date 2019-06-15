@@ -234,18 +234,33 @@ require("./clases/Empresa.php");
                                        </div>
                                     </div>
 
-
                                    </div>
+
 
                                </div>
                              </div>
 
                              <br>
 
+                             <div class="card-body">
+                             <div class="row">
+                                <div class="col-6">
+                                  <center>  <p class="card-text"> <?php echo $filas['telefono']; ?></p></center>
+                                  </a>
+                                  <center>  <p class="card-text"><?php echo $filas['correo']; ?></p></center>
+                                  </a>
+                                </div>
+                             </div>
+
+                              </div>
+
+
                         </div>
 
 
                       </div>
+
+
 
                 </div>
 

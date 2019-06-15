@@ -169,6 +169,19 @@ echo '<script> var id_empresa = '.$id_empresa.'; </script>';
                                   <input value="<?php echo $filas['instagram']; ?>" class="form-control" title="instagram" required id="txt_instagram" name="txt_instagram" placeholder="instagram" type="text">
                                 </div>
                               </div>
+
+                              <div class="form-group">
+                                  <label for="telefono">Telefono:</label>
+                                  <input value="<?php echo $filas['telefono']; ?>" class="form-control" title="telefono" required id="txt_telefono" name="txt_telefono" placeholder=":telefono" type="text">
+
+                              </div>
+
+                              <div class="form-group">
+                                <br>
+                                  <label for="correo">Correo:</label>
+                                  <input value="<?php echo $filas['correo']; ?>" class="form-control" title="correo" required id="txt_correo" name="txt_correo" placeholder="Correo electronico" type="text">
+
+                              </div>
                         </div>
 
 

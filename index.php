@@ -153,11 +153,11 @@ require("./clases/Categoria.php");
           <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
           </div>
 
-          <div  data-src="./img/principal2.jpg">
+          <div  data-src="./img/13.jpg">
           <!-- <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div> -->
           </div>
 
-          <div  data-src="./img/principal3.jpg">
+          <div  data-src="./img/Saltos-del-laja.jpg">
             <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
           </div>
 

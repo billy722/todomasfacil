@@ -149,17 +149,20 @@ require("./clases/Categoria.php");
 
       <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
 
-          <div  data-src="./img/principal.jpg">
+          <div  data-src="./img/principal1.jpg">
           <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
           </div>
 
-          <div  data-src="./img/13.jpg">
-          <!-- <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div> -->
+          <div  data-src="./img/principal2.jpg">
           </div>
 
-          <div  data-src="./img/Saltos-del-laja.jpg">
+          <div  data-src="./img/principal3.jpg">
             <div class="camera_caption fadeFromBottom">En Todo Mas Fácil encuentra lo que andas buscando. </div>
           </div>
+
+          <!-- <div  data-src="./img/principal4.jpg"> -->
+          </div>
+
 
       </div>
       <!-- #camera_wrap_1 -->

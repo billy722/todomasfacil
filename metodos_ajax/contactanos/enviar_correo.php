@@ -17,28 +17,29 @@
       $mail->SMTPDebug = 0;                                 // Enable verbose debug output
       $mail->isSMTP();
       $mail->CharSet = 'UTF-8';                                // Set mailer to use SMTP
-      $mail->Host = 'a2plcpnl0592.prod.iad2.secureserver.net';  // Specify main and backup SMTP servers
+      $mail->Host = 'secureus148.sgcpanel.com';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
       $mail->Username = 'marketing@todomasfacil.cl';   // SMTP username
-      $mail->Password = 'elchicokeny30';                           // SMTP password
+      $mail->Password = 'todomasfacil30';                           // SMTP password
       $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
       $mail->Port = 465;                               // TCP port to connect to
 
 
 
 
-        //Recipients
-        $mail->setFrom('contacto@todomasfacil.cl', 'Contacto');
-        $mail->addAddress('ceaceajohnny@gmail.com','Johnnyto');
-        $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Contacto desde www.todomasfacil.cl';
 
         //recibimos variables del formulario
         $nombre_recibido = $_REQUEST['nombre'];
-        $apellido_recibido = $_REQUEST['nombre'];
-        $correo_recibido = $_REQUEST['nombre'];
-        $mensaje_recibido = $_REQUEST['nombre'];
+        $apellido_recibido = $_REQUEST['apellido'];
+        $correo_recibido = $_REQUEST['correo'];
+        $mensaje_recibido = $_REQUEST['mensaje'];
 
+        //Recipients
+        $mail->setFrom('marketing@todomasfacil.cl', 'Contacto www.todomasfacil.cl '.$nombre_recibido);
+        $mail->addAddress('marketing@todomasfacil.cl','Marketing');
+        $mail->addAddress('billy.salazar1992@gmail.com','Marketing');
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Contacto desde www.todomasfacil.cl';
 
 
         $mail->Body    = "Nombre del contacto: ".$nombre_recibido." ".$apellido_recibido." del correo ".$correo_recibido." ha escrito el siguiente mensaje: ".$mensaje_recibido;

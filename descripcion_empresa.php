@@ -220,15 +220,90 @@ require("./clases/Empresa.php");
                                    </div> -->
                                    <div class="card-body">
 
-                                    <div class="row">
+
+                                     <style>
+
+                                     #facebook_contacto_empresa, #instagram_contacto_empresa, #correo_contacto_empresa, #telefono_contacto_empresa,#direccion_contacto_empresa,#whatsapp{
+                                       background-color: #031A25;
+                                       color:#ffffff;
+                                       font-size: 80px;
+                                       border-radius: 30px;
+                                       padding:5px;
+                                       height: 35px;
+                                       width: 35px;
+                                     }
+                                     #facebook_contacto_empresa{
+                                         padding:8px !important;
+                                         background-color: #0A425B;
+                                         color:white!important;
+                                     }
+                                     #instagram_contacto_empresa{
+                                         padding:8px !important;
+                                         background-color: #EF4723;
+                                         color:white!important;
+                                     }
+                                     #telefono_contacto_empresa{
+                                         padding:8px !important;
+                                         background-color: #75C687;
+                                         color:white!important;
+                                     }
+                                     #direccion_contacto_empresa{
+                                         padding:8px !important;
+                                     }
+                                     #correo_contacto_empresa{
+                                         padding:8px !important;
+                                         background-color: #dbb904;
+                                         color:white!important;
+                                     }
+                                     .logos_contacto{
+                                         padding: 5px;
+                                         float: left;
+                                     }
+                                     .span_texto_icono_contacto_empresa{
+                                         font-size: 14px;
+                                         color:black;
+                                     }
+
+                                     </style>
+
+
+                                     <div class="row">
+
+                                       <div class="col-12 logos_contacto">
+                                         <a class="col-12"  href="<?php echo $filas['facebook']; ?>">
+                                            <i id="facebook_contacto_empresa" class="fab fa-facebook-f"></i> <span class="span_texto_icono_contacto_empresa">Facebook</span>
+                                         </a>
+                                       </div>
+
+                                       <div class="col-12 logos_contacto">
+                                         <a class="col-12" href="<?php echo $filas['instagram']; ?>">
+                                            <i id="instagram_contacto_empresa" class="fab fa-instagram"></i> <span class="span_texto_icono_contacto_empresa">Instagram</span>
+                                         </a>
+                                       </div>
+
+                                       <div class="col-12 logos_contacto">
+                                         <a class="col-12"  href="#">
+                                            <i id="telefono_contacto_empresa" class="fas fa-phone"></i> <span class="span_texto_icono_contacto_empresa"><?php echo $filas['telefono']; ?></span>
+                                         </a>
+                                       </div>
+
+
+                                       <div class="col-12 logos_contacto">
+                                         <a class="col-12" href="./contactanos.php">
+                                            <i id="correo_contacto_empresa" class="fas fa-envelope"></i> <span class="span_texto_icono_contacto_empresa"><?php echo $filas['correo']; ?></span>
+                                         </a>
+                                       </div>
+                                      </div>
+
+                                    <!-- <div class="row">
                                        <div class="col-6">
                                          <h4 style="vertical-align: middle;">Redes Sociales</h4>
                                        </div>
                                        <div class="col-6">
-                                         <a class="col-6"  href="<?php echo $filas['facebook']; ?>">
+                                         <a class="col-6"  href="<?php //echo $filas['facebook']; ?>">
                                             <i id="facebook" class="fab fa-facebook-f"></i>
                                          </a>
-                                         <a class="col-6" href="<?php echo $filas['instagram']; ?>">
+                                         <a class="col-6" href="<?php //echo $filas['instagram']; ?>">
                                             <i id="instagram" class="fab fa-instagram"></i>
                                          </a>
                                        </div>
@@ -240,7 +315,7 @@ require("./clases/Empresa.php");
                                        <div class="col-12">
                                          <h4 style="vertical-align: middle;">Telefono</h4>
 
-                                         <h6 class="card-text"> <?php echo $filas['telefono']; ?></h6>
+                                         <h6 class="card-text"> <?php //echo $filas['telefono']; ?></h6>
                                        </div>
                                     </div>
 
@@ -250,9 +325,9 @@ require("./clases/Empresa.php");
                                        <div class="col-12">
                                          <h4 style="vertical-align: middle;">Correo </h4>
 
-                                         <h6 class="card-text"><?php echo $filas['correo']; ?></h6>
+                                         <h6 class="card-text"><?php //echo $filas['correo']; ?></h6>
                                        </div>
-                                    </div>
+                                    </div> -->
 
 
                                    </div>

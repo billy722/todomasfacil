@@ -20,7 +20,7 @@ $coordenadas_empresa = $_REQUEST['txt_coordenadas_empresa'];
 $facebook = $Funciones->limpiarTexto($_REQUEST['txt_facebook']);
 $instagram = $Funciones->limpiarTexto($_REQUEST['txt_instagram']);
 $horario = $Funciones->limpiarTexto($_REQUEST['txt_horario']);
-$telefono = $Funciones->limpiarTexto($_REQUEST['txt_telefono']);
+$telefono = $_REQUEST['txt_telefono'];
 $correo = $Funciones->limpiarTexto($_REQUEST['txt_correo']);
 // echo "face: " .$facebook;
 // echo "insta: " .$instagram;
